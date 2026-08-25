@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   base: '/Nature-Nurture/',
+  publicDir: 'public-production',
   plugins: [react()],
   server: {
     host: '0.0.0.0',
