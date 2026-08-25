@@ -1,0 +1,121 @@
+[
+  {
+    "product": "Zingo",
+    "category": "Powdered drink",
+    "sourcePdf": "Zingo-new(final).pdf",
+    "heroImage": "zingo-new-final-page-01-image-02.jpeg",
+    "secondaryImages": [
+      "zingo-new-final-page-03-image-02.jpeg",
+      "zingo-new-final-page-06-image-02.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      1,
+      3,
+      6
+    ]
+  },
+  {
+    "product": "Infant Formula",
+    "category": "Infant nutrition",
+    "sourcePdf": "infant formula .pdf",
+    "heroImage": "infant-formula-page-04-image-01.jpeg",
+    "secondaryImages": [
+      "infant-formula-page-11-image-03.jpeg",
+      "infant-formula-page-13-image-05.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      4,
+      11,
+      13
+    ]
+  },
+  {
+    "product": "Cereal / Meal Replacement",
+    "category": "Breakfast cereal and meal replacement",
+    "sourcePdf": "Nature's Nurture CEREAL  NEW.pdf",
+    "heroImage": "nature-s-nurture-cereal-new-page-11-image-01.jpeg",
+    "secondaryImages": [
+      "nature-s-nurture-cereal-new-page-12-image-01.jpeg",
+      "nature-s-nurture-cereal-new-page-20-image-01.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      11,
+      12,
+      20
+    ]
+  },
+  {
+    "product": "Vitamin B12 + Folate",
+    "category": "Sublingual supplement",
+    "sourcePdf": "sublingual _ NEW .pdf",
+    "heroImage": "sublingual-new-page-05-image-01.jpeg",
+    "secondaryImages": [
+      "sublingual-new-page-06-image-01.jpeg",
+      "sublingual-new-page-07-image-01.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      5,
+      6,
+      7
+    ]
+  },
+  {
+    "product": "Iron / Yster",
+    "category": "Sublingual supplement",
+    "sourcePdf": "sublingual _ NEW .pdf",
+    "heroImage": "sublingual-new-page-10-image-01.jpeg",
+    "secondaryImages": [
+      "sublingual-new-page-12-image-01.jpeg",
+      "sublingual-new-page-15-image-01.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      10,
+      12,
+      15
+    ]
+  },
+  {
+    "product": "Vitamin D3 + K2",
+    "category": "Sublingual supplement",
+    "sourcePdf": "sublingual _ NEW .pdf",
+    "heroImage": "sublingual-new-page-17-image-01.jpeg",
+    "secondaryImages": [
+      "sublingual-new-page-18-image-01.jpeg",
+      "sublingual-new-page-19-image-01.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      17,
+      18,
+      19
+    ]
+  },
+  {
+    "product": "Mosquito Repellent",
+    "category": "Mosquito protection",
+    "sourcePdf": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "heroImage": "mosquito-repellent-patch-new-pptx-page-01-image-04.jpeg",
+    "secondaryImages": [
+      "mosquito-repellent-patch-new-pptx-page-03-image-01.jpeg",
+      "mosquito-repellent-patch-new-pptx-page-07-image-08.jpeg"
+    ],
+    "lifestyleImages": [],
+    "confidence": "HIGH",
+    "sourcePages": [
+      1,
+      3,
+      7
+    ]
+  }
+]

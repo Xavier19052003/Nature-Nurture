@@ -1,0 +1,1530 @@
+[
+  {
+    "Candidate": "infant-formula-page-02-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 2,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-02-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 2,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-03-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-03-image-03.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-03-image-04.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-04-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 4,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-07-image-05.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-07-image-06.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-08-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 8,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-09-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-09-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-10-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-10-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-10-image-03.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-11-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-11-image-03.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-12-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-12-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-13-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-13-image-04.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-13-image-05.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-16-image-01.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-16-image-02.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "infant-formula-page-16-image-03.jpeg",
+    "Product": "Infant Formula",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "infant formula .pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-01-image-02.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-01-image-03.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-01-image-04.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-02-image-05.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 2,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-03-image-01.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-07-image-02.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-07-image-07.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-07-image-08.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-08-image-01.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 8,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-08-image-02.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 8,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-08-image-03.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 8,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-09-image-06.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-10-image-02.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-10-image-03.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-10-image-04.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-11-image-02.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-12-image-01.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-12-image-02.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-13-image-01.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-14-image-01.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-16-image-01.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-16-image-05.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "mosquito-repellent-patch-new-pptx-page-16-image-06.jpeg",
+    "Product": "Mosquito Repellent",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Mosquito-Repellent-Patch_NEW.pptx.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-01-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-01-image-02.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-01-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-01-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-02-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 2,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-02-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 2,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-02-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 2,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-03-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-03-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-03-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-04-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 4,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-04-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 4,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-04-image-06.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 4,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-05-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-05-image-02.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-05-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-09-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-09-image-02.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-09-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-09-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-11-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-11-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-11-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-11-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-12-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-12-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-12-image-07.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-12-image-08.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-13-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-13-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-13-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-14-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-14-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-14-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-14-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-14-image-06.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-15-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-15-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-15-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-16-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-16-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-16-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-16-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-18-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-18-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-18-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-18-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-20-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 20,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-20-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 20,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-20-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 20,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-20-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 20,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-22-image-02.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 22,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-22-image-04.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 22,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-22-image-05.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 22,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-23-image-01.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 23,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-23-image-02.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 23,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "nature-s-nurture-cereal-new-page-23-image-03.jpeg",
+    "Product": "Cereal / Meal Replacement",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Nature's Nurture CEREAL  NEW.pdf",
+    "Page": 23,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-05-image-01.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-05-image-03.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-05-image-05.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-06-image-01.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-06-image-03.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-06-image-08.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-06-image-09.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-07-image-01.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-07-image-02.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-07-image-08.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-07-image-09.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-08-image-01.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 8,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-08-image-02.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 8,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-09-image-01.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-09-image-03.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-09-image-08.jpeg",
+    "Product": "Vitamin B12 + Folate",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 9,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-10-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-10-image-02.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-10-image-03.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 10,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-11-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-11-image-02.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-11-image-03.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 11,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-12-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-12-image-02.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-12-image-03.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-13-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-13-image-05.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-14-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-14-image-02.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-14-image-03.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-15-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-15-image-03.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-15-image-04.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-15-image-05.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 15,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-16-image-01.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-16-image-06.jpeg",
+    "Product": "Iron / Yster",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 16,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-17-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 17,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-17-image-02.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 17,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-17-image-04.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 17,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-18-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-18-image-03.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-18-image-09.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-19-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 19,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-19-image-02.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 19,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-19-image-07.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 19,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-20-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 20,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-20-image-02.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 20,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-21-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 21,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-21-image-05.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 21,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-22-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 22,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-22-image-03.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 22,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-22-image-05.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 22,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-23-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 23,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-23-image-03.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 23,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-23-image-08.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 23,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-24-image-01.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 24,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "sublingual-new-page-24-image-03.jpeg",
+    "Product": "Vitamin D3 + K2",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "sublingual _ NEW .pdf",
+    "Page": 24,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-01-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-01-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-01-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 1,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-03-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-03-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-03-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 3,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-04-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 4,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-04-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 4,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-05-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-05-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 5,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-06-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-06-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-06-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-06-image-05.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 6,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-07-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-07-image-07.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 7,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-12-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-12-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 12,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-13-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-13-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-13-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 13,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-14-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-14-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-14-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 14,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-18-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-18-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-18-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 18,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-19-image-02.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 19,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-19-image-03.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 19,
+    "Confidence": "HIGH"
+  },
+  {
+    "Candidate": "zingo-new-final-page-19-image-04.jpeg",
+    "Product": "Zingo",
+    "Type": "PRODUCT_PACKAGING",
+    "Source PDF": "Zingo-new(final).pdf",
+    "Page": 19,
+    "Confidence": "HIGH"
+  }
+]
