@@ -1,5 +1,6 @@
 import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { contactDetails } from '../../data/contact'
 
 const productCategories = ['Sublingual sprays', 'Cereal & meal replacement', 'Infant formula', 'Zingo', 'Mosquito repellent', 'Natural ingredients']
 
@@ -41,9 +42,9 @@ export function Footer() {
         <div className="footer-column footer-column--contact">
           <h4>Head office contact</h4>
           <ul>
-            <li><MapPin size={15} /> 6 Grind Road, Durban, South Africa</li>
-            <li><Phone size={15} /> +27 31 572 3943</li>
-            <li><Mail size={15} /> hello@rainmakermfgc.co.za</li>
+            <li><MapPin size={15} /> {contactDetails.address}</li>
+            <li><Phone size={15} /> {contactDetails.phone}</li>
+            <li><Mail size={15} /> {contactDetails.email}</li>
           </ul>
         </div>
       </div>

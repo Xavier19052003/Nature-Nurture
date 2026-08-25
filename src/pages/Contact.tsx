@@ -1,6 +1,7 @@
 import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { contactDetails } from '../data/contact'
 
 type FormState = {
   name: string
@@ -128,9 +129,9 @@ export function ContactPage() {
         <div className="contact-card contact-card--primary">
           <h3>Get in touch</h3>
           <ul>
-            <li><Mail size={16} /> hello@naturesnurture.co.za</li>
-            <li><Phone size={16} /> +27 (0)11 123 4567</li>
-            <li><MapPin size={16} /> 42 Wellness Avenue, Johannesburg, South Africa</li>
+            <li><Mail size={16} /> {contactDetails.email}</li>
+            <li><Phone size={16} /> {contactDetails.phone}</li>
+            <li><MapPin size={16} /> {contactDetails.address}</li>
           </ul>
         </div>
 

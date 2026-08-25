@@ -1,6 +1,6 @@
-import { Menu, Search, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const links = [
   { label: 'Home', to: '/' },
@@ -13,6 +13,15 @@ const links = [
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const location = useLocation()
+
+  const getNavClassName = (link: { label: string; to: string }, isActive: boolean) => {
+    if (link.label === 'Search' && location.pathname.startsWith('/products')) {
+      return ''
+    }
+
+    return isActive ? 'is-active' : ''
+  }
 
   return (
     <header className="site-header">
@@ -27,14 +36,11 @@ export function Navbar() {
               key={link.to + link.label}
               to={link.to}
               end={link.to === '/'}
-              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              className={({ isActive }) => getNavClassName(link, isActive)}
             >
               {link.label}
             </NavLink>
           ))}
-          <Link to="/products" className="icon-button" aria-label="Search products">
-            <Search size={15} />
-          </Link>
           <NavLink to="/contact" className="nav-contact">Contact</NavLink>
         </nav>
 
@@ -55,7 +61,7 @@ export function Navbar() {
               key={link.to + link.label}
               to={link.to}
               end={link.to === '/'}
-              className={({ isActive }) => (isActive ? 'is-active' : '')}
+              className={({ isActive }) => getNavClassName(link, isActive)}
               onClick={() => setMenuOpen(false)}
             >
               {link.label}

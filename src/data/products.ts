@@ -72,6 +72,7 @@ export const products: Product[] = [
     featured: true,
     accent: '#d8b7c8',
   },
+  // Client confirmation pending: "Iron + Yster" is retained as-is until the final bilingual brand naming is confirmed.
   {
     id: 'iron-yster',
     slug: 'iron-yster',

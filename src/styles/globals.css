@@ -71,12 +71,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
   text-decoration: none;
   text-transform: uppercase;
   transition: color var(--ease-editorial);
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding-bottom: 0.35rem;
+}
+.desktop-nav a::after,
+.mobile-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: currentColor;
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity var(--ease-editorial), transform var(--ease-editorial);
 }
 .desktop-nav a.is-active,
 .desktop-nav a:hover,
 .mobile-nav a.is-active,
 .mobile-nav a:hover {
   color: var(--color-nature);
+}
+.desktop-nav a.is-active::after,
+.mobile-nav a.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 .nav-contact {
   border-bottom: 1px solid currentColor;

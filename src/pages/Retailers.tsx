@@ -1,5 +1,6 @@
 import { ArrowRight, Check, MapPin, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { contactDetails } from '../data/contact'
 
 const benefits = [
   'Dedicated product education and category support',
@@ -10,19 +11,19 @@ const benefits = [
 
 const locations = [
   {
-    name: 'Johannesburg',
-    address: 'Head office & distribution support',
-    phone: '+27 (0)11 123 4567',
+    name: 'National head office',
+    address: contactDetails.address,
+    phone: contactDetails.phone,
   },
   {
-    name: 'Cape Town',
-    address: 'Regional retail partnerships',
-    phone: '+27 (0)21 765 4321',
+    name: 'Retail support',
+    address: contactDetails.address,
+    phone: contactDetails.phone,
   },
   {
-    name: 'Durban',
-    address: 'Community and retail engagement',
-    phone: '+27 (0)31 987 6543',
+    name: 'Wholesale enquiries',
+    address: contactDetails.address,
+    phone: contactDetails.phone,
   },
 ]
 
