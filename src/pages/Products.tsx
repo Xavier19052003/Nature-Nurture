@@ -10,6 +10,7 @@ export function ProductsPage() {
     if (activeCategory === 'All Products') return products
     return products.filter((product) => product.category === activeCategory)
   }, [activeCategory])
+  const productPdfHref = `${import.meta.env.BASE_URL}Natures-Nurture-NEW.pdf`
 
   return (
     <main className="page-shell page-shell--light">
@@ -28,7 +29,7 @@ export function ProductsPage() {
       <section className="container product-toolbar">
         <div className="toolbar-actions">
           <Link to="/retailers" className="button button--primary">Browse wholesale pricing</Link>
-          <a href="/Natures-Nurture-NEW.pdf" download className="button button--secondary">
+          <a href={productPdfHref} download className="button button--secondary">
             Download master catalogue (PDF)
           </a>
         </div>

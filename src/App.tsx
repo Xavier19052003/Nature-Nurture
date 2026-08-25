@@ -11,6 +11,8 @@ import { ProductDetailPage } from './pages/ProductDetail'
 import { ProductsPage } from './pages/Products'
 import { RetailersPage } from './pages/Retailers'
 
+const routerBase = import.meta.env.PROD ? '/Nature-Nurture' : '/'
+
 function AppShell({ children }: { children: React.ReactNode }) {
   return (
     <>
@@ -23,7 +25,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={routerBase}>
       <Routes>
         <Route path="/" element={<AppShell><Home /></AppShell>} />
         <Route path="/products" element={<AppShell><ProductsPage /></AppShell>} />
