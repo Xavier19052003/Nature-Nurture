@@ -2,7 +2,7 @@ import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { Product } from '../../data/products'
 
-export function ProductCard({ product }: { product: Product }) {
+export function ProductCard({ product, ctaLabel = 'Explore product' }: { product: Product, ctaLabel?: string }) {
   const accent = product.accent ?? '#3e6b3f'
   const benefits = product.benefits ?? []
 
@@ -21,7 +21,7 @@ export function ProductCard({ product }: { product: Product }) {
           ))}
         </ul>
         <Link to={`/products/${product.slug}`} className="inline-link">
-          Explore product <ArrowUpRight aria-hidden="true" size={16} />
+          {ctaLabel} <ArrowUpRight aria-hidden="true" size={16} />
         </Link>
       </div>
     </article>

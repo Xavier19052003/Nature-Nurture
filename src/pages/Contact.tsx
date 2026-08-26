@@ -1,6 +1,5 @@
-import { ArrowRight, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, Mail, MapPin, MapPinned, Phone, Users2 } from 'lucide-react'
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { contactDetails } from '../data/contact'
 
 type FormState = {
@@ -113,14 +112,46 @@ export function ContactPage() {
 
   return (
     <main className="page-shell page-shell--light">
-      <section className="page-header">
-        <div className="container page-header__inner page-header__inner--stacked">
-          <div>
+      <section className="contact-hero">
+        <div className="container contact-hero__grid">
+          <div className="contact-hero__copy">
             <p className="eyebrow eyebrow--dark">Contact</p>
             <h1>Speak with the Nature&apos;s Nurture team.</h1>
+            <span className="about-hero__divider" aria-hidden="true" />
+            <p>
+              We’re here to support product enquiries, retail conversations and wellness partnerships across the region.
+            </p>
           </div>
-          <div className="page-header__copy">
-            <p>We’re here to support product enquiries, retail conversations and wellness partnerships across the region.</p>
+
+          <div className="contact-hero__panel">
+            <div className="contact-hero__item">
+              <MapPinned size={16} />
+              <div>
+                <span>Location</span>
+                <strong>{contactDetails.address}</strong>
+              </div>
+            </div>
+            <div className="contact-hero__item">
+              <Phone size={16} />
+              <div>
+                <span>Phone</span>
+                <strong>{contactDetails.phone}</strong>
+              </div>
+            </div>
+            <div className="contact-hero__item">
+              <Mail size={16} />
+              <div>
+                <span>Email</span>
+                <strong>{contactDetails.email}</strong>
+              </div>
+            </div>
+            <div className="contact-hero__item contact-hero__item--subtle">
+              <Users2 size={16} />
+              <div>
+                <span>Business enquiries</span>
+                <strong>Retail, wholesale &amp; partnerships</strong>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -223,13 +254,6 @@ export function ContactPage() {
         </form>
       </section>
 
-      <section className="container cta-panel cta-panel--green">
-        <div>
-          <p className="eyebrow eyebrow--alt">Support</p>
-          <h3>We&apos;ll respond quickly to retailers, health partners and distributors.</h3>
-        </div>
-        <Link className="button button--inverted" to="/products">Explore products <ArrowRight size={16} /></Link>
-      </section>
     </main>
   )
 }

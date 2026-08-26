@@ -1,47 +1,20 @@
-import { ArrowRight, ArrowUpRight, Check, ChevronRight } from 'lucide-react'
+import { ArrowUpRight, Factory, FlaskConical, Globe2, Home as HomeIcon, Leaf, ShieldCheck, Store, Users2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ProductCard } from '../components/ui/ProductCard'
-import { createProductPlaceholder, featuredProducts } from '../data/products'
+import { featuredProducts } from '../data/products'
 
 const philosophy = [
-  { number: '01', title: 'Wellness' },
-  { number: '02', title: 'Nutrition' },
-  { number: '03', title: 'Family' },
-  { number: '04', title: 'Everyday living' },
-]
-
-const categoryCards = [
-  {
-    title: 'Sublingual Micronutrient Sprays',
-    description: 'Evidence-led oral wellness essentials designed for everyday vitality and support.',
-    tone: 'lavender',
-    image: createProductPlaceholder('B12', '#d9bfd6', '#f3ebf4'),
-  },
-  {
-    title: 'Cereals & Meal Replacements',
-    description: 'Practical nutrition for breakfast, convenience and full-day performance.',
-    tone: 'mint',
-    image: createProductPlaceholder('Cereal', '#8db38b', '#dfeee0'),
-  },
-  {
-    title: 'Infant & Follow-On Formula',
-    description: 'Supportive early-life nutrition built around formula-led ease and trust.',
-    tone: 'peach',
-    image: createProductPlaceholder('Infant', '#e5c4a9', '#f8e4d5'),
-  },
-  {
-    title: 'Zingo Fruit Hydration',
-    description: 'Fruit-powered hydration for families and active everyday routines.',
-    tone: 'amber',
-    image: createProductPlaceholder('Zingo', '#ef8f4b', '#f7d7b2'),
-  },
+  { number: '01', title: 'Wellness', icon: Leaf },
+  { number: '02', title: 'Nutrition', icon: FlaskConical },
+  { number: '03', title: 'Family', icon: Users2 },
+  { number: '04', title: 'Everyday living', icon: HomeIcon },
 ]
 
 const reasons = [
-  { title: 'Science-led mucosal delivery', text: 'Designed for efficient nutrient absorption and quality routines.' },
-  { title: 'Quality-focused manufacturing', text: 'Traceable, standardised production for trusted daily health support.' },
-  { title: 'Formulated for modern Africa', text: 'Balance, accessibility and practicality across everyday lifestyles.' },
-  { title: 'Retail-ready multi-category FMCG', text: 'Structured for the realities of African retail and commercial scale.' },
+  { title: 'Science-led mucosal delivery', text: 'Designed for efficient nutrient absorption and quality routines.', icon: FlaskConical },
+  { title: 'Quality-focused manufacturing', text: 'Traceable, standardised production for trusted daily health support.', icon: ShieldCheck },
+  { title: 'Formulated for modern Africa', text: 'Balance, accessibility and practicality across everyday lifestyles.', icon: Globe2 },
+  { title: 'Retail-ready multi-category FMCG', text: 'Structured for the realities of African retail and commercial scale.', icon: Store },
 ]
 
 const retailStats = [
@@ -51,7 +24,14 @@ const retailStats = [
   { label: 'Pan-Africa', value: 'Pan' },
 ]
 
-const compliance = ['SAHPRA aligned', 'Department of Health SA', 'SA Pharmacy Council', 'GMP Certified', 'HACCP certified', 'ISO 22000']
+const compliance = [
+  { label: 'SAHPRA aligned', icon: ShieldCheck },
+  { label: 'Department of Health SA', icon: Factory },
+  { label: 'SA Pharmacy Council', icon: Store },
+  { label: 'GMP Certified', icon: Factory },
+  { label: 'HACCP certified', icon: ShieldCheck },
+  { label: 'ISO 22000', icon: ShieldCheck },
+]
 
 export function Home() {
   return (
@@ -115,12 +95,13 @@ export function Home() {
             </div>
             <div className="section-copy">
               <p>
-                We believe that premium, science-backed nutrition and wellness should be practical, accessible and built for real families. Through every stage of life, our products bridge natural ingredients, functional formulation and everyday relevance.
+                Premium nutrition should feel practical. Our products combine natural ingredients, functional formulation and everyday relevance for real families across Africa.
               </p>
             </div>
             <div className="philosophy-list">
               {philosophy.map((item) => (
                 <div key={item.number} className="philosophy-item">
+                  <span className="philosophy-item__icon" aria-hidden="true"><item.icon size={15} /></span>
                   <span>{item.number}</span>
                   <strong>{item.title}</strong>
                 </div>
@@ -133,40 +114,10 @@ export function Home() {
           <div className="container">
             <div className="section-header section-header--spaced">
               <div>
-                <p className="eyebrow eyebrow--dark">01 • Category architecture</p>
-                <h2>The Product World</h2>
-              </div>
-              <Link to="/products" className="inline-link inline-link--dark">View all products <ArrowUpRight size={16} /></Link>
-            </div>
-
-            <div className="category-grid">
-              {categoryCards.map((card) => (
-                <article key={card.title} className={`category-card category-card--${card.tone}`}>
-                  <div className="category-card__content">
-                    <span className="tag tag--small">Product range</span>
-                    <h3>{card.title}</h3>
-                    <p>{card.description}</p>
-                    <Link to="/products" className="inline-link inline-link--dark">
-                      Explore product <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                  <div className="category-card__visual">
-                    <img src={card.image} alt={card.title} />
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section section--light">
-          <div className="container">
-            <div className="section-header section-header--spaced">
-              <div>
-                <p className="eyebrow eyebrow--dark">04 • Featured flagships</p>
+                <p className="eyebrow eyebrow--dark">02 • Featured flagships</p>
                 <h2>Featured Flagships</h2>
               </div>
-              <Link to="/products" className="inline-link inline-link--dark">Explore all products <ChevronRight size={16} /></Link>
+              <Link to="/products" className="inline-link inline-link--dark">Explore all products <ArrowUpRight size={16} /></Link>
             </div>
 
             <div className="featured-grid">
@@ -178,16 +129,18 @@ export function Home() {
         </section>
 
         <section className="section section--dark-cta">
-          <div className="container narrative-shell">
-            <div className="narrative-copy">
-              <p className="eyebrow eyebrow--alt">06 • Brand narrative</p>
+          <div className="container narrative-shell narrative-shell--split">
+            <div className="narrative-heading">
+              <p className="eyebrow eyebrow--alt">03 • Brand narrative</p>
               <h2>
                 Nurturing life through<br />
                 science, nature &amp;<br />
                 honest craftsmanship.
               </h2>
+            </div>
+            <div className="narrative-copy narrative-copy--compact">
               <p>
-                Nature&apos;s Nurture was founded on a simple belief: that science-backed nutrition and everyday wellness deserve better ingredients, better choices and better outcomes for families.
+                Nature&apos;s Nurture brings together science-backed nutrition, natural ingredients and thoughtful product development for everyday family wellness.
               </p>
               <div className="cta-row cta-row--stacked">
                 <Link className="button button--inverted" to="/about">Read our story</Link>
@@ -197,38 +150,16 @@ export function Home() {
           </div>
         </section>
 
-        <section className="section section--orange">
-          <div className="container promo-shell">
-            <div className="promo-copy">
-              <p className="eyebrow eyebrow--alt">Zingo</p>
-              <h2>Stir. Sip. Smile. With Zingo!</h2>
-              <p>
-                Zingo brings bright flavour, convenience and everyday hydration support to family routines across Africa.
-              </p>
-              <div className="pill-row">
-                <span>Orange boost</span>
-                <span>Berry burst</span>
-                <span>Fruit hydration</span>
-              </div>
-              <Link className="button button--light" to="/products/zingo">Explore product</Link>
-            </div>
-            <div className="promo-product">
-              <div className="promo-bottle">
-                <img src={createProductPlaceholder('Zingo', '#ef8f4b', '#f7d7b2')} alt="Zingo product placeholder" />
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="section section--light">
           <div className="container reason-grid">
             <div className="section-heading section-heading--left">
-              <p className="eyebrow eyebrow--dark">07 • Why Nature&apos;s Nurture</p>
+              <p className="eyebrow eyebrow--dark">04 • Why Nature&apos;s Nurture</p>
               <h2>Why Nature&apos;s Nurture</h2>
             </div>
             <div className="reason-cards">
               {reasons.map((reason, index) => (
                 <article key={reason.title} className="reason-card">
+                  <span className="reason-card__icon" aria-hidden="true"><reason.icon size={16} /></span>
                   <span className="reason-number">0{index + 1}</span>
                   <h3>{reason.title}</h3>
                   <p>{reason.text}</p>
@@ -238,64 +169,48 @@ export function Home() {
           </div>
         </section>
 
-        <section className="section section--light">
-          <div className="container retailer-shell">
-            <div className="section-header section-header--spaced">
-              <div>
-                <p className="eyebrow eyebrow--dark">08 • Retailers &amp; wholesalers</p>
-                <h2>For Retailers, Wholesalers &amp; Distributors</h2>
-              </div>
-              <Link className="inline-link inline-link--dark" to="/retailers">Retail channel overview <ChevronRight size={16} /></Link>
+        <section className="section section--dark-cta home-trust-section">
+          <div className="container home-trust-shell">
+            <div className="home-trust-copy">
+              <p className="eyebrow eyebrow--alt">05 • Retailers &amp; wholesalers</p>
+              <h2>Built for retail. Backed by quality.</h2>
+              <p>Practical distribution support for retail partners, backed by trusted manufacturing standards and an established African market footprint.</p>
             </div>
-            <div className="retailer-stats">
-              {retailStats.map((stat) => (
-                <div key={stat.label} className="stat-box">
-                  <span>{stat.value}</span>
-                  <strong>{stat.label}</strong>
+            <div className="home-trust-metrics">
+              <div className="retailer-stats home-trust-stats">
+                {retailStats.map((stat) => (
+                  <div key={stat.label} className="stat-box">
+                    <span>{stat.value}</span>
+                    <strong>{stat.label}</strong>
+                  </div>
+                ))}
+              </div>
+              <div className="home-trust-compliance">
+                <p className="home-trust-label">Quality &amp; regulatory compliance</p>
+                <div className="compliance-grid">
+                  {compliance.map((item) => (
+                    <div key={item.label} className="compliance-item">
+                      <span className="compliance-item__icon" aria-hidden="true"><item.icon size={15} /></span>
+                      <span>{item.label}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section section--light">
-          <div className="container compliance-shell">
-            <div className="section-header section-header--spaced">
-              <div>
-                <p className="eyebrow eyebrow--dark">09 • Quality &amp; compliance</p>
-                <h2>Quality &amp; Regulatory Compliance</h2>
               </div>
-              <span className="inline-link inline-link--dark">Inspect compliance overview</span>
-            </div>
-            <div className="compliance-grid">
-              {compliance.map((item) => (
-                <div key={item} className="compliance-item">
-                  <Check size={15} />
-                  <span>{item}</span>
+              <div className="home-trust-footer">
+                <p>Behind Nature&apos;s Nurture – Rainmaker FMCG combines product development, strong operations and trade support to serve consumer and retail channels with quality and purpose.</p>
+                <div className="cta-row cta-row--stacked">
+                  <Link className="button button--inverted" to="/about">Read more</Link>
+                  <Link className="button button--ghost" to="/contact">Head office enquiries</Link>
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section section--dark-cta section--release">
-          <div className="container narrative-shell narrative-shell--compact">
-            <div className="narrative-copy narrative-copy--compact">
-              <p className="eyebrow eyebrow--alt">10 • Corporate foundation</p>
-              <h2>Behind Nature&apos;s Nurture – Rainmaker FMCG</h2>
-              <p>Our company combines product development, science-led belief and strong operations to serve both consumer markets and trade channels with quality and purpose.</p>
-              <div className="cta-row cta-row--stacked">
-                <Link className="button button--inverted" to="/about">Read more</Link>
-                <Link className="button button--ghost" to="/contact">Head office enquiries</Link>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section section--light">
-          <div className="container connect-shell">
+        <section className="section section--light home-connect-section">
+          <div className="container connect-shell home-connect-shell">
             <div>
-              <p className="eyebrow eyebrow--dark">11 • Let&apos;s connect</p>
+              <p className="eyebrow eyebrow--dark">06 • Let&apos;s connect</p>
               <h2>Let&apos;s Talk.</h2>
             </div>
             <div className="connect-actions">

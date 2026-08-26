@@ -1,6 +1,6 @@
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
-import { Link, NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 
 const links = [
   { label: 'Home', to: '/' },
@@ -8,18 +8,12 @@ const links = [
   { label: 'Brands', to: '/brands' },
   { label: 'About', to: '/about' },
   { label: 'Retailers', to: '/retailers' },
-  { label: 'Search', to: '/products' },
 ]
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const location = useLocation()
 
   const getNavClassName = (link: { label: string; to: string }, isActive: boolean) => {
-    if (link.label === 'Search' && location.pathname.startsWith('/products')) {
-      return ''
-    }
-
     return isActive ? 'is-active' : ''
   }
 

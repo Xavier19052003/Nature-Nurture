@@ -1,4 +1,4 @@
-import { ArrowRight, Check, MapPin, Phone } from 'lucide-react'
+import { ArrowRight, Globe2, Handshake, MapPinned, Phone, Store, Truck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { contactDetails } from '../data/contact'
 
@@ -8,6 +8,8 @@ const benefits = [
   'Flexible retailer partnerships and regular training',
   'Reliable assortment for everyday health essentials',
 ]
+
+const supportIcons = [Handshake, Store, Truck, Globe2]
 
 const locations = [
   {
@@ -30,14 +32,39 @@ const locations = [
 export function RetailersPage() {
   return (
     <main className="page-shell page-shell--light">
-      <section className="page-header">
-        <div className="container page-header__inner page-header__inner--stacked">
-          <div>
+      <section className="retail-hero">
+        <div className="container retail-hero__grid">
+          <div className="retail-hero__copy">
             <p className="eyebrow eyebrow--dark">For retailers</p>
             <h1>Growing everyday wellness retail partnerships.</h1>
+            <span className="about-hero__divider" aria-hidden="true" />
+            <p>
+              We build practical retail relationships that help independent stores, pharmacy groups and wellness channels grow with confidence.
+            </p>
+            <div className="cta-row">
+              <Link className="button button--primary" to="/contact">Become a retail partner <ArrowRight size={16} /></Link>
+            </div>
           </div>
-          <div className="page-header__copy">
-            <p>We build practical retail relationships that help independent stores, pharmacy groups and wellness channels grow with confidence.</p>
+
+          <div className="retail-hero__panel">
+            <div className="retail-hero__stats">
+              <div className="retail-hero__stat">
+                <span>6+</span>
+                <strong>Markets</strong>
+              </div>
+              <div className="retail-hero__stat">
+                <span>100+</span>
+                <strong>Retail doors</strong>
+              </div>
+              <div className="retail-hero__stat">
+                <span>Multi</span>
+                <strong>Channel</strong>
+              </div>
+              <div className="retail-hero__stat">
+                <span>Pan</span>
+                <strong>African reach</strong>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -49,9 +76,15 @@ export function RetailersPage() {
             <h2>Built to support trusted demand and real shelf momentum.</h2>
           </div>
           <ul className="check-list">
-            {benefits.map((item) => (
-              <li key={item}><Check size={16} />{item}</li>
-            ))}
+            {benefits.map((item, index) => {
+              const Icon = supportIcons[index]
+              return (
+                <li key={item}>
+                  <span className="check-list__icon" aria-hidden="true"><Icon size={16} /></span>
+                  {item}
+                </li>
+              )
+            })}
           </ul>
         </div>
         <div className="partner-panel">
@@ -81,7 +114,7 @@ export function RetailersPage() {
         <div className="location-grid">
           {locations.map((location) => (
             <article key={location.name} className="location-card">
-              <MapPin size={16} />
+              <MapPinned size={16} />
               <h3>{location.name}</h3>
               <p>{location.address}</p>
               <div className="location-card__contact">
@@ -91,14 +124,6 @@ export function RetailersPage() {
             </article>
           ))}
         </div>
-      </section>
-
-      <section className="container cta-panel cta-panel--light">
-        <div>
-          <p className="eyebrow eyebrow--dark">Retail opportunities</p>
-          <h3>Let&apos;s build stronger, more resilient product ranges together.</h3>
-        </div>
-        <Link className="button button--primary" to="/contact">Become a retail partner <ArrowRight size={16} /></Link>
       </section>
     </main>
   )
