@@ -2685,3 +2685,284 @@ button.button:hover { transform: translateY(-1px); }
   .zingo-steps__grid { grid-template-columns: minmax(0, 1fr); }
   .zingo-hero__frame { width: 100%; }
 }
+
+/* ---------- Brand detail: Nature's Nurture experience ---------- */
+.nn-page { overflow: clip; }
+
+.nn-hero {
+  background: linear-gradient(135deg, #f5f2e9, #eef2e6 55%, #fdf3e6);
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem);
+}
+.nn-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.nn-hero__copy h1 {
+  font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+  margin: 0.6rem 0 1rem;
+}
+.nn-hero__lead {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-forest);
+}
+.nn-hero__collage {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.nn-hero__collage-item {
+  aspect-ratio: 1 / 1;
+  border-radius: 1.5rem;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+}
+.nn-hero__collage-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.nn-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.nn-intro__grid h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.nn-intro__copy { color: var(--color-forest); }
+
+.nn-sublingual__lead { max-width: 22rem; color: var(--color-forest); }
+.nn-product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.nn-product-card {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  transition: transform var(--ease-editorial), box-shadow var(--ease-editorial);
+}
+.nn-product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+.nn-product-card__media {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nn-product-card__media img { width: 100%; height: 100%; object-fit: contain; }
+.nn-product-card h3 { font-size: 1.05rem; margin: 0; }
+.nn-product-card p { margin: 0; color: var(--color-forest); font-size: 0.85rem; }
+
+.nn-why__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.nn-why-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+}
+.nn-why-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--color-deep-forest-accent, #3e6b3f);
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+.nn-why-card h3 { color: var(--color-ivory); margin-bottom: 0.5rem; }
+.nn-why-card p { color: rgba(255,255,255,0.75); margin: 0; }
+
+.nn-transition__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.nn-transition__grid h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 0.75rem; }
+.nn-transition__lead { color: var(--color-forest); max-width: 26rem; }
+.nn-transition__areas {
+  display: grid;
+  gap: 1rem;
+}
+.nn-transition-area {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  border-top: 1px solid var(--color-line);
+  padding-top: 1rem;
+}
+.nn-transition-area:first-child { border-top: none; padding-top: 0; }
+.nn-transition-area > span {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-deep-forest);
+}
+.nn-transition-area strong { display: block; margin-bottom: 0.25rem; }
+.nn-transition-area p { margin: 0; color: var(--color-forest); font-size: 0.9rem; }
+
+.nn-infant__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+.nn-infant__grid p { color: var(--color-forest); }
+.nn-infant__products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.nn-infant-card {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  transition: transform var(--ease-editorial), box-shadow var(--ease-editorial);
+}
+.nn-infant-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+.nn-infant-card__media {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nn-infant-card__media img { width: 100%; height: 100%; object-fit: contain; }
+.nn-infant-card h3 { margin: 0 0 0.35rem; font-size: 1rem; }
+.nn-infant-card p { margin: 0; color: var(--color-forest); font-size: 0.85rem; }
+
+.nn-cereal__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.nn-cereal-card {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.06);
+  transition: transform var(--ease-editorial);
+}
+.nn-cereal-card:hover { transform: translateY(-3px); }
+.nn-cereal-card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nn-cereal-card__media img { width: 100%; height: 100%; object-fit: contain; }
+.nn-cereal-card span { font-size: 0.85rem; color: var(--color-ivory); font-weight: 500; }
+
+.nn-stevia__grid,
+.nn-mosquito__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+.nn-mosquito__grid { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); }
+.nn-stevia__media,
+.nn-mosquito__media {
+  aspect-ratio: 1 / 1;
+  border-radius: 1.5rem;
+  background: var(--color-white);
+  border: 1px solid var(--color-line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.nn-stevia__media img,
+.nn-mosquito__media img { width: 100%; height: 100%; object-fit: contain; }
+.nn-checklist {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+.nn-checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--color-forest);
+}
+.nn-checklist svg { flex-shrink: 0; margin-top: 0.2rem; color: var(--color-deep-forest); }
+
+.nn-principles__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.nn-principle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  color: var(--color-ivory);
+  font-size: 0.85rem;
+}
+
+.nn-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  gap: 1.5rem;
+}
+.nn-cta__copy p { color: rgba(255,255,255,0.8); margin-top: 0.6rem; }
+
+@media (max-width: 900px) {
+  .nn-hero__grid,
+  .nn-intro__grid,
+  .nn-transition__grid,
+  .nn-infant__grid,
+  .nn-stevia__grid,
+  .nn-mosquito__grid { grid-template-columns: minmax(0, 1fr); }
+  .nn-mosquito__grid { grid-template-columns: minmax(0, 1fr); }
+  .nn-mosquito__media { order: -1; }
+  .nn-product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nn-why__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nn-cereal__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .nn-cta { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .nn-product-grid,
+  .nn-why__grid { grid-template-columns: minmax(0, 1fr); }
+  .nn-infant__products { grid-template-columns: minmax(0, 1fr); }
+  .nn-cereal__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nn-hero__collage { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
