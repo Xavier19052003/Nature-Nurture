@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "server": "node server.js",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node scripts/copy-404.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "assets:extract": "python scripts/assets/ingest_pdf_assets.py extract",
