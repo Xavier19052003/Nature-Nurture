@@ -900,7 +900,7 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
 }
 .brands-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.35rem;
 }
 .brand-card--portfolio {
@@ -928,6 +928,56 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
 .brand-card__body--portfolio p {
   color: rgba(23,45,42,0.78);
   line-height: 1.75;
+}
+.brand-card__areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.brand-card__areas li {
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  color: var(--color-deep-forest);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+  padding: 0.35rem 0.75rem;
+}
+
+.portfolio-structure-section {
+  padding-top: clamp(2.5rem, 4vw, 4rem);
+  padding-bottom: clamp(3rem, 5vw, 4.5rem);
+}
+.portfolio-areas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+.portfolio-area-item {
+  border-top: 1px solid var(--color-line);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.portfolio-area-item__number {
+  color: var(--color-nature);
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.02em;
+}
+.portfolio-area-item strong {
+  color: var(--color-deep-forest);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+.portfolio-area-item p {
+  color: rgba(23,45,42,0.75);
+  line-height: 1.6;
+  margin: 0;
 }
 
 .home-trust-section {
@@ -2034,7 +2084,8 @@ button.button:hover { transform: translateY(-1px); }
   .contact-hero__grid {
     grid-template-columns: 1fr;
   }
-  .brands-grid {
+  .brands-grid,
+  .portfolio-areas-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .about-hero__grid,
@@ -2088,6 +2139,7 @@ button.button:hover { transform: translateY(-1px); }
   .product-grid--related,
   .reason-cards,
   .brands-grid,
+  .portfolio-areas-grid,
   .about-values__grid,
   .about-team__grid,
   .about-compliance__grid,
