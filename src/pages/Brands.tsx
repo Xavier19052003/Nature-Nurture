@@ -6,16 +6,19 @@ import { createProductPlaceholder } from '../data/products'
 const brands = [
   {
     name: "Nature's Nurture",
+    slug: 'natures-nurture',
     summary: 'Evidence-based everyday health and family wellness products built around practical nutrition and trusted ingredients.',
     image: createProductPlaceholder('Nature', '#244f39', '#dfeadf'),
   },
   {
     name: 'Zingo',
+    slug: 'zingo',
     summary: 'Fruit-inspired hydration designed for everyday energy and family routines.',
-    image: createProductPlaceholder('Zingo', '#ef8f4b', '#f9ddc0'),
+    image: `${import.meta.env.BASE_URL}products/zingo/orange-boost.png`,
   },
   {
     name: "Nature's Nurture Wellness",
+    slug: 'natures-nurture-wellness',
     summary: 'Nutritional support, micronutrients and wellness essentials created for daily quality of life.',
     image: createProductPlaceholder('Wellness', '#d5bb8d', '#fcf2e1'),
   },
@@ -46,7 +49,7 @@ export function BrandsPage() {
               <div className="brand-card__body brand-card__body--portfolio">
                 <h3>{brand.name}</h3>
                 <p>{brand.summary}</p>
-                <Link to="/brands/natures-nurture" className="inline-link inline-link--dark">
+                <Link to={`/brands/${brand.slug}`} className="inline-link inline-link--dark">
                   Explore brand <ArrowRight size={16} />
                 </Link>
               </div>

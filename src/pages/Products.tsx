@@ -1,4 +1,4 @@
-import { ArrowRight, Baby, Droplets, FlaskConical, Grid2X2, Leaf, Search, ShieldCheck, Sparkles, Users2, UtensilsCrossed } from 'lucide-react'
+import { ArrowRight, Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, ShieldCheck, Sparkles, Users2, UtensilsCrossed } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ProductCard } from '../components/ui/ProductCard'
@@ -11,6 +11,8 @@ const categoryIcons = {
   'Daily Support': ShieldCheck,
   'Child Nutrition': Baby,
   'Family Nutrition': UtensilsCrossed,
+  'Everyday Wellness': Leaf,
+  'Family Protection': Bug,
 }
 
 const valuePoints = [

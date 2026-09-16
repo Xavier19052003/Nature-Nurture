@@ -63,18 +63,21 @@ export function Home() {
             <div className="hero-visual" aria-label="Featured Nature's Nurture products">
               <div className="product-stack product-stack--one">
                 <div className="mini-product mini-product--rose">
+                  <img src={`${import.meta.env.BASE_URL}products/sublingual/b12-folate.png`} alt="Vitamin B12 + Folate" loading="lazy" />
                   <span className="mini-badge">B12</span>
                   <h4>Vitamin B12 + Folate</h4>
                 </div>
               </div>
               <div className="product-stack product-stack--two">
                 <div className="mini-product mini-product--green">
+                  <img src={`${import.meta.env.BASE_URL}products/zingo/orange-boost.png`} alt="Zingo Orange Boost" loading="lazy" />
                   <span className="mini-badge">Zingo</span>
                   <h4>Zingo</h4>
                 </div>
               </div>
               <div className="product-stack product-stack--three">
                 <div className="mini-product mini-product--gold">
+                  <img src={`${import.meta.env.BASE_URL}products/cereal/banana-bliss.png`} alt="Cereal Banana Bliss" loading="lazy" />
                   <span className="mini-badge">Cereal</span>
                   <h4>Cereal</h4>
                 </div>
@@ -83,24 +86,24 @@ export function Home() {
           </div>
         </section>
 
-        <section className="section section--light">
+        <section className="section section--dark-cta">
           <div className="container philosophy-grid">
             <div className="section-heading section-heading--left">
-              <p className="eyebrow eyebrow--dark">01 • Our philosophy</p>
+              <p className="eyebrow eyebrow--alt">01 • Our philosophy</p>
               <h2>
                 Nurturing better choices<br />
                 for everyday life across<br />
                 Africa.
               </h2>
             </div>
-            <div className="section-copy">
+            <div className="section-copy narrative-copy">
               <p>
                 Premium nutrition should feel practical. Our products combine natural ingredients, functional formulation and everyday relevance for real families across Africa.
               </p>
             </div>
             <div className="philosophy-list">
               {philosophy.map((item) => (
-                <div key={item.number} className="philosophy-item">
+                <div key={item.number} className="philosophy-item philosophy-item--on-dark">
                   <span className="philosophy-item__icon" aria-hidden="true"><item.icon size={15} /></span>
                   <span>{item.number}</span>
                   <strong>{item.title}</strong>

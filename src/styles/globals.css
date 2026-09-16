@@ -502,6 +502,13 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
 .mini-product--rose { background: linear-gradient(180deg, #efc8d7, #d5b0c5); }
 .mini-product--green { background: linear-gradient(180deg, #dfecdc, #b7d1b3); }
 .mini-product--gold { background: linear-gradient(180deg, #f7e2ba, #d8b767); }
+.mini-product img {
+  align-self: center;
+  max-width: 78%;
+  max-height: 13rem;
+  object-fit: contain;
+  filter: drop-shadow(0 0.6rem 1rem rgba(14, 43, 29, 0.18));
+}
 .mini-badge {
   align-self: flex-start;
   background: rgba(255,255,255,0.32);
@@ -1048,6 +1055,14 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
   font-family: var(--font-display);
   font-size: 1.8rem;
   line-height: 1.1;
+}
+.section--dark-cta .philosophy-grid .section-heading h2 {
+  color: var(--color-ivory);
+}
+.philosophy-item--on-dark {
+  background: var(--color-ivory);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 0.75rem 1.75rem rgba(8, 25, 17, 0.18);
 }
 
 .category-grid,
@@ -2287,4 +2302,263 @@ button.button:hover { transform: translateY(-1px); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ---------- Brand detail: Zingo experience ---------- */
+.zingo-page { overflow: clip; }
+.eyebrow--brand { color: var(--brand-accent, var(--color-zingo)); }
+
+.zingo-hero {
+  background: linear-gradient(135deg, #fdf3e6, #f5f2e9 55%, #fbe7ef);
+  padding: clamp(2.5rem, 5vw, 4.5rem) 0 clamp(3rem, 6vw, 5rem);
+}
+.zingo-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+.zingo-hero__copy h1 {
+  font-size: clamp(2.4rem, 4.6vw, 3.8rem);
+  margin: 0.6rem 0 1rem;
+}
+.zingo-hero__lead {
+  max-width: 34rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-forest);
+}
+.zingo-hero__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.zingo-hero__frame {
+  width: min(100%, 22rem);
+  aspect-ratio: 4 / 5;
+  border-radius: 2rem;
+  background: rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.7);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.zingo-hero__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.zingo-hero__stat {
+  position: absolute;
+  bottom: -0.5rem;
+  right: 0.5rem;
+  background: var(--brand-accent, var(--color-zingo));
+  color: var(--color-white);
+  border-radius: 999px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.zingo-what-is__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.zingo-what-is__grid h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.zingo-what-is__copy { color: var(--color-forest); }
+
+.zingo-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.zingo-pillar-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+}
+.zingo-pillar-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--brand-accent, var(--color-zingo));
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+.zingo-pillar-card h3 { color: var(--color-ivory); margin-bottom: 0.5rem; }
+.zingo-pillar-card p { color: rgba(255,255,255,0.75); margin: 0; }
+
+.zingo-opportunity__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.zingo-opportunity__grid h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.zingo-opportunity__grid p { color: var(--color-forest); }
+
+.zingo-value__grid {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: center;
+}
+.zingo-value__stat {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, var(--brand-accent, var(--color-zingo)), #f0c9a5);
+  border-radius: 1.5rem;
+  padding: 2rem 2.5rem;
+  color: var(--color-white);
+}
+.zingo-value__stat span {
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.zingo-value__stat strong {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+}
+
+.zingo-reasons__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.zingo-reason-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  color: var(--color-ivory);
+  font-size: 0.85rem;
+}
+.zingo-reason-pill--light {
+  background: rgba(62,107,63,0.08);
+  border-color: rgba(62,107,63,0.18);
+  color: var(--color-deep-forest);
+}
+
+.zingo-flavour-group { margin-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+.zingo-flavour-group:last-child { margin-bottom: 0; }
+.zingo-flavour-group__title {
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-accent, var(--color-zingo));
+  margin-bottom: 1rem;
+}
+.zingo-flavour-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9.5rem, 1fr));
+  gap: 1rem;
+}
+.zingo-flavour-card {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: center;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1.2rem;
+  border: 1px solid var(--color-line);
+  background: var(--color-white);
+  transition: transform var(--ease-editorial), box-shadow var(--ease-editorial);
+}
+.zingo-flavour-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+}
+.zingo-flavour-card__media {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zingo-flavour-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.zingo-flavour-card span {
+  font-size: 0.85rem;
+  color: var(--color-deep-forest);
+  font-weight: 500;
+}
+
+.zingo-steps__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+.zingo-step-card {
+  border: 1px solid var(--color-line);
+  border-radius: 1.2rem;
+  padding: 1.5rem;
+}
+.zingo-step-card__number {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--brand-accent, var(--color-zingo));
+  margin-bottom: 0.6rem;
+}
+.zingo-step-card h3 { margin-bottom: 0.4rem; }
+.zingo-step-card p { margin: 0; color: var(--color-forest); }
+
+.zingo-shelf__grid,
+.zingo-world__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: start;
+}
+.zingo-shelf__grid h2 { font-size: clamp(1.8rem, 3vw, 2.2rem); }
+.zingo-world__grid h2 { font-size: clamp(1.8rem, 3vw, 2.2rem); }
+.zingo-world__grid p { color: var(--color-forest); }
+
+.zingo-growth__copy { max-width: 40rem; color: var(--color-forest); margin-bottom: 1.25rem; }
+.zingo-growth__pills { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.zingo-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) auto;
+  gap: 1.5rem;
+}
+.zingo-cta__copy p { color: rgba(255,255,255,0.8); margin-top: 0.6rem; }
+
+@media (max-width: 900px) {
+  .zingo-hero__grid { grid-template-columns: minmax(0, 1fr); }
+  .zingo-hero__visual { order: -1; }
+  .zingo-what-is__grid,
+  .zingo-opportunity__grid,
+  .zingo-shelf__grid,
+  .zingo-world__grid { grid-template-columns: minmax(0, 1fr); }
+  .zingo-pillars__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .zingo-steps__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .zingo-value__grid { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+  .zingo-value__stat { justify-self: start; }
+  .zingo-cta { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .zingo-pillars__grid,
+  .zingo-steps__grid { grid-template-columns: minmax(0, 1fr); }
+  .zingo-hero__frame { width: 100%; }
 }
