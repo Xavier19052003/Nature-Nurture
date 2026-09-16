@@ -1,36 +1,28 @@
 import { ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
-import { createProductPlaceholder } from '../data/products'
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 const brands = [
   {
     name: "Nature's Nurture",
     slug: 'natures-nurture',
+    logo: asset('brands/natures-nurture/logo.jpg'),
     summary: 'Evidence-based everyday health and family wellness products built around practical nutrition and trusted ingredients.',
-    areas: ['Sublingual Nutrition', 'Infant Nutrition', 'Everyday Wellness', 'Family Care'],
-    image: createProductPlaceholder('Nature', '#244f39', '#dfeadf'),
+    areas: ['Sublingual Nutrition', 'Infant & Family Nutrition', 'Cereals', 'Natural Sweeteners', 'Family Protection'],
+    images: [
+      asset('products/sublingual/b12-folate.png'),
+      asset('products/infant-formula/stage-1.png'),
+      asset('products/cereal/banana-bliss.png'),
+      asset('products/stevia/stevia-sachets.png'),
+    ],
   },
   {
     name: 'Zingo',
     slug: 'zingo',
-    summary: 'A bold powdered drink range designed around refreshment, everyday vitality and active lifestyles.',
-    areas: ['Energy & Hydration', 'Powdered Drinks', 'Family & Active'],
-    image: `${import.meta.env.BASE_URL}products/zingo/orange-boost.png`,
-  },
-  {
-    name: 'Live Now',
-    slug: 'live-now',
-    summary: 'Nutritious cereals for everyday wellness.',
-    areas: ['Cereal', 'Everyday Nutrition', 'Family Wellness'],
-    image: `${import.meta.env.BASE_URL}products/cereal/banana-bliss.png`,
-  },
-  {
-    name: "Nature's Nurture Wellness",
-    slug: 'natures-nurture-wellness',
-    summary: 'Nutritional support, micronutrients and wellness essentials created for daily quality of life.',
-    areas: ['Micronutrients', 'Natural Sweeteners', 'Family Protection'],
-    image: createProductPlaceholder('Wellness', '#d5bb8d', '#fcf2e1'),
+    summary: 'A bold, bright powdered drink range bringing refreshment and everyday vitality to active consumers and families.',
+    areas: ['Energy & Hydration', 'On-the-go Format', 'Family & Active'],
+    images: [asset('products/zingo/orange-boost.png')],
   },
 ]
 
@@ -38,23 +30,32 @@ const portfolioAreas = [
   {
     number: '01',
     title: 'Sublingual Nutrition',
-    description: 'Fast-absorbing micronutrient sprays.',
+    description: 'Fast-absorbing micronutrient sprays delivering convenient nutritional support.',
   },
   {
     number: '02',
     title: 'Energy & Hydration',
-    description: 'Functional powdered drinks for everyday vitality.',
+    description: 'Functional powdered drinks developed around hydration, refreshment and everyday vitality.',
   },
   {
     number: '03',
     title: 'Infant & Family Nutrition',
-    description: 'Formula and cereals designed for family nutrition.',
+    description: 'Trusted formulas and cereals designed to nourish from the earliest stages of life.',
   },
   {
     number: '04',
     title: 'Natural & Lifestyle',
-    description: 'Natural sweeteners and protective wellness solutions.',
+    description: 'Botanical sweeteners and protective wellness solutions for clean, conscious living.',
   },
+]
+
+const portfolioVisuals = [
+  { src: asset('products/sublingual/b12-folate.png'), alt: "Nature's Nurture sublingual spray" },
+  { src: asset('products/infant-formula/stage-1.png'), alt: "Nature's Nurture infant formula" },
+  { src: asset('products/cereal/banana-bliss.png'), alt: "Nature's Nurture cereal" },
+  { src: asset('products/stevia/stevia-sachets.png'), alt: "Nature's Nurture Stevia" },
+  { src: asset('products/mosquito-repellent/mosquito-repellent-patches.png'), alt: "Nature's Nurture Mosquito Repellent Patches" },
+  { src: asset('products/zingo/orange-boost.png'), alt: 'Zingo' },
 ]
 
 export function BrandsPage() {
@@ -73,26 +74,49 @@ export function BrandsPage() {
       </section>
 
       <section className="brands-grid-section">
-        <div className="container brands-grid">
-          {brands.map((brand) => (
-            <article key={brand.name} className="brand-card brand-card--portfolio">
-              <div className="brand-card__media brand-card__media--portfolio">
-                <img src={brand.image} alt={brand.name} />
-              </div>
-              <div className="brand-card__body brand-card__body--portfolio">
-                <h3>{brand.name}</h3>
-                <p>{brand.summary}</p>
-                <ul className="brand-card__areas">
-                  {brand.areas.map((area) => (
-                    <li key={area}>{area}</li>
-                  ))}
-                </ul>
-                <Link to={`/brands/${brand.slug}`} className="inline-link inline-link--dark">
-                  Explore brand <ArrowRight size={16} />
-                </Link>
-              </div>
-            </article>
-          ))}
+        <div className="container">
+          <div className="section-header section-header--spaced">
+            <div>
+              <p className="eyebrow eyebrow--dark">Our brands</p>
+              <h2>A focused portfolio</h2>
+            </div>
+            <p className="brands-intro-copy">
+              A focused portfolio of brands created around everyday wellness, nutrition, energy and family care.
+            </p>
+          </div>
+
+          <div className="brands-grid brands-grid--two">
+            {brands.map((brand) => (
+              <article key={brand.name} className="brand-card brand-card--portfolio">
+                <div className="brand-card__media brand-card__media--portfolio brand-card__media--collage">
+                  {brand.logo ? (
+                    <div className="brand-card__logo">
+                      <img src={brand.logo} alt={`${brand.name} logo`} />
+                    </div>
+                  ) : null}
+                  <div className="brand-card__collage">
+                    {brand.images.map((src) => (
+                      <div key={src} className="brand-card__collage-item">
+                        <img src={src} alt="" loading="lazy" />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="brand-card__body brand-card__body--portfolio">
+                  <h3>{brand.name}</h3>
+                  <p>{brand.summary}</p>
+                  <ul className="brand-card__areas">
+                    {brand.areas.map((area) => (
+                      <li key={area}>{area}</li>
+                    ))}
+                  </ul>
+                  <Link to={`/brands/${brand.slug}`} className="inline-link inline-link--dark">
+                    Explore brand <ArrowRight size={16} />
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -108,6 +132,18 @@ export function BrandsPage() {
                 <span className="portfolio-area-item__number">{area.number}</span>
                 <strong>{area.title}</strong>
                 <p>{area.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--light portfolio-visuals-section">
+        <div className="container">
+          <div className="portfolio-visual-strip">
+            {portfolioVisuals.map((visual) => (
+              <div key={visual.src} className="portfolio-visual-strip__item">
+                <img src={visual.src} alt={visual.alt} loading="lazy" />
               </div>
             ))}
           </div>
