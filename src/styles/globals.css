@@ -531,6 +531,7 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
   background: linear-gradient(135deg, #0d382d, #173d2a);
   color: var(--color-white);
 }
+.section--dark-cta h2 { color: var(--color-ivory); }
 .section--orange {
   background: linear-gradient(135deg, #f0d7b8, #e8b178);
 }
