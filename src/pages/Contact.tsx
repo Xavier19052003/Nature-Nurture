@@ -7,6 +7,7 @@ type FormState = {
   email: string
   company: string
   phone: string
+  enquiryType?: string
   message: string
   website: string
 }
@@ -75,6 +76,28 @@ export function ContactPage() {
     if (Object.keys(nextErrors).length > 0) {
       setStatus('error')
       setStatusMessage('Please correct the highlighted fields and try again.')
+      return
+    }
+
+    if (import.meta.env.PROD) {
+      const emailBody = [
+        `Name: ${form.name.trim()}`,
+        `Email: ${form.email.trim()}`,
+        form.company.trim() ? `Company: ${form.company.trim()}` : '',
+        form.phone.trim() ? `Phone: ${form.phone.trim()}` : '',
+        form.enquiryType?.trim() ? `Enquiry type: ${form.enquiryType.trim()}` : '',
+        '',
+        'Message:',
+        form.message.trim(),
+      ].filter(Boolean).join('\n')
+      const emailParams = new URLSearchParams({
+        subject: `Website enquiry from ${form.name.trim()}`,
+        body: emailBody,
+      })
+
+      window.location.href = `mailto:${contactDetails.email}?${emailParams.toString()}`
+      setStatus('success')
+      setStatusMessage('Your email app should open with your enquiry details. Review and send the message there.')
       return
     }
 

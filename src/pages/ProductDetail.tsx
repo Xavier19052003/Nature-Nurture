@@ -1,6 +1,5 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
-import { Button } from '../components/ui/Button'
 import { products } from '../data/products'
 
 export function ProductDetailPage() {
@@ -40,7 +39,7 @@ export function ProductDetailPage() {
           </div>
 
           <div className="product-detail__actions">
-            <Button variant="primary">Request product details</Button>
+            <Link to="/contact" className="button button--primary">Request product details</Link>
             <Link to="/products" className="inline-link inline-link--dark">Back to catalogue <ArrowRight size={16} /></Link>
           </div>
 

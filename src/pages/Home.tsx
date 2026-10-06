@@ -1,6 +1,7 @@
-import { ArrowUpRight, Factory, FlaskConical, Globe2, Home as HomeIcon, Leaf, ShieldCheck, Store, Users2 } from 'lucide-react'
+import { ArrowUpRight, FlaskConical, Globe2, Home as HomeIcon, Leaf, ShieldCheck, Store, Users2 } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ProductCard } from '../components/ui/ProductCard'
+import { ProductCollection } from '../components/ui/ProductCollection'
 import { featuredProducts } from '../data/products'
 
 const philosophy = [
@@ -18,19 +19,18 @@ const reasons = [
 ]
 
 const retailStats = [
-  { label: '6+ categories', value: '6+' },
-  { label: '100+ SKUs ready', value: '100+' },
-  { label: 'Multi-channel', value: 'Multi' },
-  { label: 'Pan-Africa', value: 'Pan' },
+  { label: 'Portfolio categories', value: '6' },
+  { label: 'Business model', value: 'B2B' },
+  { label: 'Distribution channels', value: 'Multi' },
+  { label: 'Markets served', value: 'Africa' },
 ]
 
 const compliance = [
   { label: 'SAHPRA aligned', icon: ShieldCheck },
-  { label: 'Department of Health SA', icon: Factory },
-  { label: 'SA Pharmacy Council', icon: Store },
-  { label: 'GMP Certified', icon: Factory },
-  { label: 'HACCP certified', icon: ShieldCheck },
-  { label: 'ISO 22000', icon: ShieldCheck },
+  { label: 'GMP-compliant', icon: ShieldCheck },
+  { label: 'HACCP', icon: ShieldCheck },
+  { label: 'ISO-aligned', icon: ShieldCheck },
+  { label: 'Codex-compliant', icon: ShieldCheck },
 ]
 
 export function Home() {
@@ -60,29 +60,7 @@ export function Home() {
               </div>
             </div>
 
-            <div className="hero-visual" aria-label="Featured Nature's Nurture products">
-              <div className="product-stack product-stack--one">
-                <div className="mini-product mini-product--rose">
-                  <img src={`${import.meta.env.BASE_URL}products/sublingual/b12-folate.png`} alt="Vitamin B12 + Folate" loading="lazy" />
-                  <span className="mini-badge">B12</span>
-                  <h4>Vitamin B12 + Folate</h4>
-                </div>
-              </div>
-              <div className="product-stack product-stack--two">
-                <div className="mini-product mini-product--green">
-                  <img src={`${import.meta.env.BASE_URL}products/zingo/orange-boost.png`} alt="Zingo Orange Boost" loading="lazy" />
-                  <span className="mini-badge">Zingo</span>
-                  <h4>Zingo</h4>
-                </div>
-              </div>
-              <div className="product-stack product-stack--three">
-                <div className="mini-product mini-product--gold">
-                  <img src={`${import.meta.env.BASE_URL}products/cereal/banana-bliss.png`} alt="Cereal Banana Bliss" loading="lazy" />
-                  <span className="mini-badge">Cereal</span>
-                  <h4>Cereal</h4>
-                </div>
-              </div>
-            </div>
+            <ProductCollection />
           </div>
         </section>
 

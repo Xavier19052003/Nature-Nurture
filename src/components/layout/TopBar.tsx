@@ -3,7 +3,7 @@ export function TopBar() {
     <div className="top-bar">
       <div className="container top-bar__inner">
         <span>Nature&apos;s Nurture | FMCG &amp; Wellness Platform</span>
-        <span className="top-bar__meta">SAHPRA aligned • GMP certified</span>
+        <span className="top-bar__meta">SAHPRA-aligned • GMP-compliant</span>
       </div>
     </div>
   )

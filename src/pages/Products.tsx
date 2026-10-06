@@ -1,8 +1,9 @@
-import { ArrowRight, Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, ShieldCheck, Sparkles, Users2, UtensilsCrossed } from 'lucide-react'
+import { ArrowRight, Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, ShieldCheck, Users2, UtensilsCrossed } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ProductCard } from '../components/ui/ProductCard'
-import { categories, featuredProducts, products } from '../data/products'
+import { ProductCollection } from '../components/ui/ProductCollection'
+import { categories, products } from '../data/products'
 
 const categoryIcons = {
   'All Products': Grid2X2,
@@ -42,14 +43,25 @@ const valuePoints = [
   },
 ]
 
-const heroProducts = featuredProducts.slice(0, 3)
-
 export function ProductsPage() {
   const [activeCategory, setActiveCategory] = useState('All Products')
+  const [searchQuery, setSearchQuery] = useState('')
   const filteredProducts = useMemo(() => {
-    if (activeCategory === 'All Products') return products
-    return products.filter((product) => product.category === activeCategory)
-  }, [activeCategory])
+    const query = searchQuery.trim().toLocaleLowerCase()
+    return products.filter((product) => {
+      const matchesCategory = activeCategory === 'All Products' || product.category === activeCategory
+      const searchableText = [
+        product.name,
+        product.brand,
+        product.category,
+        product.description,
+        product.shortDescription,
+        ...(product.tags ?? []),
+        ...product.benefits,
+      ].join(' ').toLocaleLowerCase()
+      return matchesCategory && (!query || searchableText.includes(query))
+    })
+  }, [activeCategory, searchQuery])
   const productPdfHref = `${import.meta.env.BASE_URL}Natures-Nurture-NEW.pdf`
 
   return (
@@ -71,31 +83,7 @@ export function ProductsPage() {
             </div>
           </div>
 
-          <div className="products-hero__visual" aria-label="Featured Nature's Nurture product composition">
-            <div className="products-hero__frame">
-              <div className="products-hero__accent" aria-hidden="true" />
-              {heroProducts.map((product, index) => {
-                const Icon = index === 0 ? Sparkles : index === 1 ? Leaf : Users2
-                return (
-                  <article
-                    key={product.id}
-                    className={`products-hero__product products-hero__product--${index + 1}`}
-                    style={{ ['--card-accent' as string]: product.accent ?? '#3e6b3f' }}
-                  >
-                    <div className="products-hero__product-media">
-                      <img src={product.image} alt={product.name} />
-                    </div>
-                    <div className="products-hero__product-copy">
-                      <span className="products-hero__product-icon" aria-hidden="true"><Icon size={13} /></span>
-                      <span className="tag">{product.category}</span>
-                      <h3>{product.name}</h3>
-                      <p>{product.shortDescription ?? product.description}</p>
-                    </div>
-                  </article>
-                )
-              })}
-            </div>
-          </div>
+          <ProductCollection />
         </div>
       </section>
 
@@ -124,10 +112,16 @@ export function ProductsPage() {
         </div>
         <div className="product-filters-shell">
           <div className="product-filters" aria-label="Filter product categories">
-            <div className="search-chip">
-              <Search size={14} />
-              <span>Search products</span>
-            </div>
+            <label className="search-chip">
+              <Search size={14} aria-hidden="true" />
+              <input
+                type="search"
+                value={searchQuery}
+                onChange={(event) => setSearchQuery(event.target.value)}
+                placeholder="Search products"
+                aria-label="Search products"
+              />
+            </label>
             {categories.map((category) => {
               const Icon = categoryIcons[category as keyof typeof categoryIcons]
               return (
@@ -149,11 +143,15 @@ export function ProductsPage() {
       </section>
 
       <section className="container products-catalogue">
-        <div className="product-grid product-grid--catalogue">
-          {filteredProducts.map((product) => (
-            <ProductCard key={product.id} product={product} ctaLabel="EXPLORE PRODUCT →" />
-          ))}
-        </div>
+        {filteredProducts.length > 0 ? (
+          <div className="product-grid product-grid--catalogue">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={product} ctaLabel="EXPLORE PRODUCT →" />
+            ))}
+          </div>
+        ) : (
+          <p className="products-empty-state" role="status">No products match your search.</p>
+        )}
       </section>
 
       <section className="container product-cta-row">

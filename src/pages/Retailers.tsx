@@ -49,20 +49,20 @@ export function RetailersPage() {
           <div className="retail-hero__panel">
             <div className="retail-hero__stats">
               <div className="retail-hero__stat">
-                <span>6+</span>
-                <strong>Markets</strong>
+                <span>SADC</span>
+                <strong>Regional markets</strong>
               </div>
               <div className="retail-hero__stat">
-                <span>100+</span>
-                <strong>Retail doors</strong>
+                <span>Retail</span>
+                <strong>Distribution channel</strong>
               </div>
               <div className="retail-hero__stat">
-                <span>Multi</span>
-                <strong>Channel</strong>
+                <span>Wholesale</span>
+                <strong>Distribution channel</strong>
               </div>
               <div className="retail-hero__stat">
-                <span>Pan</span>
-                <strong>African reach</strong>
+                <span>Export</span>
+                <strong>Distribution channel</strong>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ export function RetailersPage() {
           </div>
           <div className="mini-stat">
             <span>Distribution support</span>
-            <strong>National reach</strong>
+            <strong>South Africa · SADC · Africa</strong>
           </div>
           <div className="mini-stat">
             <span>Consumer trust</span>

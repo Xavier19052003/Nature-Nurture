@@ -15,7 +15,7 @@ export function Footer() {
           </p>
           <div className="trust-row">
             <span>SAHPRA aligned</span>
-            <span>GMP certified</span>
+            <span>GMP-compliant</span>
             <span>Pan-Africa</span>
           </div>
         </div>
@@ -52,7 +52,6 @@ export function Footer() {
         <div className="footer-bottom__left">
           <span>© 2025 Nature&apos;s Nurture</span>
           <Link to="/about">Compliance</Link>
-          <Link to="/contact">Privacy</Link>
         </div>
         <Link to="/contact" className="inline-link inline-link--light">
           Get in touch <ArrowUpRight size={16} />

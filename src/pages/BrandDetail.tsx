@@ -245,7 +245,7 @@ function GenericBrandDetail() {
               Products designed to create everyday health confidence for families, retailers and communities across Africa.
             </p>
           </div>
-          <div className="brand-detail__stat">6+ categories</div>
+          <div className="brand-detail__stat">6 categories</div>
         </div>
 
         <div className="brand-detail__grid">
