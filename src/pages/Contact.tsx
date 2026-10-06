@@ -90,12 +90,10 @@ export function ContactPage() {
         'Message:',
         form.message.trim(),
       ].filter(Boolean).join('\n')
-      const emailParams = new URLSearchParams({
-        subject: `Website enquiry from ${form.name.trim()}`,
-        body: emailBody,
-      })
+      const subject = `Website enquiry from ${form.name.trim()}`
+      const mailto = `mailto:${contactDetails.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`
 
-      window.location.href = `mailto:${contactDetails.email}?${emailParams.toString()}`
+      window.location.href = mailto
       setStatus('success')
       setStatusMessage('Your email app should open with your enquiry details. Review and send the message there.')
       return

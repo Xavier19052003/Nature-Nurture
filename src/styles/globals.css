@@ -595,8 +595,9 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
   min-width: 0;
 }
 .about-hero__frame {
+  aspect-ratio: 7 / 4;
   position: relative;
-  min-height: 38rem;
+  min-height: 0;
   border: 1px solid var(--color-line);
   border-radius: 2rem;
   overflow: hidden;
@@ -604,6 +605,13 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
     radial-gradient(circle at 76% 18%, rgba(168,184,155,0.24), transparent 18%),
     linear-gradient(180deg, rgba(245,242,233,0.98), rgba(236,233,220,0.92));
   box-shadow: var(--shadow-soft);
+}
+.about-hero__image {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
 }
 .about-hero__frame::before,
 .about-hero__frame::after {
@@ -2428,9 +2436,6 @@ button.button:hover { transform: translateY(-1px); }
   .section-header,
   .section-heading {
     margin-bottom: 1.75rem;
-  }
-  .about-hero__frame {
-    min-height: 28rem;
   }
   .about-hero__copy h1 {
     font-size: clamp(2.8rem, 11vw, 4.2rem);

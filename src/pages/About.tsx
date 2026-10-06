@@ -65,37 +65,37 @@ const managementTeam: TeamMember[] = [
     name: 'Dr. Aman Maharaj',
     title: 'Commercial Director & Shareholder',
     bio: 'An engineer, economist and businessman with a B.Sc. in Civil Engineering, an MBA and a PhD in Development Studies. He brings 30 years of experience across government, banking, manufacturing, FMCG, management consulting and private equity financing.',
-    image: `${import.meta.env.BASE_URL}images/_extracted/our-brand-portfolio-5-page-06-image-01.jpeg`,
+    image: `${import.meta.env.BASE_URL}about/management/aman-maharaj.png`,
   },
   {
     name: 'Veer Singh',
     title: 'Marketing Director & Shareholder',
     bio: 'He holds a Master of Development Studies and brings experience in marketing research and strategy, as well as cross-cultural communication.',
-    image: `${import.meta.env.BASE_URL}images/_extracted/our-brand-portfolio-5-page-06-image-02.jpeg`,
+    image: `${import.meta.env.BASE_URL}about/management/veer-singh.png`,
   },
   {
     name: 'Bhavesh Ranka',
-    title: 'Non-Executive Director',
+    title: 'Logistics Director',
     bio: 'Bhavesh Ranka holds a B.Com qualification and brings over 28 years of business experience. His expertise spans exports, banking, manufacturing, marketing, logistics and international business operations.',
-    image: `${import.meta.env.BASE_URL}images/_extracted/our-brand-portfolio-5-page-07-image-01.jpeg`,
+    image: `${import.meta.env.BASE_URL}about/management/bhavesh-ranka.png`,
   },
   {
     name: 'Ian Naicker',
-    title: 'Pharmacist',
+    title: 'Technical Director',
     bio: 'A registered pharmacist, clinical trialist and pharmaceutical specialist, he holds a Master’s degree in public health medicine and is completing a PhD in pharmaceutical policy. He has held medical and commercial leadership roles in multinational pharma.',
-    image: `${import.meta.env.BASE_URL}images/_extracted/our-brand-portfolio-5-page-07-image-02.jpeg`,
+    image: `${import.meta.env.BASE_URL}about/management/ian-naicker.png`,
   },
   {
     name: 'Karina Christy',
-    title: 'Vice Executive Officer',
+    title: 'Sales Director',
     bio: 'Karina Christy holds a Psychology Honours degree and MBA, with 24 years of pharmaceutical industry experience across South Africa and the UK. Her expertise spans sales management, key account management and marketing leadership.',
-    image: `${import.meta.env.BASE_URL}images/_extracted/our-brand-portfolio-5-page-06-image-04.jpeg`,
+    image: `${import.meta.env.BASE_URL}about/management/karina-christy.png`,
   },
   {
     name: 'Akanksha Singh',
-    title: 'Chief Financial Officer',
+    title: 'Financial Director',
     bio: 'Akanksha Singh is a Chartered Accountant (SA) with extensive experience across multinational FMCG, consumer, healthcare and professional services sectors. Her strategic focus spans governance, risk management, operational excellence and sustainable growth across Africa.',
-    image: `${import.meta.env.BASE_URL}images/_extracted/our-brand-portfolio-5-page-06-image-05.jpeg`,
+    image: `${import.meta.env.BASE_URL}about/management/akanksha-singh.png`,
   },
 ]
 
@@ -127,9 +127,9 @@ export function AboutPage() {
           <div className="about-hero__visual">
             <div className="about-hero__frame">
               <img
-                src={`${import.meta.env.BASE_URL}images/_pages/our-brand-portfolio-5-page-05.png`}
+                className="about-hero__image"
+                src={`${import.meta.env.BASE_URL}about/about-hero.png`}
                 alt="RainmakerFMCG manufacturing and wellness production"
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </div>
           </div>
