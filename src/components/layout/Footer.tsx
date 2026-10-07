@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="container footer-bottom">
         <div className="footer-bottom__left">
-          <span>© 2025 Nature&apos;s Nurture</span>
+          <span>© 2026 Nature&apos;s Nurture</span>
           <Link to="/about">Compliance</Link>
         </div>
         <Link to="/contact" className="inline-link inline-link--light">

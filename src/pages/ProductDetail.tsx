@@ -4,7 +4,7 @@ import { products } from '../data/products'
 
 export function ProductDetailPage() {
   const { slug } = useParams()
-  const product = products.find((item) => item.slug === slug) ?? products[0]
+  const product = products.find((item) => item.slug === slug)
   const benefits = product?.benefits ?? []
 
   if (!product) {

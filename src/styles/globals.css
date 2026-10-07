@@ -9,10 +9,10 @@
 }
 
 * { box-sizing: border-box; }
-html { min-width: 320px; scroll-behavior: smooth; }
+html { min-width: 0; scroll-behavior: smooth; }
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: 0;
   min-height: 100vh;
   background: var(--color-ivory);
   color: var(--color-ink);
@@ -285,6 +285,7 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
   color: var(--color-deep-forest);
   font-size: 1rem;
   line-height: 1.6;
+  overflow-wrap: anywhere;
 }
 .contact-hero__item--subtle strong {
   font-size: 0.92rem;
@@ -1205,6 +1206,9 @@ h3 { font-size: clamp(1.4rem, 2.6vw, 2.1rem); }
 }
 .home-trust-stats .stat-box strong {
   color: rgba(255,255,255,0.72);
+}
+.home-trust-stats .stat-box span {
+  color: var(--color-ivory);
 }
 .home-trust-compliance {
   display: grid;
@@ -2256,6 +2260,9 @@ button.button:hover { transform: translateY(-1px); }
 }
 
 @media (max-width: 1024px) {
+  .home-trust-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .category-grid,
   .featured-grid,
   .product-grid--catalogue,
@@ -2264,6 +2271,7 @@ button.button:hover { transform: translateY(-1px); }
   .promoshell,
   .footer-shell,
   .contact-layout,
+  .partner-layout,
   .product-detail,
   .reason-grid,
   .connect-shell,

@@ -1,5 +1,5 @@
 import { Menu, X } from 'lucide-react'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 const links = [
@@ -12,15 +12,21 @@ const links = [
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const menuButton = useRef<HTMLButtonElement>(null)
 
   const getNavClassName = (link: { label: string; to: string }, isActive: boolean) => {
     return isActive ? 'is-active' : ''
   }
 
   return (
-    <header className="site-header">
+    <header className="site-header" onKeyDown={(event) => {
+      if (event.key === 'Escape' && menuOpen) {
+        setMenuOpen(false)
+        menuButton.current?.focus()
+      }
+    }}>
       <div className="container site-header__inner">
-        <Link className="wordmark" to="/" aria-label="Nature's Nurture home">
+        <Link className="wordmark" to="/" aria-label="Nature's Nurture home" onClick={() => setMenuOpen(false)}>
           • NATURE&apos;S NURTURE
         </Link>
 
@@ -39,9 +45,12 @@ export function Navbar() {
         </nav>
 
         <button
+          ref={menuButton}
           className="menu-button"
           type="button"
           aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls={menuOpen ? 'mobile-navigation' : undefined}
           onClick={() => setMenuOpen((value) => !value)}
         >
           {menuOpen ? <X aria-hidden="true" size={22} /> : <Menu aria-hidden="true" size={22} />}
@@ -49,7 +58,7 @@ export function Navbar() {
       </div>
 
       {menuOpen && (
-        <div className="mobile-nav" aria-label="Mobile navigation">
+        <nav id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">
           {links.map((link) => (
             <NavLink
               key={link.to + link.label}
@@ -64,7 +73,7 @@ export function Navbar() {
           <NavLink to="/contact" className="nav-contact" onClick={() => setMenuOpen(false)}>
             Contact
           </NavLink>
-        </div>
+        </nav>
       )}
     </header>
   )

@@ -76,9 +76,9 @@ export function ProductsPage() {
               Explore our evidence-led FMCG and wellness portfolio across nutrition, wellness and family health.
             </p>
             <div className="cta-row">
-              <Link to="/retailers" className="button button--primary">Browse wholesale pricing</Link>
+              <Link to="/retailers" className="button button--primary">Retail &amp; wholesale enquiries</Link>
               <a href={productPdfHref} download className="button button--secondary">
-                Download master catalogue (PDF)
+                Download Stevia brochure (PDF)
               </a>
             </div>
           </div>
@@ -128,6 +128,7 @@ export function ProductsPage() {
                 <button
                   key={category}
                   type="button"
+                  aria-pressed={activeCategory === category}
                   className={`filter-chip ${activeCategory === category ? 'is-selected' : ''}`}
                   onClick={() => setActiveCategory(category)}
                 >

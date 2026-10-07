@@ -120,7 +120,7 @@ const mosquitoRepellentProduct: Product = {
   name: 'Mosquito Repellent Patches',
   brand: "Nature's Nurture",
   category: 'Family Protection',
-  description: 'Affordable, non-toxic, 24-hour protection for your family. DEET-free with plant-based ingredients, simply stick onto clothing or skin.',
+  description: 'Affordable, non-toxic, 24-hour protection for your family. DEET-free with plant-based ingredients, apply to clothing or nearby objects — do not apply directly to skin.',
   shortDescription: '24-hour non-toxic protection',
   image: `${import.meta.env.BASE_URL}products/mosquito-repellent/mosquito-repellent-patches.png`,
   format: 'Patch',
