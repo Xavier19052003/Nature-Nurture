@@ -222,5 +222,49 @@ export const products: Product[] = [
   mosquitoRepellentProduct,
 ]
 
-export const featuredProducts = products.filter((product) => product.featured)
-export const categories = ['All Products', ...new Set(products.map((product) => product.category))]
+// Keep individual flavours as approved range assets, not separate catalogue entries.
+export const zingoRange: Product = {
+  ...zingoProducts[0],
+  id: 'zingo-range',
+  slug: 'zingo',
+  name: 'Zingo Range',
+  brand: 'Zingo',
+  category: 'Energy & Hydration',
+  image: `${zingoImageBase}/orange-boost.png`,
+  shortDescription: 'Powdered fruit drink · 8 flavours',
+  gallery: zingoProducts.map((product) => product.image),
+  tags: zingoVariants.map((variant) => variant.name),
+}
+
+const catalogueCategoryByProductCategory: Record<string, string> = {
+  'Wellness Nutrition': 'Sublingual Nutrition',
+  'Daily Support': 'Sublingual Nutrition',
+  'Child Nutrition': 'Infant Nutrition',
+  'Family Nutrition': 'Cereal & Meal Replacement',
+  'Everyday Wellness': 'Natural Sweeteners',
+  'Family Protection': 'Family Protection',
+}
+
+export const catalogueProducts: Product[] = [
+  ...products.filter((product) => !product.slug.startsWith('zingo-')).map((product) => ({
+    ...product,
+    category: catalogueCategoryByProductCategory[product.category] ?? product.category,
+  })),
+  zingoRange,
+]
+
+export const featuredProducts = [
+  ...catalogueProducts.filter((product) => product.featured && product.id !== zingoRange.id),
+  zingoRange,
+]
+export const categories = ['All Products', ...new Set(catalogueProducts.map((product) => product.category))]
+
+export function getProductHref(product: Product) {
+  return product.slug === 'zingo' || zingoVariants.some((variant) => variant.slug === product.slug)
+    ? '/brands/zingo'
+    : `/products/${product.slug}`
+}
+
+export function getCategoryHref(category: string) {
+  return `/products?${new URLSearchParams({ category })}#catalogue`
+}

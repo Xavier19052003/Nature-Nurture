@@ -56,7 +56,8 @@ function NaturesNurtureDetail() {
                   <img src={product.image} alt={product.name} loading="lazy" />
                 </div>
                 <h3>{product.name}</h3>
-                <p>{product.shortDescription ?? product.description}</p>
+                <p>{product.shortDescription}</p>
+                <span className="nn-card-action">Explore product <ArrowRight size={16} aria-hidden="true" /></span>
               </Link>
             ))}
           </div>
@@ -258,8 +259,8 @@ export function BrandDetailPage() {
             <h1>{content.heroHeadline}</h1>
             <p className="zingo-hero__lead">{content.heroLead}</p>
             <div className="cta-row">
-              <Link className="button button--primary" to="/products">Explore the range <ArrowRight size={16} /></Link>
-              <Link className="button button--secondary" to="/contact">Talk to us about {content.name}</Link>
+              <a className="button button--primary" href="#flavours">View all 8 flavours <ArrowRight size={16} /></a>
+              <Link className="inline-link inline-link--dark" to="/contact">Talk to us about {content.name}</Link>
             </div>
           </div>
           <div className="zingo-hero__visual">
@@ -280,6 +281,38 @@ export function BrandDetailPage() {
           <p className="zingo-what-is__copy">{content.whatIsCopy}</p>
         </div>
       </section>
+
+      {flavourProducts.length > 0 && (
+        <section className="section section--light zingo-flavours" id="flavours">
+          <div className="container">
+            <div className="section-header">
+              <div>
+                <p className="eyebrow eyebrow--dark">The full collection</p>
+                <h2>The {content.name} Flavour Collection</h2>
+              </div>
+            </div>
+            {content.flavourGroups.map((group) => (
+              <div key={group.title} className="zingo-flavour-group">
+                <h3 className="zingo-flavour-group__title">{group.title}</h3>
+                <div className="zingo-flavour-grid">
+                  {group.slugs.map((slug) => {
+                    const product = flavourProducts.find((item) => item.slug === slug)
+                    if (!product) return null
+                    return (
+                      <figure key={slug} className="zingo-flavour-card">
+                        <div className="zingo-flavour-card__media">
+                          <img src={product.image} alt={product.name} loading="lazy" />
+                        </div>
+                        <figcaption>{product.name.replace('Zingo ', '')}</figcaption>
+                      </figure>
+                    )
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       <section className="section section--dark-cta zingo-pillars">
         <div className="container">
@@ -346,38 +379,6 @@ export function BrandDetailPage() {
         </div>
       </section>
 
-      {flavourProducts.length > 0 && (
-        <section className="section section--light zingo-flavours">
-          <div className="container">
-            <div className="section-header">
-              <div>
-                <p className="eyebrow eyebrow--dark">The full collection</p>
-                <h2>The {content.name} Flavour Collection</h2>
-              </div>
-            </div>
-            {content.flavourGroups.map((group) => (
-              <div key={group.title} className="zingo-flavour-group">
-                <h3 className="zingo-flavour-group__title">{group.title}</h3>
-                <div className="zingo-flavour-grid">
-                  {group.slugs.map((slug) => {
-                    const product = flavourProducts.find((item) => item.slug === slug)
-                    if (!product) return null
-                    return (
-                      <Link key={slug} to={`/products/${product.slug}`} className="zingo-flavour-card">
-                        <div className="zingo-flavour-card__media">
-                          <img src={product.image} alt={product.name} loading="lazy" />
-                        </div>
-                        <span>{product.name.replace('Zingo ', '')}</span>
-                      </Link>
-                    )
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
       <section className="section section--light zingo-steps">
         <div className="container">
           <div className="section-heading section-heading--left">
@@ -438,8 +439,8 @@ export function BrandDetailPage() {
           <p>{content.ctaCopy}</p>
         </div>
         <div className="cta-row">
-          <Link className="button button--inverted" to="/products">Explore the {content.name} range <ArrowRight size={16} /></Link>
-          <Link className="button button--ghost" to="/contact">Talk to us about {content.name}</Link>
+          <Link className="button button--inverted" to="/contact">Request range information <ArrowRight size={16} /></Link>
+          <Link className="inline-link" to="/products">Back to catalogue</Link>
         </div>
       </section>
     </main>

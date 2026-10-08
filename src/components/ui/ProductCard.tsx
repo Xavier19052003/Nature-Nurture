@@ -1,27 +1,18 @@
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import type { Product } from '../../data/products'
+import { getProductHref, type Product } from '../../data/products'
 
-export function ProductCard({ product, ctaLabel = 'Explore product' }: { product: Product, ctaLabel?: string }) {
-  const accent = product.accent ?? '#3e6b3f'
-  const benefits = product.benefits ?? []
-
+export function ProductCard({ product }: { product: Product }) {
   return (
-    <article className="product-card" style={{ ['--card-accent' as string]: accent }}>
+    <article className="product-card" style={{ ['--card-accent' as string]: product.accent ?? '#3e6b3f' }}>
       <div className="product-card__media">
-        <img src={product.image} alt={product.name} />
+        <img src={product.image} alt={product.name} loading="lazy" />
       </div>
       <div className="product-card__body">
-        <span className="tag">{product.category}</span>
+        <p className="product-card__category">{product.category}</p>
         <h3>{product.name}</h3>
-        <p>{product.description}</p>
-        <ul>
-          {benefits.map((benefit) => (
-            <li key={benefit}>{benefit}</li>
-          ))}
-        </ul>
-        <Link to={`/products/${product.slug}`} className="inline-link">
-          {ctaLabel} <ArrowUpRight aria-hidden="true" size={16} />
+        <Link to={getProductHref(product)} className="button button--primary product-card__action" aria-label={`Explore ${product.name}`}>
+          Explore {product.id === 'zingo-range' ? 'range' : 'product'} <ArrowUpRight aria-hidden="true" size={16} />
         </Link>
       </div>
     </article>

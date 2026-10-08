@@ -1,6 +1,7 @@
 import { ArrowRight, BadgeCheck, Baby, Droplets, FlaskConical, HandCoins, Leaf, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { InternationalExpansion } from '../components/ui/InternationalExpansion'
 
 type ValueCard = {
   number: string
@@ -149,6 +150,9 @@ export function AboutPage() {
             <p>
               The company’s portfolio is developed to address the needs of African consumers and families, with an emphasis on accessible wellness and international standards.
             </p>
+            <a href="https://rainmakerfmcg.co.za/" target="_blank" rel="noopener noreferrer" className="inline-link">
+              Visit Rainmaker FMCG <ArrowRight size={16} aria-hidden="true" />
+            </a>
           </div>
         </div>
       </section>
@@ -169,6 +173,8 @@ export function AboutPage() {
           </dl>
         </div>
       </section>
+
+      <InternationalExpansion />
 
       <section className="about-capabilities section">
         <div className="container">

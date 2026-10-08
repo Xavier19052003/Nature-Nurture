@@ -5,10 +5,10 @@ import { ProductCollection } from '../components/ui/ProductCollection'
 import { featuredProducts } from '../data/products'
 
 const philosophy = [
-  { number: '01', title: 'Wellness', icon: Leaf },
-  { number: '02', title: 'Nutrition', icon: FlaskConical },
-  { number: '03', title: 'Family', icon: Users2 },
-  { number: '04', title: 'Everyday living', icon: HomeIcon },
+  { title: 'Wellness', icon: Leaf },
+  { title: 'Nutrition', icon: FlaskConical },
+  { title: 'Family', icon: Users2 },
+  { title: 'Everyday living', icon: HomeIcon },
 ]
 
 const reasons = [
@@ -40,7 +40,7 @@ export function Home() {
         <section className="hero-shell">
           <div className="container hero-grid">
             <div className="hero-copy">
-              <p className="eyebrow">01 • Portfolio introduction</p>
+              <p className="eyebrow">Nature&apos;s Nurture • Rainmaker FMCG</p>
               <h1 className="display-heading">
                 Better<br />
                 choices.<br />
@@ -51,7 +51,7 @@ export function Home() {
               </p>
               <div className="cta-row">
                 <Link className="button button--primary" to="/products">Explore products</Link>
-                <Link className="button button--secondary" to="/retailers">For formulas &amp; wholesalers</Link>
+                <Link className="button button--secondary" to="/retailers">For retailers &amp; wholesalers</Link>
               </div>
               <div className="hero-meta">
                 <span>Natural ingredients</span>
@@ -64,39 +64,12 @@ export function Home() {
           </div>
         </section>
 
-        <section className="section section--dark-cta">
-          <div className="container philosophy-grid">
-            <div className="section-heading section-heading--left">
-              <p className="eyebrow eyebrow--alt">01 • Our philosophy</p>
-              <h2>
-                Nurturing better choices<br />
-                for everyday life across<br />
-                Africa.
-              </h2>
-            </div>
-            <div className="section-copy narrative-copy">
-              <p>
-                Premium nutrition should feel practical. Our products combine natural ingredients, functional formulation and everyday relevance for real families across Africa.
-              </p>
-            </div>
-            <div className="philosophy-list">
-              {philosophy.map((item) => (
-                <div key={item.number} className="philosophy-item philosophy-item--on-dark">
-                  <span className="philosophy-item__icon" aria-hidden="true"><item.icon size={15} /></span>
-                  <span>{item.number}</span>
-                  <strong>{item.title}</strong>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="section section--light">
           <div className="container">
             <div className="section-header section-header--spaced">
               <div>
-                <p className="eyebrow eyebrow--dark">02 • Featured flagships</p>
-                <h2>Featured Flagships</h2>
+                <p className="eyebrow eyebrow--dark">Selected from our portfolio</p>
+                <h2>Explore our portfolio</h2>
               </div>
               <Link to="/products" className="inline-link inline-link--dark">Explore all products <ArrowUpRight size={16} /></Link>
             </div>
@@ -110,9 +83,35 @@ export function Home() {
         </section>
 
         <section className="section section--dark-cta">
+          <div className="container philosophy-grid">
+            <div className="section-heading section-heading--left">
+              <p className="eyebrow eyebrow--alt">Our philosophy</p>
+              <h2>
+                Nurturing better choices<br />
+                for everyday life across<br />
+                Africa.
+              </h2>
+            </div>
+            <div className="section-copy narrative-copy">
+              <p>
+                Premium nutrition should feel practical. Our products combine natural ingredients, functional formulation and everyday relevance for real families across Africa.
+              </p>
+            </div>
+            <div className="philosophy-list">
+              {philosophy.map((item) => (
+                <div key={item.title} className="philosophy-item philosophy-item--on-dark">
+                  <span className="philosophy-item__icon" aria-hidden="true"><item.icon size={28} /></span>
+                  <strong>{item.title}</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section section--dark-cta">
           <div className="container narrative-shell narrative-shell--split">
             <div className="narrative-heading">
-              <p className="eyebrow eyebrow--alt">03 • Brand narrative</p>
+              <p className="eyebrow eyebrow--alt">Brand narrative</p>
               <h2>
                 Nurturing life through<br />
                 science, nature &amp;<br />
@@ -134,14 +133,13 @@ export function Home() {
         <section className="section section--light">
           <div className="container reason-grid">
             <div className="section-heading section-heading--left">
-              <p className="eyebrow eyebrow--dark">04 • Why Nature&apos;s Nurture</p>
+              <p className="eyebrow eyebrow--dark">Why Nature&apos;s Nurture</p>
               <h2>Why Nature&apos;s Nurture</h2>
             </div>
             <div className="reason-cards">
-              {reasons.map((reason, index) => (
+              {reasons.map((reason) => (
                 <article key={reason.title} className="reason-card">
                   <span className="reason-card__icon" aria-hidden="true"><reason.icon size={16} /></span>
-                  <span className="reason-number">0{index + 1}</span>
                   <h3>{reason.title}</h3>
                   <p>{reason.text}</p>
                 </article>
@@ -153,7 +151,7 @@ export function Home() {
         <section className="section section--dark-cta home-trust-section">
           <div className="container home-trust-shell">
             <div className="home-trust-copy">
-              <p className="eyebrow eyebrow--alt">05 • Retailers &amp; wholesalers</p>
+              <p className="eyebrow eyebrow--alt">Retailers &amp; wholesalers</p>
               <h2>Built for retail. Backed by quality.</h2>
               <p>Practical distribution support for retail partners, backed by trusted manufacturing standards and an established African market footprint.</p>
             </div>
@@ -191,14 +189,13 @@ export function Home() {
         <section className="section section--light home-connect-section">
           <div className="container connect-shell home-connect-shell">
             <div>
-              <p className="eyebrow eyebrow--dark">06 • Let&apos;s connect</p>
+              <p className="eyebrow eyebrow--dark">Let&apos;s connect</p>
               <h2>Let&apos;s Talk.</h2>
             </div>
             <div className="connect-actions">
               <p>Whether you&apos;re a supermarket buyer, health professional, distributor or partner, our team would welcome a conversation.</p>
               <div className="cta-row cta-row--inline">
                 <Link className="button button--primary" to="/contact">Submit trade enquiry</Link>
-                <Link className="button button--secondary" to="/contact">General contact</Link>
               </div>
             </div>
           </div>

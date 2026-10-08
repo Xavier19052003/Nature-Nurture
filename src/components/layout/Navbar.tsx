@@ -27,7 +27,14 @@ export function Navbar() {
     }}>
       <div className="container site-header__inner">
         <Link className="wordmark" to="/" aria-label="Nature's Nurture home" onClick={() => setMenuOpen(false)}>
-          • NATURE&apos;S NURTURE
+          <img
+            className="wordmark__logo"
+            src={`${import.meta.env.BASE_URL}branding/natures-nurture-logo.png`}
+            alt="Nature's Nurture — Nature's Way, Every Day"
+            width={2048}
+            height={2064}
+          />
+          <span className="wordmark__text">Nature&apos;s Nurture<span>Rainmaker FMCG</span></span>
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">

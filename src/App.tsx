@@ -1,4 +1,4 @@
-import { useLayoutEffect } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 import { Footer } from './components/layout/Footer'
 import { Navbar } from './components/layout/Navbar'
@@ -16,13 +16,23 @@ const routerBase = import.meta.env.BASE_URL.replace(/\/$/, '') || '/'
 
 function ScrollToTop() {
   const location = useLocation()
+  const previousPath = useRef<string | null>(null)
 
   useLayoutEffect(() => {
+    const routeChanged = previousPath.current !== location.pathname
+    previousPath.current = location.pathname
+    if (!routeChanged && !location.hash) return
+
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual'
     }
 
     const resetScroll = () => {
+      const target = location.hash ? document.getElementById(location.hash.slice(1)) : null
+      if (target) {
+        target.scrollIntoView({ behavior: 'auto', block: 'start' })
+        return
+      }
       window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
@@ -36,7 +46,7 @@ function ScrollToTop() {
       window.cancelAnimationFrame(frame)
       window.clearTimeout(timeout)
     }
-  }, [location.pathname])
+  }, [location.pathname, location.hash])
 
   return null
 }

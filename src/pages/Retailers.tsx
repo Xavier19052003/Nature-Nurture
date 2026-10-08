@@ -1,5 +1,6 @@
 import { ArrowRight, Globe2, Handshake, MapPinned, Phone, Store, Truck } from 'lucide-react'
 import { Link } from 'react-router-dom'
+import { InternationalExpansion } from '../components/ui/InternationalExpansion'
 import { contactDetails } from '../data/contact'
 
 const benefits = [
@@ -103,6 +104,8 @@ export function RetailersPage() {
           </div>
         </div>
       </section>
+
+      <InternationalExpansion />
 
       <section className="container location-shell">
         <div className="section-header section-header--spaced">

@@ -1,164 +1,103 @@
-import { ArrowRight, Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, ShieldCheck, Users2, UtensilsCrossed } from 'lucide-react'
-import { useMemo, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { ArrowRight, Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, UtensilsCrossed } from 'lucide-react'
+import { useMemo } from 'react'
+import { Link, useSearchParams } from 'react-router-dom'
 import { ProductCard } from '../components/ui/ProductCard'
 import { ProductCollection } from '../components/ui/ProductCollection'
-import { categories, products } from '../data/products'
+import { categories, catalogueProducts } from '../data/products'
 
 const categoryIcons = {
   'All Products': Grid2X2,
-  Hydration: Droplets,
-  'Wellness Nutrition': FlaskConical,
-  'Daily Support': ShieldCheck,
-  'Child Nutrition': Baby,
-  'Family Nutrition': UtensilsCrossed,
-  'Everyday Wellness': Leaf,
+  'Sublingual Nutrition': FlaskConical,
+  'Infant Nutrition': Baby,
+  'Cereal & Meal Replacement': UtensilsCrossed,
+  'Natural Sweeteners': Leaf,
   'Family Protection': Bug,
+  'Energy & Hydration': Droplets,
 }
 
-const valuePoints = [
-  {
-    number: '01',
-    title: 'Science-led formulas',
-    description: 'Developed with evidence and purpose.',
-    icon: FlaskConical,
-  },
-  {
-    number: '02',
-    title: 'Trusted ingredients',
-    description: 'Quality nutrients you can rely on.',
-    icon: Leaf,
-  },
-  {
-    number: '03',
-    title: 'Family-first wellbeing',
-    description: 'Products designed for everyday health.',
-    icon: Users2,
-  },
-  {
-    number: '04',
-    title: 'Quality you can trust',
-    description: 'Manufactured to appropriate standards.',
-    icon: ShieldCheck,
-  },
-]
-
 export function ProductsPage() {
-  const [activeCategory, setActiveCategory] = useState('All Products')
-  const [searchQuery, setSearchQuery] = useState('')
+  const [searchParams, setSearchParams] = useSearchParams()
+  const requestedCategory = searchParams.get('category') ?? 'All Products'
+  const activeCategory = categories.includes(requestedCategory) ? requestedCategory : 'All Products'
+  const searchQuery = searchParams.get('q') ?? ''
   const filteredProducts = useMemo(() => {
     const query = searchQuery.trim().toLocaleLowerCase()
-    return products.filter((product) => {
+    return catalogueProducts.filter((product) => {
       const matchesCategory = activeCategory === 'All Products' || product.category === activeCategory
-      const searchableText = [
-        product.name,
-        product.brand,
-        product.category,
-        product.description,
-        product.shortDescription,
-        ...(product.tags ?? []),
-        ...product.benefits,
-      ].join(' ').toLocaleLowerCase()
+      const searchableText = [product.name, product.brand, product.category, product.description,
+        product.shortDescription, ...(product.tags ?? []), ...product.benefits].join(' ').toLocaleLowerCase()
       return matchesCategory && (!query || searchableText.includes(query))
     })
   }, [activeCategory, searchQuery])
-  const productPdfHref = `${import.meta.env.BASE_URL}Natures-Nurture-NEW.pdf`
+
+  const chooseCategory = (category: string) => {
+    setSearchParams(category === 'All Products' ? {} : { category })
+  }
 
   return (
     <main className="page-shell page-shell--light products-page">
       <section className="products-hero">
         <div className="container products-hero__grid">
           <div className="products-hero__copy">
-            <p className="eyebrow eyebrow--dark">Product catalogue &amp; formulation</p>
+            <p className="eyebrow eyebrow--dark">Nature&apos;s Nurture &amp; Zingo</p>
             <h1>The Complete Catalogue</h1>
-            <span className="about-hero__divider" aria-hidden="true" />
-            <p className="products-hero__lead">
-              Explore our evidence-led FMCG and wellness portfolio across nutrition, wellness and family health.
-            </p>
-            <div className="cta-row">
-              <Link to="/retailers" className="button button--primary">Retail &amp; wholesale enquiries</Link>
-              <a href={productPdfHref} download className="button button--secondary">
-                Download Stevia brochure (PDF)
-              </a>
-            </div>
+            <p className="products-hero__lead">Choose a category, then explore a product or range for detailed information.</p>
+            <a href="#catalogue" className="button button--primary">Browse products <ArrowRight size={16} /></a>
           </div>
-
           <ProductCollection />
         </div>
       </section>
 
-      <section className="container products-value-strip" aria-label="Product values">
-        {valuePoints.map(({ number, title, description, icon: Icon }) => (
-          <article key={number} className="products-value-item">
-            <span className="products-value-item__number">{number}</span>
-            <span className="products-value-item__icon" aria-hidden="true"><Icon size={15} /></span>
-            <div>
-              <h3>{title}</h3>
-              <p>{description}</p>
+      <section className="container catalogue-browser" id="catalogue" aria-labelledby="catalogue-heading">
+        <div className="catalogue-browser__heading">
+          <h2 id="catalogue-heading">Choose a category</h2>
+          <label className="search-chip">
+            <Search size={20} aria-hidden="true" />
+            <input type="search" value={searchQuery} onChange={(event) => {
+              const next = new URLSearchParams(searchParams)
+              if (event.target.value) next.set('q', event.target.value)
+              else next.delete('q')
+              setSearchParams(next, { replace: true })
+            }} placeholder="Search products or flavours" aria-label="Search products" />
+          </label>
+        </div>
+        <label className="mobile-category-picker">
+          <span>Product category</span>
+          <select value={activeCategory} onChange={(event) => chooseCategory(event.target.value)} aria-controls="catalogue-results">
+            {categories.map((category) => <option key={category}>{category}</option>)}
+          </select>
+        </label>
+        <div className="product-filters" role="group" aria-label="Filter product categories">
+          {categories.map((category) => {
+            const Icon = categoryIcons[category as keyof typeof categoryIcons]
+            return (
+              <button key={category} type="button" aria-pressed={activeCategory === category}
+                aria-controls="catalogue-results" className={`filter-chip ${activeCategory === category ? 'is-selected' : ''}`}
+                onClick={() => chooseCategory(category)}>
+                <Icon size={22} aria-hidden="true" />{category}
+              </button>
+            )
+          })}
+        </div>
+        <p className="catalogue-results-summary" role="status">{filteredProducts.length} {filteredProducts.length === 1 ? 'product or range' : 'products and ranges'}{activeCategory === 'All Products' ? '' : ` in ${activeCategory}`}</p>
+        <div id="catalogue-results">
+          {filteredProducts.length > 0 ? (
+            <div className="product-grid product-grid--catalogue">
+              {filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)}
             </div>
-          </article>
-        ))}
-      </section>
-
-      <section className="container product-section-intro">
-        <div className="section-heading section-heading--left">
-          <div>
-            <p className="eyebrow eyebrow--dark">Explore by category</p>
-            <h2>Products for modern family wellbeing.</h2>
-          </div>
-          <p className="about-section-heading__copy">
-            Browse the portfolio by category, formulation type and everyday use case.
-          </p>
-        </div>
-        <div className="product-filters-shell">
-          <div className="product-filters" aria-label="Filter product categories">
-            <label className="search-chip">
-              <Search size={14} aria-hidden="true" />
-              <input
-                type="search"
-                value={searchQuery}
-                onChange={(event) => setSearchQuery(event.target.value)}
-                placeholder="Search products"
-                aria-label="Search products"
-              />
-            </label>
-            {categories.map((category) => {
-              const Icon = categoryIcons[category as keyof typeof categoryIcons]
-              return (
-                <button
-                  key={category}
-                  type="button"
-                  aria-pressed={activeCategory === category}
-                  className={`filter-chip ${activeCategory === category ? 'is-selected' : ''}`}
-                  onClick={() => setActiveCategory(category)}
-                >
-                  {Icon ? (
-                    <span className="filter-chip__icon" aria-hidden="true"><Icon size={12} /></span>
-                  ) : null}
-                  {category}
-                </button>
-              )
-            })}
-          </div>
+          ) : (
+            <div className="products-empty-state">
+              <p>No products match your search.</p>
+              <button className="button button--primary" onClick={() => setSearchParams({})}>Show all products</button>
+            </div>
+          )}
         </div>
       </section>
 
-      <section className="container products-catalogue">
-        {filteredProducts.length > 0 ? (
-          <div className="product-grid product-grid--catalogue">
-            {filteredProducts.map((product) => (
-              <ProductCard key={product.id} product={product} ctaLabel="EXPLORE PRODUCT →" />
-            ))}
-          </div>
-        ) : (
-          <p className="products-empty-state" role="status">No products match your search.</p>
-        )}
-      </section>
-
-      <section className="container product-cta-row">
-        <Link to="/contact" className="button button--secondary">
-          Request product information <ArrowRight size={16} />
-        </Link>
+      <section className="container catalogue-support" aria-label="Product and trade information">
+        <Link to="/contact" className="button button--secondary">Request product information <ArrowRight size={16} /></Link>
+        <Link to="/retailers" className="inline-link inline-link--dark">Retail &amp; wholesale enquiries</Link>
+        <a href={`${import.meta.env.BASE_URL}Natures-Nurture-NEW.pdf`} download className="inline-link inline-link--dark">Download Stevia brochure (PDF)</a>
       </section>
     </main>
   )

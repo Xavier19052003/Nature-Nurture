@@ -1,4 +1,5 @@
-import { ArrowRight } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
@@ -58,6 +59,52 @@ const portfolioVisuals = [
   { src: asset('products/zingo/orange-boost.png'), alt: 'Zingo' },
 ]
 
+function BrandProductCarousel({ images }: { images: string[] }) {
+  const track = useRef<HTMLDivElement>(null)
+  const [active, setActive] = useState(0)
+
+  const goTo = (index: number) => {
+    const element = track.current
+    if (!element) return
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    element.scrollTo({ left: index * element.clientWidth, behavior: reducedMotion ? 'instant' : 'smooth' })
+  }
+
+  return (
+    <div className="brand-carousel" role="region" aria-roledescription="carousel" aria-label="Nature's Nurture products">
+      <div
+        className="brand-carousel__track"
+        ref={track}
+        onScroll={(event) => {
+          const element = event.currentTarget
+          if (element.clientWidth) setActive(Math.round(element.scrollLeft / element.clientWidth))
+        }}
+      >
+        {images.map((src, index) => (
+          <div className="brand-carousel__slide" key={src} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${images.length}`}>
+            <img src={src} alt={['B12 and Folate spray', 'Stage 1 infant formula', 'Banana Bliss cereal', 'Stevia sachets'][index]} loading="lazy" />
+          </div>
+        ))}
+      </div>
+      <div className="brand-carousel__controls">
+        <button type="button" aria-label="Previous product" disabled={active === 0} onClick={() => goTo(active - 1)}>
+          <ArrowLeft size={18} />
+        </button>
+        <div className="brand-carousel__dots" aria-label="Choose product">
+          {images.map((src, index) => (
+            <button key={src} type="button" aria-label={`Show product ${index + 1}`} aria-current={active === index ? 'true' : undefined} onClick={() => goTo(index)}>
+              <span />
+            </button>
+          ))}
+        </div>
+        <button type="button" aria-label="Next product" disabled={active === images.length - 1} onClick={() => goTo(active + 1)}>
+          <ArrowRight size={18} />
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export function BrandsPage() {
   return (
     <main className="page-shell page-shell--light brands-page">
@@ -94,13 +141,14 @@ export function BrandsPage() {
                       <img src={brand.logo} alt={`${brand.name} logo`} />
                     </div>
                   ) : null}
-                  <div className="brand-card__collage">
+                  <div className={`brand-card__collage${brand.logo ? ' brand-card__collage--desktop' : ''}`}>
                     {brand.images.map((src) => (
                       <div key={src} className="brand-card__collage-item">
                         <img src={src} alt="" loading="lazy" />
                       </div>
                     ))}
                   </div>
+                  {brand.logo ? <BrandProductCarousel images={brand.images} /> : null}
                 </div>
                 <div className="brand-card__body brand-card__body--portfolio">
                   <h3>{brand.name}</h3>
@@ -110,7 +158,7 @@ export function BrandsPage() {
                       <li key={area}>{area}</li>
                     ))}
                   </ul>
-                  <Link to={`/brands/${brand.slug}`} className="inline-link inline-link--dark">
+                  <Link to={`/brands/${brand.slug}`} className="button button--primary">
                     Explore brand <ArrowRight size={16} />
                   </Link>
                 </div>
@@ -129,7 +177,6 @@ export function BrandsPage() {
           <div className="portfolio-areas-grid">
             {portfolioAreas.map((area) => (
               <div key={area.number} className="portfolio-area-item">
-                <span className="portfolio-area-item__number">{area.number}</span>
                 <strong>{area.title}</strong>
                 <p>{area.description}</p>
               </div>

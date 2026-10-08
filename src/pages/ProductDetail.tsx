@@ -1,11 +1,15 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
-import { Link, useParams } from 'react-router-dom'
-import { products } from '../data/products'
+import { Link, Navigate, useParams } from 'react-router-dom'
+import { catalogueProducts, getProductHref, products } from '../data/products'
 
 export function ProductDetailPage() {
   const { slug } = useParams()
   const product = products.find((item) => item.slug === slug)
   const benefits = product?.benefits ?? []
+
+  if (slug === 'zingo' || (product && product.slug.startsWith('zingo-'))) {
+    return <Navigate to="/brands/zingo" replace />
+  }
 
   if (!product) {
     return (
@@ -62,13 +66,13 @@ export function ProductDetailPage() {
           </div>
         </div>
         <div className="product-grid product-grid--related">
-          {products.filter((item) => item.id !== product.id).slice(0, 3).map((item) => (
+          {catalogueProducts.filter((item) => item.id !== product.id).slice(0, 3).map((item) => (
             <article key={item.id} className="mini-product-card">
               <img src={item.image} alt={item.name} />
               <div>
                 <span>{item.category}</span>
                 <h3>{item.name}</h3>
-                <Link to={`/products/${item.slug}`} className="inline-link inline-link--dark">View product <ArrowRight size={15} /></Link>
+                <Link to={getProductHref(item)} className="inline-link inline-link--dark">View product <ArrowRight size={15} /></Link>
               </div>
             </article>
           ))}

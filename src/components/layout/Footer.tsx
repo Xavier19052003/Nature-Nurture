@@ -36,6 +36,7 @@ export function Footer() {
             <li><Link to="/brands">Brands</Link></li>
             <li><Link to="/retailers">Retailers</Link></li>
             <li><Link to="/contact">Contact</Link></li>
+            <li><a href="https://rainmakerfmcg.co.za/" target="_blank" rel="noopener noreferrer">Rainmaker FMCG</a></li>
           </ul>
         </div>
 
