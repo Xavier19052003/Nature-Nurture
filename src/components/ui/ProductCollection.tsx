@@ -8,12 +8,15 @@ const previews = [
   { category: 'Energy & Hydration', image: 'zingo/orange-boost.png', alt: 'Zingo Orange Boost', tone: 'green', position: 'three' },
 ]
 
-export function ProductCollection() {
+export function ProductCollection({ homepage = false }: { homepage?: boolean }) {
+  const visiblePreviews = homepage
+    ? [previews[0], { category: 'Infant & Family Nutrition', image: 'infant-formula/stage-1.png', alt: "Nature's Nurture Stage 1 infant formula", tone: 'green', position: 'infant' }, ...previews.slice(1)]
+    : previews
   return (
-    <nav className="hero-visual" aria-label="Explore product categories">
-      {previews.map((preview) => (
+    <nav className={`hero-visual${homepage ? ' hero-visual--home' : ''}`} aria-label="Explore product categories">
+      {visiblePreviews.map((preview) => (
         <div key={preview.category} className={`product-stack product-stack--${preview.position}`}>
-          <Link className={`mini-product mini-product--${preview.tone}`} to={getCategoryHref(preview.category)}>
+          <Link className={`mini-product mini-product--${preview.tone}`} to={getCategoryHref(preview.category === 'Infant & Family Nutrition' ? 'Infant Nutrition' : preview.category)}>
             <img src={`${import.meta.env.BASE_URL}products/${preview.image}`} alt={preview.alt} width={400} height={400} />
             <span className="mini-product__category">{preview.category}</span>
             <span className="mini-product__action">Browse category <ArrowUpRight size={16} aria-hidden="true" /></span>

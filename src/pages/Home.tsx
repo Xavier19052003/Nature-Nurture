@@ -60,7 +60,7 @@ export function Home() {
               </div>
             </div>
 
-            <ProductCollection />
+            <ProductCollection homepage />
           </div>
         </section>
 
