@@ -7,6 +7,7 @@ import {
   Sparkles,
   Target,
 } from 'lucide-react'
+import { sublingualProducts } from './sublingual'
 import { products, type Product } from './products'
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
@@ -23,10 +24,8 @@ export type NNPortfolioArea = {
   description: string
 }
 
-// The four sublingual sprays currently approved and in production —
-// mirrors the real catalogue rather than the PDF's generic "B Complex" label,
-// since the actual approved product in the range is "Calm Complex".
-const sublingualSlugs = ['vitamin-b12-folate', 'iron', 'vitamin-d3-k2', 'calm-complex']
+// Final active four-product Sublingual Nutrition range.
+const sublingualSlugs = sublingualProducts.map((product) => product.slug)
 const cerealSlugs = [
   'cereal-banana-bliss',
   'cereal-pineapple-paradise',
@@ -51,7 +50,7 @@ export const naturesNurtureContent = {
     headline: 'Wellness, Reimagined for Everyday Life',
     lead: "Nature's Nurture brings together convenient nutrition, everyday wellness and family-focused essentials — from fast-absorbing sublingual sprays to infant formula, cereals and natural, protective products for daily life.",
     images: [
-      asset('products/sublingual/b12-folate.png'),
+      sublingualProducts[0].image,
       asset('products/infant-formula/stage-1.png'),
       asset('products/cereal/banana-bliss.png'),
       asset('products/stevia/stevia-sachets.png'),
@@ -116,10 +115,10 @@ export const naturesNurtureContent = {
   mosquito: {
     eyebrow: 'Family Protection',
     headline: 'Everyday protection for the whole family',
-    product: products.find((product) => product.slug === 'mosquito-repellent-patches'),
+    products: products.filter((product) => product.category === 'Family Protection'),
     points: [
-      '24-hour protection per patch',
-      'DEET-free, plant-based ingredients',
+      'Long-lasting protection',
+      'DEET-free positioning',
       'Apply to clothing or nearby objects — do not apply directly to skin',
       'Ideal for camping & hiking, beach & water activities, school & play',
     ],

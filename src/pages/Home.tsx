@@ -1,48 +1,73 @@
-import { ArrowUpRight, FlaskConical, Globe2, Home as HomeIcon, Leaf, ShieldCheck, Store, Users2 } from 'lucide-react'
+import { PageHero } from '../components/ui/PageHero'
+import type { CSSProperties } from 'react'
+import { ArrowRight, ClipboardCheck, Factory, FlaskConical, Handshake, Globe2, PackageCheck, ShieldCheck, Store, Truck } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { ProductCard } from '../components/ui/ProductCard'
 import { ProductCollection } from '../components/ui/ProductCollection'
-import { featuredProducts } from '../data/products'
+import { useHomeHeroFit } from '../components/ui/useHomeHeroFit'
 
-const philosophy = [
-  { title: 'Wellness', icon: Leaf },
-  { title: 'Nutrition', icon: FlaskConical },
-  { title: 'Family', icon: Users2 },
-  { title: 'Everyday living', icon: HomeIcon },
+const presenceIndicators = [
+  { title: 'SADC', text: 'Regional Market Reach', icon: Globe2 },
+  { title: 'East & West Africa', text: 'Export Capability', icon: Truck },
+  { title: 'Multi-Channel', text: 'Retail · Pharmacy · Wholesale · Export', icon: Store },
+  { title: 'International', text: 'Trade-Ready', icon: Handshake },
 ]
 
-const reasons = [
-  { title: 'Science-led mucosal delivery', text: 'Designed for efficient nutrient absorption and quality routines.', icon: FlaskConical },
-  { title: 'Quality-focused manufacturing', text: 'Traceable, standardised production for trusted daily health support.', icon: ShieldCheck },
-  { title: 'Formulated for modern Africa', text: 'Balance, accessibility and practicality across everyday lifestyles.', icon: Globe2 },
-  { title: 'Retail-ready multi-category FMCG', text: 'Structured for the realities of African retail and commercial scale.', icon: Store },
+const capabilities = [
+  { title: 'Nutritional Products', text: 'Science-backed formulations across vitamins, minerals and functional nutrition.', icon: FlaskConical },
+  { title: 'Scalable Distribution', text: 'Multi-channel reach across retail, pharmacy, wholesale and export.', icon: Store },
+  { title: 'African Market Expansion', text: 'Active growth strategy targeting SADC and broader pan-African trade corridors.', icon: Globe2 },
 ]
 
-const retailStats = [
-  { label: 'Portfolio categories', value: '6' },
-  { label: 'Business model', value: 'B2B' },
-  { label: 'Distribution channels', value: 'Multi' },
-  { label: 'Markets served', value: 'Africa' },
+const companyFacts = [
+  { label: 'Headquarters', value: 'Durban, South Africa' },
+  { label: 'Industry', value: 'FMCG / Wellness / Nutrition / Consumer Health' },
+  { label: 'Markets Served', value: 'South Africa, SADC, Africa' },
+  { label: 'Distribution Channels', value: 'Retail, Pharmacy, Wholesale, E-Commerce, Export' },
+  { label: 'Business Model', value: 'B2B, Retail, Export, Private Label, Co-Manufacturing' },
+  { label: 'Export Capability', value: 'SADC, East Africa, West Africa, International Trade-Ready' },
 ]
 
-const compliance = [
-  { label: 'SAHPRA aligned', icon: ShieldCheck },
-  { label: 'GMP-compliant', icon: ShieldCheck },
-  { label: 'HACCP', icon: ShieldCheck },
-  { label: 'ISO-aligned', icon: ShieldCheck },
-  { label: 'Codex-compliant', icon: ShieldCheck },
+const foundations = [
+  { title: 'Batch Traceability', text: 'End-to-end traceability supports product accountability from raw material intake through to dispatch.', icon: ClipboardCheck },
+  { title: 'Commercial Product Development', text: 'Product development shaped around consumer needs, modern retail and commercially relevant FMCG categories.', icon: FlaskConical },
+  { title: 'Third-Party Testing', text: 'Independent microbiological and safety testing supports product quality prior to market release.', icon: ShieldCheck },
+  { title: 'Scalable Distribution', text: 'Multi-channel reach across retail, pharmacy, wholesale, e-commerce and export.', icon: Truck },
+  { title: 'Partner-Centric Solutions', text: 'Flexible solutions designed around partner requirements, packaging, pricing and collaboration models.', icon: Handshake },
+  { title: 'Export Readiness', text: 'Production and documentation aligned with international regulatory and import requirements.', icon: Globe2 },
 ]
+
+const manufacturing = [
+  { title: 'GMP & HACCP', text: 'Manufacturing operates in alignment with Good Manufacturing Practice and HACCP protocols.', icon: ShieldCheck },
+  { title: 'Batch Traceability', text: 'End-to-end systems support accountability from raw material intake to dispatch.', icon: ClipboardCheck },
+  { title: 'Third-Party Testing', text: 'Independent microbiological and safety testing supports market release.', icon: FlaskConical },
+  { title: 'Export Readiness', text: 'Production documentation is aligned with international regulatory and import requirements.', icon: Globe2 },
+]
+
+const tradeCapabilities = [
+  { title: 'Retail', text: 'FMCG and consumer retail channels', icon: Store },
+  { title: 'Pharmacy', text: 'Health and wellness distribution', icon: FlaskConical },
+  { title: 'Wholesale', text: 'Multi-channel wholesale capability', icon: Truck },
+  { title: 'Private Label', text: 'Commercially flexible product development', icon: PackageCheck },
+  { title: 'Co-Manufacturing', text: 'Partner-oriented production models', icon: Factory },
+  { title: 'Export', text: 'SADC, East Africa, West Africa and international trade readiness', icon: Globe2 },
+]
+
+const compliance = ['GMP-Compliant', 'HACCP', 'SAHPRA-Aligned', 'Codex-Compliant', 'ISO-Aligned']
 
 export function Home() {
+  useHomeHeroFit()
   return (
     <>
       <main>
-        <section className="hero-shell">
-          <div className="container hero-grid">
-            <div className="hero-copy">
+        <PageHero entryPlacement="bottom" className="hero-shell home-landing" scrollLabel="Scroll to explore" scrollTarget="home-company" labelledBy="home-heading" scrollAriaLabel="Scroll to explore our company overview" style={{
+          '--home-bg-desktop': `url("${import.meta.env.BASE_URL}home/hero-bg-desktop.webp")`,
+          '--home-bg-mobile': `url("${import.meta.env.BASE_URL}home/hero-bg-mobile.webp")`,
+        } as CSSProperties}>
+          <div className="container hero-grid page-hero__layout">
+            <div className="hero-copy page-hero__copy">
               <p className="eyebrow">Nature&apos;s Nurture • Rainmaker FMCG</p>
-              <h1 className="display-heading">
-                Better<br />
+              <h1 id="home-heading" className="display-heading">
+                Better<span className="home-headline-break"><br /></span>{' '}
                 choices.<br />
                 <span>Naturally.</span>
               </h1>
@@ -50,156 +75,170 @@ export function Home() {
                 Nature&apos;s Nurture crafts evidence-based wellness solutions to support everyday confidence, family health and modern nutrition across Africa.
               </p>
               <div className="cta-row">
-                <Link className="button button--primary" to="/products">Explore products</Link>
-                <Link className="button button--secondary" to="/retailers">For retailers &amp; wholesalers</Link>
-              </div>
-              <div className="hero-meta">
-                <span>Natural ingredients</span>
-                <span>Evidence-led</span>
-                <span>Family wellness</span>
+                <Link className="button button--primary" to="/products">Explore products <ArrowRight size={18} aria-hidden="true" /></Link>
+                <Link className="button button--secondary" to="/retailers">For retailers &amp; wholesalers <ArrowRight size={18} aria-hidden="true" /></Link>
               </div>
             </div>
 
             <ProductCollection homepage />
           </div>
-        </section>
+</PageHero>
 
-        <section className="section section--light">
+        <section className="home-lower-section home-platform" id="home-company" tabIndex={-1}>
           <div className="container">
-            <div className="section-header section-header--spaced">
-              <div>
-                <p className="eyebrow eyebrow--dark">Selected from our portfolio</p>
-                <h2>Explore our portfolio</h2>
+            <div className="home-lower-split home-platform__intro">
+              <div className="home-lower-heading">
+                <p className="eyebrow">Our Platform</p>
+                <h2>A Diversified African<br className="home-desktop-break" /> FMCG Platform</h2>
               </div>
-              <Link to="/products" className="inline-link inline-link--dark">Explore all products <ArrowUpRight size={16} /></Link>
-            </div>
-
-            <div className="featured-grid">
-              {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section section--dark-cta">
-          <div className="container philosophy-grid">
-            <div className="section-heading section-heading--left">
-              <p className="eyebrow eyebrow--alt">Our philosophy</p>
-              <h2>
-                Nurturing better choices<br />
-                for everyday life across<br />
-                Africa.
-              </h2>
-            </div>
-            <div className="section-copy narrative-copy">
-              <p>
-                Premium nutrition should feel practical. Our products combine natural ingredients, functional formulation and everyday relevance for real families across Africa.
-              </p>
-            </div>
-            <div className="philosophy-list">
-              {philosophy.map((item) => (
-                <div key={item.title} className="philosophy-item philosophy-item--on-dark">
-                  <span className="philosophy-item__icon" aria-hidden="true"><item.icon size={28} /></span>
-                  <strong>{item.title}</strong>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section section--dark-cta">
-          <div className="container narrative-shell narrative-shell--split">
-            <div className="narrative-heading">
-              <p className="eyebrow eyebrow--alt">Brand narrative</p>
-              <h2>
-                Nurturing life through<br />
-                science, nature &amp;<br />
-                honest craftsmanship.
-              </h2>
-            </div>
-            <div className="narrative-copy narrative-copy--compact">
-              <p>
-                Nature&apos;s Nurture brings together science-backed nutrition, natural ingredients and thoughtful product development for everyday family wellness.
-              </p>
-              <div className="cta-row cta-row--stacked">
-                <Link className="button button--inverted" to="/about">Read our story</Link>
-                <Link className="button button--ghost" to="/products">See all nutritional information</Link>
+              <div className="home-lower-copy">
+                <p>RainmakerFMCG is a South Africa-based diversified FMCG company operating across wellness, nutrition and consumer health categories. The business serves retail, pharmacy, wholesale and export markets across South Africa and the broader African continent.</p>
+                <p>Built on a foundation of compliant manufacturing, scalable distribution and commercially focused product development, RainmakerFMCG is positioned to meet growing demand for accessible, evidence-based wellness solutions across African markets.</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="section section--light">
-          <div className="container reason-grid">
-            <div className="section-heading section-heading--left">
-              <p className="eyebrow eyebrow--dark">Why Nature&apos;s Nurture</p>
-              <h2>Why Nature&apos;s Nurture</h2>
-            </div>
-            <div className="reason-cards">
-              {reasons.map((reason) => (
-                <article key={reason.title} className="reason-card">
-                  <span className="reason-card__icon" aria-hidden="true"><reason.icon size={16} /></span>
-                  <h3>{reason.title}</h3>
-                  <p>{reason.text}</p>
+            <div className="home-platform__cards">
+              {capabilities.map(({ title, text, icon: Icon }) => (
+                <article key={title} className="home-info-card home-platform-card">
+                  <span className="home-info-card__icon" aria-hidden="true"><Icon size={24} /></span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section section--dark-cta home-trust-section">
-          <div className="container home-trust-shell">
-            <div className="home-trust-copy">
-              <p className="eyebrow eyebrow--alt">Retailers &amp; wholesalers</p>
-              <h2>Built for retail. Backed by quality.</h2>
-              <p>Practical distribution support for retail partners, backed by trusted manufacturing standards and an established African market footprint.</p>
+        <section className="home-lower-section home-presence" id="home-philosophy">
+          <div className="home-presence__art" aria-hidden="true">
+            <img src={`${import.meta.env.BASE_URL}about/about-hero.png`} alt="" loading="lazy" />
+          </div>
+          <div className="container">
+            <div className="home-lower-split">
+              <div className="home-lower-heading">
+                <p className="eyebrow">Our Presence</p>
+                <h2>Nurturing better choices for everyday life across Africa, Asia, Oceania and South America.</h2>
+              </div>
+              <div className="home-lower-copy home-presence__copy">
+                <p>Rooted in Africa and built for international trade, RainmakerFMCG continues to develop opportunities across African and global markets through scalable distribution, export readiness and commercially focused partnerships.</p>
+                <p>Expansion opportunities span Africa, Asia, Oceania and South America.</p>
+              </div>
             </div>
-            <div className="home-trust-metrics">
-              <div className="retailer-stats home-trust-stats">
-                {retailStats.map((stat) => (
-                  <div key={stat.label} className="stat-box">
-                    <span>{stat.value}</span>
-                    <strong>{stat.label}</strong>
-                  </div>
-                ))}
-              </div>
-              <div className="home-trust-compliance">
-                <p className="home-trust-label">Quality &amp; regulatory compliance</p>
-                <div className="compliance-grid">
-                  {compliance.map((item) => (
-                    <div key={item.label} className="compliance-item">
-                      <span className="compliance-item__icon" aria-hidden="true"><item.icon size={15} /></span>
-                      <span>{item.label}</span>
-                    </div>
-                  ))}
+            <div className="home-presence__indicators">
+              {presenceIndicators.map(({ title, text, icon: Icon }) => (
+                <div key={title} className="home-presence__indicator">
+                  <Icon size={28} aria-hidden="true" />
+                  <div><h3>{title}</h3><p>{text}</p></div>
                 </div>
-              </div>
-              <div className="home-trust-footer">
-                <p>Behind Nature&apos;s Nurture – Rainmaker FMCG combines product development, strong operations and trade support to serve consumer and retail channels with quality and purpose.</p>
-                <div className="cta-row cta-row--stacked">
-                  <Link className="button button--inverted" to="/about">Read more</Link>
-                  <Link className="button button--ghost" to="/contact">Head office enquiries</Link>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="section section--light home-connect-section">
-          <div className="container connect-shell home-connect-shell">
-            <div>
-              <p className="eyebrow eyebrow--dark">Let&apos;s connect</p>
-              <h2>Let&apos;s Talk.</h2>
+        <section className="home-lower-section home-snapshot">
+          <div className="container">
+            <div className="home-lower-heading">
+              <p className="eyebrow">Company Overview</p>
+              <h2>Company at a Glance</h2>
             </div>
-            <div className="connect-actions">
-              <p>Whether you&apos;re a supermarket buyer, health professional, distributor or partner, our team would welcome a conversation.</p>
-              <div className="cta-row cta-row--inline">
-                <Link className="button button--primary" to="/contact">Submit trade enquiry</Link>
-              </div>
+            <dl className="home-snapshot__grid">
+              {companyFacts.map(({ label, value }) => (
+                <div key={label} className="home-info-card">
+                  <dt>{label}</dt>
+                  <dd>{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
+        <section className="home-lower-section home-commitment">
+          <div className="home-commitment__art" aria-hidden="true">
+            <img src={`${import.meta.env.BASE_URL}about/about-hero.png`} alt="" loading="lazy" />
+          </div>
+          <div className="container home-lower-split">
+            <div className="home-lower-heading">
+              <p className="eyebrow">Our Commitment</p>
+              <h2>Nurturing life through science, nature &amp; reputable practices.</h2>
+            </div>
+            <div className="home-lower-copy">
+              <p>RainmakerFMCG operates under a compliance-first manufacturing philosophy, with products developed, tested and released in alignment with applicable national and international regulatory frameworks.</p>
+              <p>This approach supports consumer safety, market access and export readiness across the company’s wellness, nutrition and consumer health portfolio.</p>
+              <Link className="button button--inverted home-lower-button" to="/about">Our Approach <ArrowRight size={18} aria-hidden="true" /></Link>
             </div>
           </div>
         </section>
+
+        <section className="home-lower-section home-foundations">
+          <div className="container home-lower-split home-foundations__layout">
+            <div className="home-lower-heading">
+              <p className="eyebrow">Our Capabilities</p>
+              <h2><span>Built on</span>{' '}<span>Strong</span>{' '}<span>Foundations</span></h2>
+            </div>
+            <div className="home-foundations__grid">
+              {foundations.map(({ title, text, icon: Icon }) => (
+                <article key={title} className="home-info-card">
+                  <span className="home-info-card__icon" aria-hidden="true"><Icon size={24} /></span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="home-lower-section home-manufacturing">
+          <div className="container home-manufacturing__layout">
+            <div className="home-lower-heading">
+              <p className="eyebrow">Our Manufacturing</p>
+              <h2>Manufacturing Excellence</h2>
+            </div>
+            <div className="home-manufacturing__grid">
+              {manufacturing.map(({ title, text, icon: Icon }) => (
+                <article key={title} className="home-info-card">
+                  <span className="home-info-card__icon" aria-hidden="true"><Icon size={22} /></span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+            <div className="home-manufacturing__visual">
+              <img
+                src={`${import.meta.env.BASE_URL}home/manufacturing-quality-control.png`}
+                alt="Quality control worker inspecting a product bottle on a production line"
+                width={1168}
+                height={1347}
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="home-lower-section home-retail">
+          <div className="container home-lower-split home-retail__layout">
+            <div className="home-lower-heading home-lower-copy">
+              <p className="eyebrow">Retailers &amp; Wholesalers</p>
+              <h2>Built for retail. Backed by quality.</h2>
+              <p>RainmakerFMCG combines commercially focused product development, scalable distribution and compliance-led manufacturing to support retail, pharmacy, wholesale and export channels.</p>
+              <p>Flexible business models support B2B, retail, export, private-label and co-manufacturing opportunities.</p>
+            </div>
+            <div>
+              <div className="home-retail__grid">
+                {tradeCapabilities.map(({ title, text, icon: Icon }) => (
+                  <article key={title} className="home-info-card">
+                    <span className="home-info-card__icon" aria-hidden="true"><Icon size={24} /></span>
+                    <h3>{title}</h3>
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
+              <ul className="home-retail__standards" aria-label="Quality and compliance standards">
+                {compliance.map((item) => <li key={item}><ShieldCheck size={15} aria-hidden="true" />{item}</li>)}
+              </ul>
+              <Link className="button button--inverted home-lower-button" to="/retailers">View Retailer Information <ArrowRight size={18} aria-hidden="true" /></Link>
+            </div>
+          </div>
+        </section>
+
       </main>
     </>
   )

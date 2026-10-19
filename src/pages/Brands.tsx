@@ -1,201 +1,166 @@
-import { useRef, useState } from 'react'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { PageHero } from '../components/ui/PageHero'
+import type { CSSProperties } from 'react'
+import { ClipboardCheck, Factory, FlaskConical, Globe2, Handshake, ShieldCheck, Sprout, PackageCheck, FileCheck2, Users2 } from 'lucide-react'
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
-const brands = [
-  {
-    name: "Nature's Nurture",
-    slug: 'natures-nurture',
-    logo: asset('brands/natures-nurture/logo.jpg'),
-    summary: 'Evidence-based everyday health and family wellness products built around practical nutrition and trusted ingredients.',
-    areas: ['Sublingual Nutrition', 'Infant & Family Nutrition', 'Cereals', 'Natural Sweeteners', 'Family Protection'],
-    images: [
-      asset('products/sublingual/b12-folate.png'),
-      asset('products/infant-formula/stage-1.png'),
-      asset('products/cereal/banana-bliss.png'),
-      asset('products/stevia/stevia-sachets.png'),
-    ],
-  },
-  {
-    name: 'Zingo',
-    slug: 'zingo',
-    summary: 'A bold, bright powdered drink range bringing refreshment and everyday vitality to active consumers and families.',
-    areas: ['Energy & Hydration', 'On-the-go Format', 'Family & Active'],
-    images: [asset('products/zingo/orange-boost.png')],
-  },
+const productAccreditations = [
+  { name: 'World Health Organization', image: 'world-health-organization' },
+  { name: 'ISO', image: 'iso' },
+  { name: 'GMP Certified', image: 'gmp-certified' },
+  { name: 'Vegan 100%', image: 'vegan-100' },
+  { name: 'HACCP', image: 'haccp' },
+  { name: 'FDA', image: 'fda' },
+  { name: 'SAHPRA', image: 'sahpra' },
+  { name: 'FSSAI', image: 'fssai' },
+  { name: 'Proudly South African', image: 'proudly-south-african' },
 ]
 
-const portfolioAreas = [
-  {
-    number: '01',
-    title: 'Sublingual Nutrition',
-    description: 'Fast-absorbing micronutrient sprays delivering convenient nutritional support.',
-  },
-  {
-    number: '02',
-    title: 'Energy & Hydration',
-    description: 'Functional powdered drinks developed around hydration, refreshment and everyday vitality.',
-  },
-  {
-    number: '03',
-    title: 'Infant & Family Nutrition',
-    description: 'Trusted formulas and cereals designed to nourish from the earliest stages of life.',
-  },
-  {
-    number: '04',
-    title: 'Natural & Lifestyle',
-    description: 'Botanical sweeteners and protective wellness solutions for clean, conscious living.',
-  },
+const regulatoryAccreditations = [
+  { name: 'SAHPRA', type: 'Licence number', number: 'DL02-e70d5f', image: 'sahpra' },
+  { name: 'South African Department of Health', type: 'Licence number', number: 'KZN00067W', image: 'department-of-health' },
+  { name: 'South African Pharmacy Council', type: 'Registration number', number: 'Y61844', image: 'south-african-pharmacy-council' },
 ]
 
-const portfolioVisuals = [
-  { src: asset('products/sublingual/b12-folate.png'), alt: "Nature's Nurture sublingual spray" },
-  { src: asset('products/infant-formula/stage-1.png'), alt: "Nature's Nurture infant formula" },
-  { src: asset('products/cereal/banana-bliss.png'), alt: "Nature's Nurture cereal" },
-  { src: asset('products/stevia/stevia-sachets.png'), alt: "Nature's Nurture Stevia" },
-  { src: asset('products/mosquito-repellent/mosquito-repellent-patches.png'), alt: "Nature's Nurture Mosquito Repellent Patches" },
-  { src: asset('products/zingo/orange-boost.png'), alt: 'Zingo' },
+const frameworks = [
+  { label: 'GMP-Compliant', icon: ShieldCheck },
+  { label: 'HACCP', icon: ClipboardCheck },
+  { label: 'ISO-Aligned', icon: Globe2 },
+  { label: 'SAHPRA-Aligned', icon: FileCheck2 },
+  { label: 'Codex-Compliant', icon: PackageCheck },
 ]
 
-function BrandProductCarousel({ images }: { images: string[] }) {
-  const track = useRef<HTMLDivElement>(null)
-  const [active, setActive] = useState(0)
+const manufacturing = [
+  { title: 'GMP & HACCP', text: 'Manufacturing operates in alignment with Good Manufacturing Practice and HACCP protocols.', icon: Factory },
+  { title: 'Batch Traceability', text: 'End-to-end traceability systems support accountability from raw material intake through to dispatch.', icon: ClipboardCheck },
+  { title: 'Third-Party Testing', text: 'Independent microbiological and safety testing supports market release.', icon: FlaskConical },
+  { title: 'Export Readiness', text: 'Production and documentation are aligned with international regulatory and import requirements.', icon: Globe2 },
+  { title: 'Partner-Centric Solutions', text: 'Flexible solutions designed around partner requirements, packaging, pricing and collaboration models.', icon: Handshake },
+  { title: 'BEE Compliance', text: 'Broad-Based Black Economic Empowerment (B-BBEE) compliant, supporting inclusive growth and economic transformation in South Africa.', icon: Users2 },
+]
 
-  const goTo = (index: number) => {
-    const element = track.current
-    if (!element) return
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    element.scrollTo({ left: index * element.clientWidth, behavior: reducedMotion ? 'instant' : 'smooth' })
-  }
+const ongoingCommitments = [
+  { title: 'Ingredient Sourcing', text: 'Ethical sourcing guides our wellness and nutrition portfolio.', icon: Sprout },
+  { title: 'Batch Testing', text: 'Independent microbiological and safety testing supports product release.', icon: ClipboardCheck },
+  { title: 'Product Integrity', text: 'Product development, testing and release align with applicable regulatory frameworks.', icon: ShieldCheck },
+]
 
+export function CertificationsPage() {
   return (
-    <div className="brand-carousel" role="region" aria-roledescription="carousel" aria-label="Nature's Nurture products">
-      <div
-        className="brand-carousel__track"
-        ref={track}
-        onScroll={(event) => {
-          const element = event.currentTarget
-          if (element.clientWidth) setActive(Math.round(element.scrollLeft / element.clientWidth))
-        }}
-      >
-        {images.map((src, index) => (
-          <div className="brand-carousel__slide" key={src} role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${images.length}`}>
-            <img src={src} alt={['B12 and Folate spray', 'Stage 1 infant formula', 'Banana Bliss cereal', 'Stevia sachets'][index]} loading="lazy" />
+    <main className="page-shell page-shell--light quality-page" style={{ '--quality-botanical-bg': `url("${asset('quality/quality-botanical-background.png')}")` } as CSSProperties}>
+      <PageHero backgroundImage={`${import.meta.env.BASE_URL}quality/quality-standards-hero.png`} entryPlacement="bottom" className="quality-hero" scrollLabel="Explore our standards" scrollTarget="product-accreditations" labelledBy="quality-title">
+        <div className="container quality-hero__layout page-hero__layout">
+          <div className="quality-hero__copy page-hero__copy">
+            <p className="eyebrow eyebrow--dark">Our commitment to a higher standard</p>
+            <h1 id="quality-title">Certifications &amp; Quality Standards</h1>
+            <p className="quality-lead">At Nature’s Nurture, quality, compliance and regulatory alignment are built into every stage of product development and manufacturing. Our standards reflect a commitment to consumer safety, market readiness and trusted everyday wellness.</p>
+
           </div>
-        ))}
-      </div>
-      <div className="brand-carousel__controls">
-        <button type="button" aria-label="Previous product" disabled={active === 0} onClick={() => goTo(active - 1)}>
-          <ArrowLeft size={18} />
-        </button>
-        <div className="brand-carousel__dots" aria-label="Choose product">
-          {images.map((src, index) => (
-            <button key={src} type="button" aria-label={`Show product ${index + 1}`} aria-current={active === index ? 'true' : undefined} onClick={() => goTo(index)}>
-              <span />
-            </button>
-          ))}
         </div>
-        <button type="button" aria-label="Next product" disabled={active === images.length - 1} onClick={() => goTo(active + 1)}>
-          <ArrowRight size={18} />
-        </button>
-      </div>
-    </div>
-  )
-}
+      </PageHero>
 
-export function BrandsPage() {
-  return (
-    <main className="page-shell page-shell--light brands-page">
-      <section className="brands-hero">
-        <div className="container brands-hero__grid">
-          <div className="brands-hero__copy">
-            <p className="eyebrow eyebrow--dark">Brand architecture &amp; portfolio</p>
-            <h1>Our Distinct Brand<br />Portfolios</h1>
+      <section className="quality-section quality-products" id="product-accreditations" aria-labelledby="product-accreditations-heading" tabIndex={-1}>
+        <div className="container">
+          <div className="quality-heading">
+            <p className="eyebrow eyebrow--dark">Globally recognized</p>
+            <h2 id="product-accreditations-heading">Product Accreditations</h2>
+            <p>Our products have the following accreditations, <strong>where relevant</strong>:</p>
           </div>
-          <p className="brands-hero__lead">
-            Rainmaker FMCG and Nature&apos;s Nurture bring together product innovation, family-first wellbeing and everyday science-led nutrition.
-          </p>
+          <div className="quality-logo-grid">
+            {productAccreditations.map(({ name, image }) => (
+              <figure key={name} className="quality-logo-tile">
+                <img src={asset(`quality/accreditations/${image}.png`)} alt={`${name} accreditation logo`} loading="lazy" />
+                <figcaption>{name}</figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 
-      <section className="brands-grid-section">
+      <section className="quality-section quality-regulatory" aria-labelledby="regulatory-accreditations">
         <div className="container">
-          <div className="section-header section-header--spaced">
-            <div>
-              <p className="eyebrow eyebrow--dark">Our brands</p>
-              <h2>A focused portfolio</h2>
-            </div>
-            <p className="brands-intro-copy">
-              A focused portfolio of brands created around everyday wellness, nutrition, energy and family care.
-            </p>
+          <div className="quality-heading">
+            <p className="eyebrow eyebrow--dark">Regulatory compliance worldwide</p>
+            <h2 id="regulatory-accreditations">Regulatory Accreditations</h2>
+            <p>We operate in line with national and international regulatory requirements.</p>
           </div>
-
-          <div className="brands-grid brands-grid--two">
-            {brands.map((brand) => (
-              <article key={brand.name} className="brand-card brand-card--portfolio">
-                <div className="brand-card__media brand-card__media--portfolio brand-card__media--collage">
-                  {brand.logo ? (
-                    <div className="brand-card__logo">
-                      <img src={brand.logo} alt={`${brand.name} logo`} />
-                    </div>
-                  ) : null}
-                  <div className={`brand-card__collage${brand.logo ? ' brand-card__collage--desktop' : ''}`}>
-                    {brand.images.map((src) => (
-                      <div key={src} className="brand-card__collage-item">
-                        <img src={src} alt="" loading="lazy" />
-                      </div>
-                    ))}
-                  </div>
-                  {brand.logo ? <BrandProductCarousel images={brand.images} /> : null}
-                </div>
-                <div className="brand-card__body brand-card__body--portfolio">
-                  <h3>{brand.name}</h3>
-                  <p>{brand.summary}</p>
-                  <ul className="brand-card__areas">
-                    {brand.areas.map((area) => (
-                      <li key={area}>{area}</li>
-                    ))}
-                  </ul>
-                  <Link to={`/brands/${brand.slug}`} className="button button--primary">
-                    Explore brand <ArrowRight size={16} />
-                  </Link>
-                </div>
+          <div className="quality-regulatory-grid">
+            {regulatoryAccreditations.map(({ name, type, number, image }) => (
+              <article key={name} className="quality-card quality-regulatory-card">
+                <img src={asset(`quality/accreditations/${image}.png`)} alt={`${name} logo`} loading="lazy" />
+                <h3>{name}</h3>
+                <dl><dt>{type}</dt><dd>{number}</dd></dl>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="section section--light portfolio-structure-section">
+      <section className="quality-section quality-framework" aria-labelledby="quality-framework">
         <div className="container">
-          <div className="section-header">
-            <p className="eyebrow eyebrow--dark">The portfolio</p>
-            <h2>Four complementary areas of wellness</h2>
+          <div className="quality-heading">
+            <p className="eyebrow eyebrow--dark">Built on systems. Driven by trust.</p>
+            <h2 id="quality-framework">Quality &amp; Compliance Framework</h2>
+            <p>We follow a rigorous, fully documented quality management approach aligned with recognised national and international standards.</p>
           </div>
-          <div className="portfolio-areas-grid">
-            {portfolioAreas.map((area) => (
-              <div key={area.number} className="portfolio-area-item">
-                <strong>{area.title}</strong>
-                <p>{area.description}</p>
-              </div>
-            ))}
+          <ul className="quality-framework-grid">
+            {frameworks.map(({ label, icon: Icon }) => <li key={label}><Icon size={28} aria-hidden="true" /><span>{label}</span></li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section className="quality-section quality-process" aria-labelledby="compliance-first">
+        <div className="container quality-process__layout">
+          <div className="quality-process__copy">
+            <p className="eyebrow">Compliance in every batch</p>
+            <h2 id="compliance-first">Compliance-First Manufacturing</h2>
+            <p>RainmakerFMCG operates under a compliance-first manufacturing philosophy, with products developed, tested and released in alignment with applicable national and international regulatory frameworks.</p>
+            <p>This approach supports consumer safety, market access and export readiness.</p>
+          </div>
+          <div className="quality-process__image">
+            <img src={asset('home/manufacturing-quality-control.png')} alt="Quality control worker inspecting a product bottle on a production line" width={1168} height={1347} loading="lazy" />
           </div>
         </div>
       </section>
 
-      <section className="section section--light portfolio-visuals-section">
+      <section className="quality-section quality-manufacturing" aria-labelledby="manufacturing-excellence">
         <div className="container">
-          <div className="portfolio-visual-strip">
-            {portfolioVisuals.map((visual) => (
-              <div key={visual.src} className="portfolio-visual-strip__item">
-                <img src={visual.src} alt={visual.alt} loading="lazy" />
-              </div>
+          <div className="quality-heading">
+            <p className="eyebrow eyebrow--dark">Innovation meets responsibility</p>
+            <h2 id="manufacturing-excellence">Manufacturing Excellence</h2>
+          </div>
+          <div className="quality-manufacturing-grid">
+            {manufacturing.map(({ title, text, icon: Icon }) => (
+              <article key={title} className="quality-card">
+                <Icon size={26} aria-hidden="true" />
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
             ))}
+          </div>
+          <div className="quality-ongoing" aria-labelledby="ongoing-commitment">
+            <h3 className="eyebrow eyebrow--dark" id="ongoing-commitment">Our ongoing commitment</h3>
+            <div className="quality-commitment-grid">
+              {ongoingCommitments.map(({ title, text, icon: Icon }) => (
+                <article key={title} className="quality-card quality-commitment-card">
+                  <Icon size={28} aria-hidden="true" />
+                  <h4>{title}</h4>
+                  <p>{text}</p>
+                </article>
+              ))}
+              <article className="quality-card quality-traceability">
+                <Globe2 size={32} aria-hidden="true" />
+                <div><h4>Full Traceability</h4><p>Complete traceability supports transparency across the supply chain, from raw material intake through to finished product dispatch.</p></div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
+
+      <section className="quality-statement">
+        <div className="container"><p>Every product. Every batch. Every standard.</p></div>
+      </section>
+
     </main>
   )
 }

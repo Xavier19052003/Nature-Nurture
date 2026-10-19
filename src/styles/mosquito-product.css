@@ -1,0 +1,114 @@
+/* Patch pages reuse the site's current Home-led design tokens. */
+.mosquito-page.page-shell { padding-bottom: 0; color: var(--color-deep-forest); }
+.mosquito-page h1 { font-size: var(--type-hero); line-height: 1.02; letter-spacing: -0.035em; }
+.mosquito-page h2 { font-size: var(--type-section); line-height: 1.04; letter-spacing: -0.035em; margin-bottom: 1.25rem; }
+.mosquito-page h3 { font-size: var(--type-card); line-height: 1.15; letter-spacing: -0.02em; }
+.mosquito-page p { color: var(--color-copy); font-size: var(--type-body); line-height: 1.65; }
+.mosquito-page p:last-child { margin-bottom: 0; }
+.mosquito-page .eyebrow { font-size: var(--type-eyebrow); font-weight: 700; line-height: 1.4; letter-spacing: 0.13em; color: var(--color-muted); margin: 0 0 0.85rem; }
+.mosquito-page :is(h1, h2, h3, h4, p, li) { overflow-wrap: anywhere; }
+.mosquito-page .button { min-height: 48px; padding: 0.8rem 1.2rem; border-radius: var(--radius-pill); font-size: var(--type-button); line-height: 1.6; letter-spacing: 0.035em; white-space: normal; text-align: center; gap: 0.65rem; }
+.mosquito-page .button--primary { background: var(--color-forest); color: var(--color-white); }
+.mosquito-page .button--secondary { background: rgba(255,255,255,0.4); border-color: var(--color-outline); }
+.mosquito-page .button svg { flex-shrink: 0; }
+.mosquito-page .cta-row { flex-wrap: wrap; gap: 0.75rem; }
+.patch-section { padding-block: var(--space-section-medium); }
+.patch-section--soft { background: var(--color-section-soft); }
+.patch-section--forest { background: linear-gradient(115deg, var(--color-feature-start), var(--color-feature-end)); }
+.mosquito-page .patch-section--forest :is(h2, p) { color: var(--color-ivory); }
+.mosquito-page .patch-section--forest .eyebrow { color: var(--color-on-forest); }
+.patch-section--forest a:focus-visible { outline-color: var(--color-ivory); }
+.patch-hero { padding-block: var(--space-hero); background: linear-gradient(110deg, var(--color-section-soft), transparent 65%); }
+.patch-split { display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); gap: var(--space-split); align-items: center; }
+.patch-hero__copy, .patch-hero__visual { min-width: 0; }
+.patch-hero h1 span { display: block; }
+.patch-hero__copy > p { max-width: 34rem; }
+.mosquito-page .patch-lead { font-size: clamp(1rem, 1.4vw, 1.15rem); }
+.patch-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.5rem 0; }
+.patch-tags span { border: var(--rule); border-radius: var(--radius-pill); padding: 0.4rem 0.65rem; font-size: var(--type-small); background: var(--color-card); }
+.patch-hero__visual { width: min(100%, 28rem); justify-self: center; aspect-ratio: 4 / 5; padding: 0.65rem; background: var(--color-card); border: var(--rule); border-radius: var(--radius-hero); box-shadow: var(--shadow-card); overflow: hidden; }
+.patch-hero__visual img { width: 100%; height: 100%; object-fit: contain; border-radius: var(--radius-image); }
+.patch-editorial { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: start; }
+.patch-editorial > p, .patch-editorial > div > p { max-width: 65ch; }
+.patch-benefits { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.patch-card { min-width: 0; padding: var(--space-card); border: 1px solid var(--color-card-border); border-radius: var(--radius-card); background: var(--color-card); box-shadow: var(--shadow-card); }
+.patch-card > svg { color: var(--color-forest); display: block; margin-bottom: 1rem; }
+.mosquito-page .patch-card h3 { font-size: var(--type-card-compact); margin-bottom: 0.75rem; }
+.mosquito-page .patch-card p { font-size: 0.94rem; line-height: 1.6; margin-bottom: 0; }
+.patch-directions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; list-style: none; margin: 1.75rem 0 1.25rem; padding: 0; }
+.patch-step { display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; margin-bottom: 1.25rem; border-radius: 50%; color: var(--color-ivory); background: var(--color-forest); font-size: 1.15rem; }
+.mosquito-page .patch-directions h3 { font-family: var(--font-body); font-size: 0.875rem; font-weight: 700; line-height: 1.5; letter-spacing: 0.04em; }
+.mosquito-page .patch-application { display: flex; align-items: center; gap: 0.75rem; margin: 0; padding: 1rem 1.25rem; border-radius: var(--radius-card); border: var(--rule); color: var(--color-deep-forest); font-weight: 500; background: var(--color-cream); }
+.patch-application svg { flex-shrink: 0; }
+#patch-directions { scroll-margin-top: calc(var(--navbar-height) + 1rem); }
+.patch-use-cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.75rem; }
+.patch-use-cases--kids { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.patch-community { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(1.5rem, 4vw, 4rem); border-top: var(--rule); padding-top: 2rem; margin-top: 2rem; }
+.patch-contexts { display: flex; flex-wrap: wrap; list-style: none; padding: 0; margin: 1rem 0 0; gap: 0.5rem; }
+.patch-contexts li { border: var(--rule); border-radius: var(--radius-pill); padding: 0.4rem 0.65rem; font-size: var(--type-small); }
+.patch-comparison { display: grid; gap: 0.75rem; margin-top: 1.75rem; }
+.patch-comparison__row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border: var(--rule); border-radius: var(--radius-card); overflow: hidden; }
+.patch-comparison__row > div { min-width: 0; padding: 1.25rem 1.5rem; background: var(--color-card); }
+.patch-comparison__row > div + div { background: var(--color-section-soft); border-left: var(--rule); }
+.mosquito-page .patch-comparison__row h3 { font-family: var(--font-body); font-size: var(--type-eyebrow); font-weight: 700; letter-spacing: 0.1em; line-height: 1.5; margin-bottom: 0.5rem; }
+.mosquito-page .patch-comparison__row p { color: var(--color-deep-forest); font-size: 1.05rem; margin: 0; }
+.mosquito-page .patch-methods-heading { margin: 2.5rem 0 1.25rem; }
+.patch-methods { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.patch-methods h4 { font-size: var(--type-card-compact); line-height: 1.2; }
+.patch-methods ul { font-size: 0.94rem; line-height: 1.6; color: var(--color-copy); margin-bottom: 0; }
+.patch-checklist { display: grid; list-style: none; padding: 0; margin: 0; gap: 0.85rem; }
+.patch-checklist li { display: flex; align-items: flex-start; gap: 0.75rem; color: var(--color-copy); font-size: var(--type-body); line-height: 1.65; }
+.patch-checklist svg { flex-shrink: 0; margin-top: 0.2rem; color: var(--color-nature); }
+.patch-usage { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr); gap: clamp(1.5rem, 4vw, 4rem); padding: clamp(1.25rem, 3vw, 2.5rem); background: var(--color-cream); border: var(--rule); border-radius: var(--radius-card); }
+.patch-usage > div > svg { color: var(--color-forest); margin-bottom: 0.75rem; }
+.mosquito-page .patch-usage h2 { font-size: var(--type-section-compact); margin-bottom: 0; }
+.patch-related { border-top: var(--rule); }
+.patch-related__layout { display: grid; grid-template-columns: minmax(0, 0.6fr) minmax(0, 1.4fr); align-items: center; gap: clamp(1.75rem, 4vw, 4rem); }
+.patch-related__visual { aspect-ratio: 4 / 5; width: min(100%, 16rem); justify-self: center; overflow: hidden; border-radius: var(--radius-feature); }
+.patch-related__visual img { width: 100%; height: 100%; object-fit: contain; }
+.patch-related h2 { font-size: var(--type-section-compact); }
+.patch-related h3 { margin-bottom: 0.75rem; }
+.patch-related p { max-width: 40rem; }
+.patch-cta .patch-editorial { align-items: center; }
+.patch-cta h2 { margin-bottom: 0; }
+.patch-cta .cta-row { margin: 0; }
+
+/* Keep the new two-variant Family Protection card in the existing compact row. */
+.products-page .range-carousel--single[aria-roledescription="carousel"] { display: flex; flex-direction: column; }
+.products-page .range-carousel--single[aria-roledescription="carousel"] .range-carousel__slides { flex: 1; height: auto; }
+.products-page .range-carousel--single[aria-roledescription="carousel"] .range-carousel__slide { height: auto; }
+.products-page .range-carousel--single[aria-roledescription="carousel"] .range-carousel__copy h3 { font-size: var(--type-card-compact); }
+.nn-mosquito .nn-mosquito__variants { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); aspect-ratio: auto; padding: 0; gap: 1rem; border: 0; background: transparent; }
+.nn-mosquito__variants .nn-product-card { min-width: 0; }
+.nn-mosquito__variants .nn-product-card__media { aspect-ratio: 4 / 5; }
+.nn-mosquito__variants .nn-product-card__media img { width: 100%; height: 100%; object-fit: contain; }
+
+@media (max-width: 1100px) {
+  .patch-benefits, .patch-use-cases, .patch-methods { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 1024px) {
+  .patch-split { grid-template-columns: minmax(0, 1fr); }
+  .patch-hero__visual { width: min(100%, 24rem); }
+}
+@media (max-width: 900px) {
+  .patch-editorial, .patch-community, .patch-usage { grid-template-columns: minmax(0, 1fr); }
+  .patch-directions { grid-template-columns: minmax(0, 1fr); }
+  .patch-directions .patch-card { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 0.5rem 1rem; }
+  .patch-directions .patch-step { grid-row: span 2; margin: 0; }
+  .mosquito-page .patch-directions h3 { margin-bottom: 0; }
+  .patch-directions p { grid-column: 2; }
+}
+@media (max-width: 700px) {
+  .patch-benefits, .patch-use-cases, .patch-methods, .patch-related__layout { grid-template-columns: minmax(0, 1fr); }
+  .patch-comparison__row { grid-template-columns: minmax(0, 1fr); }
+  .patch-comparison__row > div { padding: 1.1rem; }
+  .patch-comparison__row > div + div { border-left: 0; border-top: var(--rule); }
+  .mosquito-page .cta-row > .button, .patch-related .button { width: 100%; }
+  .patch-hero__visual { width: min(100%, 20rem); }
+  .patch-section { padding-block: var(--space-section-medium); }
+  .patch-community { padding-top: 1.5rem; margin-top: 1.5rem; }
+  .patch-usage { padding: 1.15rem; }
+  .patch-application { align-items: flex-start; }
+  .patch-related__visual { width: min(100%, 14rem); }
+  .nn-mosquito .nn-mosquito__variants { grid-template-columns: minmax(0, 1fr); }
+}

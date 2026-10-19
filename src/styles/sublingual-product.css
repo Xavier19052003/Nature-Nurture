@@ -1,0 +1,67 @@
+.sublingual-hero { padding-block: var(--space-hero); background: radial-gradient(ellipse at 85% 25%,var(--sublingual-accent),transparent 65%),var(--color-ivory); }
+.sublingual-breadcrumb { display: flex; flex-wrap: wrap; gap: 0.4rem 0.65rem; margin-bottom: 2rem; font-size: 0.8rem; line-height: 1.5; color: var(--color-copy); }
+.sublingual-breadcrumb a { text-decoration: underline; text-underline-offset: 3px; }
+.sublingual-breadcrumb a:hover { color: var(--color-forest); }
+.sublingual-story .sublingual-hero h1 { max-width: 12ch; }
+.sublingual-hero__art { width: min(100%,26rem); margin: 0; justify-self: center; padding: 0.55rem; border: var(--rule); border-radius: var(--radius-hero); background: var(--color-card); box-shadow: var(--shadow-card); overflow: hidden; }
+.sublingual-hero__art > img { display: block; width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: contain; border-radius: var(--radius-image); }
+.sublingual-secondary-art { width: min(100%,28rem); margin: 0; justify-self: center; }
+.sublingual-secondary-art .product-image-placeholder { aspect-ratio: 1; }
+.sublingual-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 1.5rem 0 2rem; list-style: none; }
+.sublingual-chips li { border: var(--rule); border-radius: var(--radius-pill); background: var(--color-card); color: var(--color-forest); padding: 0.6rem 0.85rem; font-size: 0.8rem; line-height: 1.4; }
+.sublingual-card-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 1.75rem; }
+.sublingual-card-grid .stevia-card p { font-size: 0.94rem; margin-top: 0.8rem; }
+.sublingual-section-lead { max-width: 52rem; }
+.sublingual-formula { background: var(--sublingual-accent); }
+.sublingual-nutrients { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1.75rem; }
+.sublingual-nutrients > :only-child { max-width: 42rem; grid-column: 1 / -1; width: 100%; }
+.sublingual-nutrients--eight { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.sublingual-story .sublingual-nutrient-form { margin: 0.65rem 0 1.25rem; font-size: 0.95rem; }
+.sublingual-nutrients--eight h3 { font-size: clamp(2.3rem,3.5vw,3rem); }
+.sublingual-nutrients--eight .sublingual-nutrient-form { margin-bottom: 0; }
+.sublingual-comparison { background: var(--color-mist); }
+.sublingual-table { border: var(--rule); border-radius: var(--radius-feature); margin-top: 1.75rem; background: var(--color-card); overflow: hidden; }
+.sublingual-table table { width: 100%; table-layout: fixed; border-collapse: collapse; font-size: 0.95rem; color: var(--color-copy); line-height: 1.6; }
+.sublingual-table__caption { text-align: left; padding: 1.2rem 1.5rem; font-size: 18.5px; background: var(--color-ivory); color: var(--color-muted); }
+.sublingual-table th, .sublingual-table td { text-align: left; vertical-align: top; padding: 1.25rem; border-bottom: var(--rule); overflow-wrap: anywhere; }
+.sublingual-table th { color: var(--color-forest); font-weight: 600; }
+.sublingual-table thead th { font-size: 20px; background: var(--color-forest); color: var(--color-white); }
+.sublingual-table :is(th,td):last-child { background: rgba(216,225,209,0.35); }
+.sublingual-table thead th:last-child { background: var(--color-forest); }
+.sublingual-table tbody tr:last-child > * { border-bottom: 0; }
+.sublingual-table__mobile-label { display: none; }
+.sublingual-iron-panels { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin-top: 1.75rem; }
+.sublingual-iron-panels article:last-child { background: var(--color-mist); }
+.sublingual-iron-panels dl { margin: 1.5rem 0 0; }
+.sublingual-iron-panels dl > div + div { border-top: var(--rule); padding-top: 1rem; margin-top: 1rem; }
+.sublingual-iron-panels dt { font-weight: 600; font-size: 0.85rem; margin-bottom: 0.5rem; }
+.sublingual-iron-panels dd { margin: 0; font-size: 0.95rem; line-height: 1.7; color: var(--color-copy); }
+.sublingual-delivery { background: radial-gradient(ellipse at 90% 0,var(--sublingual-accent),transparent 60%),var(--color-ivory); }
+.sublingual-use-panel { padding: clamp(1.5rem,3vw,2.5rem); border: var(--rule); border-radius: var(--radius-feature); background: var(--color-mist); }
+.sublingual-use-panel svg { color: var(--color-nature); margin-bottom: 1rem; }
+.sublingual-use-panel > span { display: block; color: var(--color-muted); font-size: 0.8rem; line-height: 1.5; margin-top: 1rem; }
+.sublingual-related-card { display: flex; min-width: 0; }
+.sublingual-related-card .product-card { width: 100%; }
+.sublingual-story a:focus-visible { outline: 2px solid var(--color-nature); outline-offset: 4px; }
+@media (hover:hover) {
+  .sublingual-hero__art .product-image-placeholder { transition: transform 500ms ease; }
+  .sublingual-hero__art:hover .product-image-placeholder { transform: scale(1.01); }
+}
+@media (max-width:1100px) { .sublingual-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width:700px) {
+  .sublingual-hero__art { width: min(100%,23rem); }
+  .sublingual-card-grid, .sublingual-nutrients, .sublingual-iron-panels { grid-template-columns: minmax(0,1fr); }
+  .sublingual-nutrients--eight { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .sublingual-nutrients--eight .stevia-card { padding: 1rem; }
+  .sublingual-hero .cta-row { align-items: stretch; flex-direction: column; }
+  .sublingual-hero .stevia-text-link { justify-content: center; }
+  .sublingual-table table, .sublingual-table tbody { display: block; }
+  .sublingual-table thead { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); }
+  .sublingual-table tbody tr { display: grid; grid-template-columns: minmax(0,1fr); border-bottom: var(--rule); }
+  .sublingual-table tbody tr:last-child { border-bottom: 0; }
+  .sublingual-table tbody :is(th,td) { display: block; padding: 1rem; border: 0; }
+  .sublingual-table tbody th { background: var(--color-ivory); }
+  .sublingual-table__mobile-label { display: block; color: var(--color-forest); font-size: 20px; font-weight: 700; margin-bottom: 0.4rem; }
+  .sublingual-table__caption { display: block; padding: 1rem; }
+}
+@media (prefers-reduced-motion:reduce) { .sublingual-hero__art .product-image-placeholder { transition: none; } .sublingual-hero__art:hover .product-image-placeholder { transform: none; } }

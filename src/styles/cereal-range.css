@@ -1,0 +1,115 @@
+.cereal-hero .stevia-split { grid-template-columns: minmax(0,0.85fr) minmax(0,1.15fr); gap: clamp(1.5rem,3.5vw,3.5rem); }
+.cereal-story .stevia-art img { object-fit: contain; }
+.cereal-hero .cereal-hero__art { width: 100%; padding: 0.5rem; }
+.cereal-story .cereal-hero h1 { font-size: clamp(2.5rem,4vw,3.8rem); }
+.cereal-grid { display: grid; gap: 1rem; margin-top: 1.75rem; }
+.cereal-grid--4 { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.cereal-grid--3 { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.cereal-grid--2 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.cereal-range-intro .stevia-art { width: 100%; }
+.cereal-flavour-cards { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 0.85rem; margin-top: 2rem; }
+.cereal-flavour-cards .stevia-card { padding: 0.75rem; background: var(--flavour-accent); }
+.cereal-flavour-cards__image { height: 11rem; overflow: hidden; border-radius: var(--radius-image); margin-bottom: 1rem; }
+.cereal-flavour-cards img { width: 100%; height: 100%; object-fit: contain; transition: transform 600ms ease; }
+.cereal-story .cereal-flavour-cards h3 { font-size: 1.25rem; }
+.cereal-selector { scroll-margin-top: calc(var(--navbar-height) + 1rem); }
+.cereal-tabs { display: flex; gap: 0.65rem; overflow-x: auto; padding: 0.3rem 0.3rem 0.8rem; margin: 0 -0.3rem 0.9rem; }
+.cereal-tabs button { flex: 0 0 auto; min-height: 48px; padding: 0.75rem 1rem; border: var(--rule); border-radius: var(--radius-pill); background: var(--color-ivory); color: var(--color-forest); font: 500 var(--type-small)/1.4 var(--font-body); cursor: pointer; transition: background 240ms ease,color 240ms ease; }
+.cereal-tabs button[aria-selected="true"] { background: var(--color-forest); color: var(--color-white); }
+.cereal-tabs button:hover { border-color: var(--color-forest); }
+.cereal-tabs button:focus-visible, .cereal-flavour-panel:focus-visible { outline: 2px solid var(--color-nature); outline-offset: 3px; }
+.cereal-flavour-panel { padding: clamp(1.25rem,3vw,2.5rem); border: var(--rule); border-radius: var(--radius-feature); background: var(--flavour-accent); transition: background 300ms ease; }
+.cereal-flavour-panel__content { animation: cereal-flavour-enter 300ms ease both; }
+.cereal-flavour-panel__image { margin: 0; width: 100%; height: 23rem; min-width: 0; }
+.cereal-flavour-panel__image img { width: 100%; height: 100%; object-fit: contain; }
+.cereal-story .cereal-flavour-panel h3 { font-size: var(--type-section-compact); line-height: 1.05; }
+.cereal-story .cereal-flavour-panel__description { font: 400 var(--type-card)/1.3 var(--font-display); margin: 1.25rem 0 1.75rem; }
+@keyframes cereal-flavour-enter { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.cereal-strawberry { background: #f7e9e7; }
+.cereal-strawberry .stevia-art { width: 100%; }
+.cereal-story .cereal-feature-line { color: var(--color-nature); font: 400 var(--type-card)/1.2 var(--font-display); }
+.cereal-pack-guidance { display: flex; align-items: center; gap: 0.75rem; margin-top: 1.5rem; font-weight: 500; }
+.cereal-pack-guidance svg { flex-shrink: 0; }
+.cereal-nutrition, .cereal-vitamins { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 1rem; margin: 1.75rem 0 0; }
+.cereal-vitamins { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.cereal-nutrition > div, .cereal-vitamins > div { min-width: 0; padding: 1.25rem; border: var(--rule); border-radius: var(--radius-card); background: var(--color-card); }
+.cereal-nutrition dt, .cereal-vitamins dt { font-size: var(--type-small); color: var(--color-copy); }
+.cereal-nutrition dd, .cereal-vitamins dd { display: grid; gap: 0.65rem; margin: 1rem 0 0; }
+.cereal-nutrition strong, .cereal-vitamins strong { font: 400 clamp(1.75rem,2.5vw,2.75rem)/1.1 var(--font-display); }
+.cereal-nutrition dd span, .cereal-vitamins dd span { font-size: 0.8rem; color: var(--color-muted); line-height: 1.5; }
+.cereal-story .cereal-note { font-size: var(--type-small); color: var(--color-muted); margin-top: 1.25rem; }
+.cereal-hundred { padding-top: 0; }
+.cereal-hundred__panel { border: var(--rule); border-radius: var(--radius-feature); padding: clamp(1.25rem,3vw,2rem); background: var(--color-cream); }
+.cereal-story .cereal-hundred h2 { font-size: var(--type-card); margin-bottom: 0; }
+.cereal-nutrition--secondary { gap: 0.75rem; }
+.cereal-nutrition--secondary > div { padding: 0.8rem; }
+.cereal-nutrition--secondary strong { font-size: 1.5rem; }
+.cereal-protein-values { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.cereal-story .cereal-protein-values p { display: grid; margin: 0; gap: 0.7rem; border-left: var(--rule); padding-left: 1.5rem; }
+.cereal-protein-values strong { font: 400 clamp(2rem,4vw,3.5rem)/1 var(--font-display); color: var(--color-forest); }
+.cereal-protein-values span { font-size: var(--type-small); }
+.cereal-omega-values { background: var(--color-card); padding: 1.5rem; border: var(--rule); border-radius: var(--radius-card); }
+.cereal-omega-values > svg { color: var(--color-nature); margin-bottom: 0.75rem; }
+.cereal-omega-values dl { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; margin: 0; }
+.cereal-omega-values dt { color: var(--color-copy); font-size: var(--type-small); }
+.cereal-omega-values dd { margin: 0.5rem 0 0; font: 400 1.7rem/1.2 var(--font-display); }
+.cereal-serving-ideas { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem; padding-top: 1.5rem; border-top: var(--rule); }
+.cereal-story .cereal-serving-ideas h3 { margin: 0; }
+.cereal-serving-ideas ul, .cereal-quality__references { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
+.cereal-serving-ideas li { font-size: var(--type-small); border: var(--rule); border-radius: var(--radius-pill); padding: 0.6rem 0.9rem; }
+.cereal-polyols { display: grid; grid-template-columns: minmax(0,0.8fr) minmax(0,1.2fr); align-items: center; gap: 1.5rem; padding: 1.5rem; border: var(--rule); border-radius: var(--radius-card); background: var(--color-cream); }
+.cereal-polyols > div { display: flex; align-items: center; gap: 1rem; }
+.cereal-polyols svg { flex-shrink: 0; color: var(--color-nature); }
+.cereal-story .cereal-polyols h2 { font-size: var(--type-card); margin: 0; }
+.cereal-quality { background: var(--color-mist); }
+.cereal-quality__references { margin-top: 1.5rem; }
+.cereal-quality__references li { border-top: var(--rule); padding: 0.75rem 0.85rem 0; color: var(--color-muted); font-size: var(--type-small); }
+.cereal-product-story { border-top: var(--rule); }
+.cereal-related-item { display: flex; min-width: 0; }
+.cereal-related-item > .product-card { width: 100%; }
+.cereal-story .cereal-related-item:nth-child(2) { transition-delay: 70ms; }
+.cereal-story .cereal-related-item:nth-child(3) { transition-delay: 140ms; }
+.cereal-trade { background: linear-gradient(120deg,var(--color-feature-start),var(--color-feature-end)); }
+.cereal-story .cereal-trade :is(h2,p) { color: var(--color-ivory); }
+.cereal-story .cereal-trade .eyebrow { color: var(--color-on-forest); }
+.cereal-trade .cta-row { margin-top: 1.75rem; }
+.cereal-trade .button:focus-visible { outline-color: var(--color-ivory); }
+.cereal-information__panel { display: grid; grid-template-columns: minmax(0,0.7fr) minmax(0,1.3fr); gap: 2rem; }
+.cereal-story .cereal-information h2 { font-size: var(--type-card-compact); }
+.cereal-information .stevia-checklist li { font-size: 0.85rem; color: var(--color-muted); }
+.cereal-story .button svg { transition: transform 240ms ease; }
+.cereal-story .button:hover svg { transform: translateX(3px); }
+@media (hover:hover) and (min-width:901px) { .cereal-flavour-cards .stevia-card:hover img { transform: scale(1.015); } }
+@media (max-width:1100px) {
+  .cereal-grid--4, .cereal-grid--3, .cereal-vitamins { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cereal-flavour-cards { grid-template-columns: repeat(3,minmax(0,1fr)); }
+  .cereal-nutrition { grid-template-columns: repeat(3,minmax(0,1fr)); }
+}
+@media (max-width:900px) {
+  .cereal-hero .stevia-split { grid-template-columns: minmax(0,1fr); }
+  .cereal-hero__art { max-width: 44rem; }
+  .cereal-flavour-panel__image { height: 20rem; }
+  .cereal-information__panel, .cereal-polyols { grid-template-columns: minmax(0,1fr); }
+}
+@media (max-width:700px) {
+  .cereal-grid, .cereal-nutrition, .cereal-vitamins { grid-template-columns: minmax(0,1fr); }
+  .cereal-story .cereal-hero h1 { font-size: clamp(2.1rem,8.5vw,2.8rem); }
+  .cereal-flavour-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .cereal-flavour-cards__image { height: 9rem; }
+  .cereal-story .cereal-flavour-cards h3 { font-size: 1.15rem; }
+  .cereal-story .cereal-flavour-cards p { font-size: 0.85rem; }
+  .cereal-flavour-panel__image { height: 18rem; }
+  .cereal-nutrition > div, .cereal-vitamins > div { display: grid; grid-template-columns: minmax(0,0.8fr) minmax(0,1.2fr); align-items: center; gap: 0.75rem; }
+  .cereal-nutrition dd, .cereal-vitamins dd { margin: 0; }
+  .cereal-nutrition strong, .cereal-vitamins strong { font-size: 1.8rem; }
+  .cereal-nutrition--secondary strong { font-size: 1.4rem; }
+  .cereal-protein-values { gap: 0.75rem; }
+  .cereal-story .cereal-protein-values p { padding-left: 0.75rem; }
+  .cereal-serving-ideas { flex-direction: column; align-items: flex-start; }
+  .cereal-omega-values dd { font-size: 1.4rem; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .cereal-flavour-panel__content { animation: none; }
+  .cereal-flavour-panel, .cereal-flavour-cards img, .cereal-story .button svg { transition: none; }
+  .cereal-flavour-cards .stevia-card:hover img, .cereal-story .button:hover svg { transform: none; }
+}

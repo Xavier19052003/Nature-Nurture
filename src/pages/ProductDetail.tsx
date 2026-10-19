@@ -1,11 +1,42 @@
+import { SublingualProduct } from './SublingualProduct'
+import { ProductMedia } from '../components/ui/ProductImagePlaceholder'
+import { sublingualRange } from '../data/sublingual'
 import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { catalogueProducts, getProductHref, products } from '../data/products'
+import { mosquitoPatchVariants } from '../data/mosquitoPatches'
+import { MosquitoPatchProduct } from './MosquitoPatchProduct'
+import { SteviaProduct } from './SteviaProduct'
+import { InfantFormula } from './InfantFormula'
+import { CerealRange } from './CerealRange'
+import { cerealFlavours } from '../data/cerealRange'
+import { catalogueProducts, getCategoryHref, getProductHref, products } from '../data/products'
 
 export function ProductDetailPage() {
   const { slug } = useParams()
   const product = products.find((item) => item.slug === slug)
   const benefits = product?.benefits ?? []
+
+  if (slug === 'calm-complex') return <Navigate to="/products/vitamin-b-complex" replace />
+  if (product && sublingualRange.some((item) => item.slug === slug)) return <SublingualProduct key={product.slug} product={product} />
+
+  if (slug === 'cereal-meal-replacement') return <CerealRange />
+  if (cerealFlavours.some((flavour) => flavour.slug === slug)) {
+    return <Navigate to="/products/cereal-meal-replacement" replace />
+  }
+
+  if (slug === 'infant-formula') return <InfantFormula />
+  if (slug === 'infant-formula-stage-1' || slug === 'infant-formula-stage-2') {
+    return <Navigate to="/products/infant-formula" replace />
+  }
+
+  if (slug === 'mosquito-repellent-patches') {
+    return <Navigate to={getCategoryHref('Family Protection')} replace />
+  }
+
+  const patchVariant = mosquitoPatchVariants.find((variant) => variant.slug === slug)
+  if (product && patchVariant) return <MosquitoPatchProduct product={product} variant={patchVariant} />
+
+  if (product && slug === 'stevia-sachets') return <SteviaProduct />
 
   if (slug === 'zingo' || (product && product.slug.startsWith('zingo-'))) {
     return <Navigate to="/brands/zingo" replace />
@@ -68,7 +99,7 @@ export function ProductDetailPage() {
         <div className="product-grid product-grid--related">
           {catalogueProducts.filter((item) => item.id !== product.id).slice(0, 3).map((item) => (
             <article key={item.id} className="mini-product-card">
-              <img src={item.image} alt={item.name} />
+              <ProductMedia product={item} />
               <div>
                 <span>{item.category}</span>
                 <h3>{item.name}</h3>

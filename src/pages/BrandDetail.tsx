@@ -1,8 +1,10 @@
+import { ProductImagePlaceholder, ProductMedia } from '../components/ui/ProductImagePlaceholder'
 import { ArrowRight, Check } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
-import { brandContentBySlug, getBrandProducts } from '../data/brands'
+import { ZingoProduct } from './ZingoProduct'
 import { naturesNurtureContent } from '../data/naturesNurtureContent'
 import { NotFound } from './NotFound'
+import { getProductHref } from '../data/products'
 
 function NaturesNurtureDetail() {
   const nn = naturesNurtureContent
@@ -23,7 +25,7 @@ function NaturesNurtureDetail() {
           <div className="nn-hero__collage">
             {nn.hero.images.map((src) => (
               <div key={src} className="nn-hero__collage-item">
-                <img src={src} alt="" loading="lazy" />
+                {src ? <img src={src} alt="" loading="lazy" /> : <ProductImagePlaceholder name="Vitamin B12 + Folate" compact />}
               </div>
             ))}
           </div>
@@ -53,7 +55,7 @@ function NaturesNurtureDetail() {
             {nn.sublingual.products.map((product) => (
               <Link key={product.slug} to={`/products/${product.slug}`} className="nn-product-card">
                 <div className="nn-product-card__media">
-                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <ProductMedia product={product} />
                 </div>
                 <h3>{product.name}</h3>
                 <p>{product.shortDescription}</p>
@@ -115,7 +117,7 @@ function NaturesNurtureDetail() {
           </div>
           <div className="nn-infant__products">
             {nn.infant.products.map((product) => (
-              <Link key={product.slug} to={`/products/${product.slug}`} className="nn-infant-card">
+              <Link key={product.slug} to={getProductHref(product)} className="nn-infant-card">
                 <div className="nn-infant-card__media">
                   <img src={product.image} alt={product.name} loading="lazy" />
                 </div>
@@ -137,7 +139,7 @@ function NaturesNurtureDetail() {
           </div>
           <div className="nn-cereal__grid">
             {nn.cereal.products.map((product) => (
-              <Link key={product.slug} to={`/products/${product.slug}`} className="nn-cereal-card">
+              <Link key={product.slug} to={getProductHref(product)} className="nn-cereal-card">
                 <div className="nn-cereal-card__media">
                   <img src={product.image} alt={product.name} loading="lazy" />
                 </div>
@@ -176,8 +178,11 @@ function NaturesNurtureDetail() {
               ))}
             </ul>
           </div>
-          <div className="nn-mosquito__media">
-            {nn.mosquito.product ? <img src={nn.mosquito.product.image} alt={nn.mosquito.product.name} loading="lazy" /> : null}
+          <div className="nn-mosquito__media nn-mosquito__variants">
+            {nn.mosquito.products.map((product) => <Link className="nn-product-card" key={product.slug} to={getProductHref(product)}>
+              <div className="nn-product-card__media"><img src={product.image} alt={product.name} loading="lazy" /></div>
+              <h3>{product.name}</h3><span className="nn-card-action">Explore product <ArrowRight size={16} aria-hidden="true" /></span>
+            </Link>)}
           </div>
         </div>
       </section>
@@ -238,211 +243,7 @@ function NaturesNurtureDetail() {
 export function BrandDetailPage() {
   const { slug } = useParams()
 
-  if (slug === 'natures-nurture') {
-    return <NaturesNurtureDetail />
-  }
-
-  const content = slug ? brandContentBySlug[slug] : undefined
-
-  if (!content) {
-    return <NotFound />
-  }
-
-  const flavourProducts = getBrandProducts(content)
-
-  return (
-    <main className="page-shell page-shell--light zingo-page" style={{ ['--brand-accent' as string]: content.accent }}>
-      <section className="zingo-hero">
-        <div className="container zingo-hero__grid">
-          <div className="zingo-hero__copy">
-            <p className="eyebrow eyebrow--brand">{content.heroEyebrow}</p>
-            <h1>{content.heroHeadline}</h1>
-            <p className="zingo-hero__lead">{content.heroLead}</p>
-            <div className="cta-row">
-              <a className="button button--primary" href="#flavours">View all 8 flavours <ArrowRight size={16} /></a>
-              <Link className="inline-link inline-link--dark" to="/contact">Talk to us about {content.name}</Link>
-            </div>
-          </div>
-          <div className="zingo-hero__visual">
-            <div className="zingo-hero__frame">
-              <img src={content.heroImage} alt={`${content.name} product`} loading="lazy" />
-            </div>
-            <span className="zingo-hero__stat">{content.heroStat}</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--light zingo-what-is">
-        <div className="container zingo-what-is__grid">
-          <div>
-            <p className="eyebrow eyebrow--dark">What is {content.name}?</p>
-            <h2>{content.whatIsLead}</h2>
-          </div>
-          <p className="zingo-what-is__copy">{content.whatIsCopy}</p>
-        </div>
-      </section>
-
-      {flavourProducts.length > 0 && (
-        <section className="section section--light zingo-flavours" id="flavours">
-          <div className="container">
-            <div className="section-header">
-              <div>
-                <p className="eyebrow eyebrow--dark">The full collection</p>
-                <h2>The {content.name} Flavour Collection</h2>
-              </div>
-            </div>
-            {content.flavourGroups.map((group) => (
-              <div key={group.title} className="zingo-flavour-group">
-                <h3 className="zingo-flavour-group__title">{group.title}</h3>
-                <div className="zingo-flavour-grid">
-                  {group.slugs.map((slug) => {
-                    const product = flavourProducts.find((item) => item.slug === slug)
-                    if (!product) return null
-                    return (
-                      <figure key={slug} className="zingo-flavour-card">
-                        <div className="zingo-flavour-card__media">
-                          <img src={product.image} alt={product.name} loading="lazy" />
-                        </div>
-                        <figcaption>{product.name.replace('Zingo ', '')}</figcaption>
-                      </figure>
-                    )
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      <section className="section section--dark-cta zingo-pillars">
-        <div className="container">
-          <div className="section-heading section-heading--left">
-            <p className="eyebrow eyebrow--alt">What makes {content.name} different</p>
-            <h2>Four ideas behind every sachet.</h2>
-          </div>
-          <div className="zingo-pillars__grid">
-            {content.pillars.map((pillar) => {
-              const Icon = pillar.icon
-              return (
-                <article key={pillar.title} className="zingo-pillar-card">
-                  <span className="zingo-pillar-card__icon"><Icon size={18} /></span>
-                  <h3>{pillar.title}</h3>
-                  <p>{pillar.description}</p>
-                </article>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--light zingo-opportunity">
-        <div className="container zingo-opportunity__grid">
-          <div>
-            <p className="eyebrow eyebrow--dark">{content.opportunityEyebrow}</p>
-            <h2>{content.opportunityTitle}</h2>
-          </div>
-          <p>{content.opportunityCopy}</p>
-        </div>
-      </section>
-
-      <section className="section section--light zingo-value">
-        <div className="container zingo-value__grid">
-          <div className="zingo-value__stat">
-            <span>{content.valueStat.top}</span>
-            <strong>{content.valueStat.bottom}</strong>
-          </div>
-          <div>
-            <p className="eyebrow eyebrow--dark">Value proposition</p>
-            <h2>{content.valueHeadline}</h2>
-            <p>{content.valueCopy}</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--dark-cta zingo-reasons">
-        <div className="container">
-          <div className="section-heading section-heading--left">
-            <p className="eyebrow eyebrow--alt">Why choose {content.name}</p>
-            <h2>Everyday reasons families reach for {content.name}.</h2>
-          </div>
-          <div className="zingo-reasons__grid">
-            {content.reasons.map((reason) => {
-              const Icon = reason.icon
-              return (
-                <div key={reason.title} className="zingo-reason-pill">
-                  <Icon size={16} />
-                  <span>{reason.title}</span>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--light zingo-steps">
-        <div className="container">
-          <div className="section-heading section-heading--left">
-            <p className="eyebrow eyebrow--dark">How to enjoy {content.name}</p>
-            <h2>From sachet to smile in four steps.</h2>
-          </div>
-          <div className="zingo-steps__grid">
-            {content.steps.map((step, index) => (
-              <div key={step.title} className="zingo-step-card">
-                <span className="zingo-step-card__number">{String(index + 1).padStart(2, '0')}</span>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section--dark-cta zingo-shelf">
-        <div className="container zingo-shelf__grid">
-          <div>
-            <p className="eyebrow eyebrow--alt">Retail &amp; shelf story</p>
-            <h2>{content.shelfTitle}</h2>
-          </div>
-          <p>{content.shelfCopy}</p>
-        </div>
-      </section>
-
-      <section className="section section--light zingo-world">
-        <div className="container zingo-world__grid">
-          <div>
-            <p className="eyebrow eyebrow--dark">Beyond the drink</p>
-            <h2>{content.worldTitle}</h2>
-          </div>
-          <p>{content.worldCopy}</p>
-        </div>
-      </section>
-
-      <section className="section section--light zingo-growth">
-        <div className="container">
-          <div className="section-heading section-heading--left">
-            <p className="eyebrow eyebrow--dark">Looking ahead</p>
-            <h2>{content.growthTitle}</h2>
-          </div>
-          <p className="zingo-growth__copy">{content.growthCopy}</p>
-          <div className="zingo-growth__pills">
-            {content.growthPoints.map((point) => (
-              <span key={point} className="zingo-reason-pill zingo-reason-pill--light">{point}</span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="container zingo-cta cta-panel cta-panel--green">
-        <div className="zingo-cta__copy">
-          <p className="eyebrow eyebrow--alt">{content.tagline}</p>
-          <h3>{content.ctaHeadline}</h3>
-          <p>{content.ctaCopy}</p>
-        </div>
-        <div className="cta-row">
-          <Link className="button button--inverted" to="/contact">Request range information <ArrowRight size={16} /></Link>
-          <Link className="inline-link" to="/products">Back to catalogue</Link>
-        </div>
-      </section>
-    </main>
-  )
+  if (slug === 'natures-nurture') return <NaturesNurtureDetail />
+  if (slug === 'zingo') return <ZingoProduct />
+  return <NotFound />
 }

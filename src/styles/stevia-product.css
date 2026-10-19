@@ -1,0 +1,113 @@
+.stevia-story.page-shell { padding-bottom: 0; color: var(--color-deep-forest); background: var(--color-ivory); }
+.stevia-story :is(h1,h2,h3,p,li,a) { overflow-wrap: anywhere; }
+.stevia-story h1 { font-size: var(--type-hero); line-height: 1.02; letter-spacing: -0.035em; margin-bottom: 1.25rem; }
+.stevia-story h2 { font-size: var(--type-section-compact); line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 1.25rem; }
+.stevia-story h3 { font-size: var(--type-card-compact); line-height: 1.15; letter-spacing: -0.02em; }
+.stevia-story p { font-size: var(--type-body); line-height: 1.7; color: var(--color-copy); }
+.stevia-story p:last-child { margin-bottom: 0; }
+.stevia-story .eyebrow { color: var(--color-muted); font: 700 var(--type-eyebrow)/1.5 var(--font-body); letter-spacing: 0.13em; margin: 0 0 0.85rem; text-transform: uppercase; }
+.stevia-story .button { min-height: 48px; border-radius: var(--radius-pill); padding: 0.8rem 1.2rem; gap: 0.7rem; white-space: normal; text-align: center; font-size: var(--type-button); line-height: 1.6; letter-spacing: 0.04em; }
+.stevia-story .button svg { flex-shrink: 0; }
+.stevia-story .button--primary { background: var(--color-forest); color: var(--color-white); }
+.stevia-story .cta-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.stevia-section { padding-block: var(--space-section-medium); }
+.stevia-section--compact { padding-block: var(--space-section-compact); }
+.stevia-section--white { background: rgba(255,255,255,0.5); }
+.stevia-section--sage { background: var(--color-mist); }
+.stevia-split { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem,5vw,5rem); align-items: center; }
+.stevia-split > *, .stevia-editorial > * { min-width: 0; }
+.stevia-editorial { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem,5vw,5rem); align-items: center; }
+.stevia-art { margin: 0; padding: 0.6rem; width: min(100%,28rem); justify-self: center; border: var(--rule); border-radius: var(--radius-hero); background: rgba(255,255,255,0.5); box-shadow: var(--shadow-soft); overflow: hidden; }
+.stevia-art img { display: block; width: 100%; height: auto; border-radius: var(--radius-image); }
+.stevia-hero { padding-block: var(--space-hero); background: radial-gradient(ellipse at 75% 25%,rgba(216,225,209,0.6),transparent 60%); }
+.stevia-hero__art { width: min(100%,25rem); }
+.stevia-hero__copy > p { max-width: 36rem; }
+.stevia-story .stevia-hero__tagline { font: 400 clamp(1.6rem,2.2vw,2rem)/1.15 var(--font-display); color: var(--color-nature); margin-bottom: 1.5rem; }
+.stevia-highlights { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.75rem 0; }
+.stevia-highlights span { border: var(--rule); border-radius: var(--radius-pill); padding: 0.55rem 0.75rem; font-size: 0.8rem; background: var(--color-card); }
+.stevia-text-link { display: inline-flex; min-height: 48px; align-items: center; gap: 0.65rem; text-transform: uppercase; font-size: var(--type-button); font-weight: 600; letter-spacing: 0.06em; color: var(--color-forest); }
+.stevia-text-link:hover { color: var(--color-nature); }
+.stevia-checklist { display: grid; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.stevia-checklist li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: var(--type-body); line-height: 1.65; color: var(--color-copy); }
+.stevia-checklist svg { flex-shrink: 0; color: var(--color-nature); margin-top: 0.2rem; }
+.stevia-overview-list { border-left: var(--rule); padding-left: 2rem; }
+.stevia-benefits { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 1.75rem; }
+.stevia-card { min-width: 0; padding: var(--space-card); border: 1px solid var(--color-card-border); border-radius: var(--radius-card); background: var(--color-card); box-shadow: var(--shadow-card); transition: transform var(--ease-editorial), box-shadow var(--ease-editorial); }
+.stevia-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+.stevia-card > svg { display: block; color: var(--color-nature); margin-bottom: 1.1rem; }
+.stevia-story .stevia-card h3 { margin-bottom: 0.75rem; }
+.stevia-story .stevia-card p { font-size: 0.94rem; line-height: 1.6; }
+.stevia-sweetness .stevia-editorial > p { font-size: clamp(1rem,1.5vw,1.15rem); }
+.stevia-origin { padding-top: 0; }
+.stevia-origin__panel { display: grid; grid-template-columns: minmax(0,0.5fr) minmax(0,1.5fr); gap: clamp(1.5rem,4vw,4rem); align-items: center; padding: clamp(1.5rem,4vw,3.5rem); border: var(--rule); border-radius: var(--radius-feature); background: var(--color-soft-green); }
+.stevia-origin__panel p { max-width: 65ch; }
+.stevia-origin__mark { display: grid; place-items: center; aspect-ratio: 1; width: min(100%,12rem); justify-self: center; border-radius: 50%; background: rgba(255,255,255,0.3); color: var(--color-nature); }
+.stevia-origin__mark svg { width: 60%; height: 60%; }
+.stevia-applications__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.85rem; margin-top: 1.5rem; }
+.stevia-applications .stevia-card { background: var(--color-ivory); }
+.stevia-story .stevia-applications__grid h3 { font-size: 1.15rem; margin-bottom: 0; }
+.stevia-convenience__art { width: min(100%,25rem); }
+.stevia-places { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0.75rem; margin-top: 2rem; }
+.stevia-places > div { border-top: var(--rule); padding-top: 1.25rem; }
+.stevia-places svg { color: var(--color-nature); margin-bottom: 0.75rem; }
+.stevia-story .stevia-places h3 { font-size: 1.3rem; margin-bottom: 0; }
+.stevia-lifestyle { text-align: center; }
+.stevia-story .stevia-lifestyle h2 { font-size: var(--type-card); }
+.stevia-lifestyle ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.75rem; list-style: none; padding: 0; margin: 1.5rem 0 0; }
+.stevia-lifestyle li { display: flex; align-items: center; gap: 0.55rem; padding: 0.7rem 1rem; border-radius: var(--radius-pill); border: var(--rule); background: var(--color-card); font-size: var(--type-small); }
+.stevia-format { padding-top: 0; }
+.stevia-format__panel { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; border: var(--rule); border-radius: var(--radius-feature); padding: clamp(1.5rem,3vw,2.5rem); background: var(--color-cream); }
+.stevia-format__panel > svg { flex-shrink: 0; color: var(--color-nature); }
+.stevia-story .stevia-format h3 { font-size: var(--type-section-compact); line-height: 1.06; letter-spacing: -0.035em; margin-bottom: 1.25rem; }
+.stevia-information__panel { display: grid; grid-template-columns: minmax(0,0.8fr) minmax(0,1.2fr); gap: 1.5rem; padding-block: 1rem; border-top: var(--rule); border-bottom: var(--rule); align-items: center; }
+.stevia-story .stevia-information h2 { font: 600 var(--type-small)/1.5 var(--font-body); letter-spacing: 0; margin: 0; }
+.stevia-story .stevia-information p { font-size: var(--type-small); margin: 0; color: var(--color-muted); }
+.stevia-related { padding-top: var(--space-section-compact); }
+.stevia-related__grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1.25rem; margin-top: 1.75rem; }
+.stevia-related .product-card { background: var(--color-card); border: var(--rule); border-radius: var(--radius-card); box-shadow: var(--shadow-card); overflow: hidden; transition: transform var(--ease-editorial), box-shadow var(--ease-editorial); }
+.stevia-related .product-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-soft); }
+.stevia-related .product-card__media { margin: 1rem 1rem 0; height: 15rem; border-radius: var(--radius-image); background: var(--color-mist); overflow: hidden; }
+.stevia-related .product-card__media img { width: 100%; height: 100%; object-fit: contain; }
+.stevia-related .product-card__body { padding: 1.25rem; }
+.stevia-trade { background: linear-gradient(120deg,var(--color-feature-start),var(--color-feature-end)); }
+.stevia-story .stevia-trade :is(h2,p) { color: var(--color-ivory); }
+.stevia-story .stevia-trade .eyebrow { color: var(--color-on-forest); }
+.stevia-trade__art { background: var(--color-deep-forest); border-color: rgba(255,255,255,0.15); width: min(100%,23rem); }
+.stevia-trade .cta-row { margin-top: 1.75rem; }
+.stevia-trade .button:focus-visible { outline-color: var(--color-ivory); }
+@media (max-width: 1100px) {
+  .stevia-benefits { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .stevia-related__grid { gap: 1rem; }
+}
+@media (max-width: 900px) {
+  .stevia-split, .stevia-editorial { grid-template-columns: minmax(0,1fr); }
+  .stevia-hero__copy > p { max-width: 44rem; }
+  .stevia-overview-list { border-left: 0; border-top: var(--rule); padding-left: 0; padding-top: 1.5rem; }
+  .stevia-art { width: min(100%,24rem); }
+  .stevia-applications > .stevia-art { order: 2; }
+  .stevia-related__grid { grid-template-columns: minmax(0,1fr); }
+  .stevia-related .product-card { display: grid; grid-template-columns: minmax(0,0.8fr) minmax(0,1.2fr); }
+  .stevia-related .product-card__media { margin: 1rem; height: 13rem; }
+}
+@media (max-width: 700px) {
+  .stevia-benefits { grid-template-columns: minmax(0,1fr); }
+  .stevia-origin__panel { grid-template-columns: minmax(0,1fr); }
+  .stevia-origin__mark { width: 6rem; justify-self: start; }
+  .stevia-art { width: min(100%,21rem); }
+  .stevia-story .cta-row > :is(.button,.stevia-text-link) { width: 100%; justify-content: center; }
+  .stevia-applications__grid { grid-template-columns: minmax(0,1fr); }
+  .stevia-applications .stevia-card { display: flex; align-items: center; gap: 1rem; }
+  .stevia-applications .stevia-card > svg { flex-shrink: 0; margin: 0; }
+  .stevia-places { gap: 1rem; }
+  .stevia-story .stevia-places h3 { font-size: 1.15rem; }
+  .stevia-information__panel { grid-template-columns: minmax(0,1fr); gap: 0.6rem; }
+  .stevia-format__panel { align-items: flex-start; }
+  .stevia-format__panel > svg { width: 32px; height: 32px; }
+  .stevia-related .product-card { display: flex; }
+  .stevia-related .product-card__media { margin: 1rem 1rem 0; height: 15rem; }
+  .stevia-related .product-card__action { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .stevia-story .stevia-card, .stevia-related .product-card { transition: none; }
+  .stevia-story .stevia-card:hover, .stevia-related .product-card:hover { transform: none; }
+}

@@ -1,0 +1,142 @@
+/* One restrained motion vocabulary. No layout dimensions are animated. */
+:root {
+  --motion-fast: 180ms;
+  --motion-standard: 300ms;
+  --motion-arrow: 250ms;
+  --motion-carousel: 400ms;
+  --motion-entrance: 500ms;
+  --motion-scroll-loop: 2s;
+  --motion-section-scroll: 900ms;
+  --motion-stagger: 60ms;
+  --motion-hero-step: 80ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-gentle: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-editorial: var(--motion-standard) var(--motion-ease);
+}
+
+/* Arrow-only feedback works for pointer, keyboard and touch. */
+#root :is(a, button) svg:is(.lucide-arrow-right, .lucide-arrow-up-right, .lucide-arrow-left, .lucide-arrow-down):not(.hero-entry svg) {
+  --arrow-x: 1; --arrow-y: 0;
+  transition: transform var(--motion-arrow) var(--motion-ease);
+}
+#root :is(a, button) svg.lucide-arrow-left:not(.hero-entry svg) { --arrow-x: -1; }
+#root :is(a, button) svg.lucide-arrow-down:not(.hero-entry svg) { --arrow-x: 0; --arrow-y: 1; }
+#root .button:hover { transform: none; }
+@media (hover: hover) and (pointer: fine) {
+  #root :is(a, button):hover svg:is(.lucide-arrow-right, .lucide-arrow-up-right, .lucide-arrow-left, .lucide-arrow-down):not(.hero-entry svg) {
+    transform: translate(calc(var(--arrow-x) * 5px), calc(var(--arrow-y) * 5px));
+  }
+}
+#root :is(a, button):focus-visible svg:is(.lucide-arrow-right, .lucide-arrow-up-right, .lucide-arrow-left, .lucide-arrow-down):not(.hero-entry svg) {
+  transform: translate(calc(var(--arrow-x) * 5px), calc(var(--arrow-y) * 5px));
+}
+#root :is(a, button):active svg:is(.lucide-arrow-right, .lucide-arrow-up-right, .lucide-arrow-left, .lucide-arrow-down):not(.hero-entry svg) {
+  transform: translate(calc(var(--arrow-x) * 2.5px), calc(var(--arrow-y) * 2.5px));
+}
+#root .hero-entry svg { animation: scroll-float var(--motion-scroll-loop) var(--motion-gentle) infinite; }
+@keyframes scroll-float {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, 7px, 0); }
+}
+
+/* Shared mount entrance: route changes start the sequence immediately. */
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero :where(.page-hero__copy > *) { animation: hero-arrive var(--motion-entrance) var(--motion-ease) both; }
+  .page-hero__copy > h1 { animation-delay: var(--motion-hero-step); }
+  .page-hero__copy > p:not(.eyebrow) { animation-delay: calc(var(--motion-hero-step) * 2); }
+  .page-hero__copy > :is(.button, .cta-row) { animation-delay: calc(var(--motion-hero-step) * 3); }
+  .page-hero__visual { animation: hero-visual-arrive var(--motion-entrance) var(--motion-ease) both; animation-delay: calc(var(--motion-hero-step) * 5); }
+  .page-hero__entry { animation: hero-arrive var(--motion-entrance) var(--motion-ease) both; animation-delay: calc(var(--motion-hero-step) * 8); }
+  .home-landing > .page-hero__entry { animation-delay: calc(var(--motion-hero-step) * 6 + 5 * var(--motion-stagger) + var(--motion-carousel)); }
+  .page-hero__entry--inline { animation-delay: calc(var(--motion-hero-step) * 3); }
+  .home-landing .product-stack { animation: category-arrive var(--motion-carousel) var(--motion-ease) both; animation-delay: calc(var(--motion-hero-step) * 6 + var(--category-order) * var(--motion-stagger)); }
+  .home-landing .product-stack:nth-of-type(1) { --category-order: 0; }
+  .home-landing .product-stack:nth-of-type(2) { --category-order: 1; }
+  .home-landing .product-stack:nth-of-type(3) { --category-order: 2; }
+  .home-landing .product-stack:nth-of-type(4) { --category-order: 3; }
+  .home-landing .product-stack:nth-of-type(5) { --category-order: 4; }
+  .home-landing .product-stack:nth-of-type(6) { --category-order: 5; }
+}
+@keyframes hero-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes hero-visual-arrive { from { opacity: 0; transform: translateY(8px) scale(0.985); } to { opacity: 1; transform: none; } }
+@keyframes category-arrive { from { opacity: 0; transform: translateY(10px) scale(0.98); } to { opacity: 1; transform: none; } }
+.page-hero:focus-within :is(.page-hero__copy > *, .page-hero__visual, .page-hero__entry, .product-stack) { animation: none; }
+
+/* All slides remain in the same grid cell to reserve the tallest slide's space. */
+#root .range-carousel { --slide-sign: 1; }
+#root .range-carousel[data-direction="previous"] { --slide-sign: -1; }
+#root .range-carousel__slide { transition: none; animation: none; opacity: 0; visibility: hidden; pointer-events: none; }
+#root .range-carousel__slide.is-active { opacity: 1; visibility: visible; pointer-events: auto; animation: carousel-arrive var(--motion-carousel) var(--motion-ease) both; }
+#root .range-carousel__slide.is-leaving { visibility: visible; animation: carousel-leave var(--motion-carousel) var(--motion-ease) both; }
+@keyframes carousel-arrive { from { opacity: 0; transform: translateX(calc(var(--slide-sign) * 10px)); } to { opacity: 1; transform: none; } }
+@keyframes carousel-leave { from { opacity: 1; transform: none; } to { opacity: 0; transform: translateX(calc(var(--slide-sign) * -10px)); } }
+#root .range-carousel__dots span { width: 8px; height: 8px; background: var(--color-deep-forest); opacity: 0.45; transform: scale(1); transition: transform var(--motion-arrow) var(--motion-ease), opacity var(--motion-arrow) var(--motion-ease); }
+#root .range-carousel__dots [aria-current="true"] span { width: 8px; height: 8px; opacity: 1; transform: scale(1.15); }
+
+/* Content stays visible without enhancement. Only the shared observer adds pending. */
+[data-immersive-section] { overflow-x: clip; overflow-y: visible; }
+[data-motion-reveal] {
+  --reveal-x: 0px; --reveal-y: 28px; --reveal-scale: 1;
+  --reveal-duration: 720ms; --reveal-stagger: 80ms;
+  --reveal-delay: calc(var(--reveal-order, 0) * var(--reveal-stagger) + var(--reveal-phase, 0ms));
+  opacity: 1; transform: none;
+  transition: opacity var(--reveal-duration) var(--motion-ease), transform var(--reveal-duration) var(--motion-ease);
+}
+[data-motion-reveal="fade-in"], [data-motion-reveal="map"], [data-motion-reveal="image"] { --reveal-y: 0px; }
+[data-motion-reveal="fade-left"] { --reveal-x: 28px; --reveal-y: 0px; }
+[data-motion-reveal="fade-right"] { --reveal-x: -28px; --reveal-y: 0px; }
+[data-motion-reveal="scale-in"] { --reveal-y: 0px; --reveal-scale: 0.98; }
+[data-motion-reveal="benefit"] { --reveal-y: 16px; }
+.home-snapshot__grid [data-motion-reveal] { --reveal-y: 16px; }
+[data-motion-reveal][data-reveal-state="pending"] {
+  opacity: 0; transform: translate3d(var(--reveal-x), var(--reveal-y), 0) scale(var(--reveal-scale));
+}
+[data-motion-reveal][data-reveal-state="revealed"] { transition-delay: var(--reveal-delay); }
+[data-motion-reveal="image"] { overflow: clip; }
+[data-motion-reveal="image"] > img { transform: scale(1); transition: transform var(--reveal-duration) var(--motion-ease) var(--reveal-delay); }
+[data-motion-reveal="image"][data-reveal-state="pending"] > img { transform: scale(1.025); }
+[data-motion-reveal="benefit"] > svg { transform: scale(1); transition: transform 500ms var(--motion-ease) var(--reveal-delay); }
+[data-motion-reveal="benefit"][data-reveal-state="pending"] > svg { transform: scale(0.9); }
+[data-motion-reveal]:focus-within { opacity: 1 !important; transform: none !important; transition: none; }
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  html[data-immersive-snap]:not([data-section-scrolling]) { scroll-snap-type: y proximity; }
+  [data-chapter-snap="true"] { scroll-snap-align: start; scroll-snap-stop: normal; scroll-margin-top: calc(var(--navbar-height) + 1px); }
+  [data-chapter-state="passed"] [data-motion-reveal][data-reveal-state="revealed"] { opacity: 0.86; transform: translate3d(0, -14px, 0); transition-delay: 0ms; }
+}
+@media (max-width: 1023px) {
+  html[data-immersive-snap] { scroll-snap-type: none; }
+  [data-motion-reveal] { --reveal-duration: 560ms; --reveal-stagger: 60ms; --reveal-y: 18px; }
+  [data-motion-reveal="fade-left"], [data-motion-reveal="fade-right"] { --reveal-x: 0px; --reveal-y: 18px; }
+  [data-motion-reveal="fade-in"], [data-motion-reveal="map"], [data-motion-reveal="image"], [data-motion-reveal="scale-in"] { --reveal-y: 0px; --reveal-scale: 1; }
+  [data-motion-reveal="image"][data-reveal-state="pending"] > img { transform: none; }
+}
+@media (max-width: 700px) {
+  [data-immersive-section="story"]:not(.about-design-manufacturing):not(.retailers-focus):not(.quality-statement):not(.stevia-hero):not(.sublingual-hero):not(.zing-hero):not(.patch-hero) { padding-block: clamp(48px, 10vw, 64px); }
+  [data-immersive-section="dense"]:not(#catalogue) { padding-block: clamp(40px, 8vw, 48px); }
+}
+@media (min-width: 360px) and (max-width: 700px) {
+  [data-immersive-section] .home-snapshot__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 390px) and (max-width: 700px) {
+  [data-immersive-section] .home-retail__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Navbar and footer are outside this route-only surface. */
+.route-content { opacity: 1; animation: route-arrive var(--motion-fast) var(--motion-gentle) both; }
+.route-content[data-exiting="true"] { animation: none; opacity: 0; transition: opacity var(--motion-fast) var(--motion-gentle); }
+@keyframes route-arrive { from { opacity: 0; } to { opacity: 1; } }
+
+@media (max-width: 700px) {
+  .page-hero { --motion-hero-step: 65ms; --motion-stagger: 50ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #root .hero-entry svg { animation: none; will-change: auto; transform: none; }
+  #root :is(a, button) svg:is(.lucide-arrow-right, .lucide-arrow-up-right, .lucide-arrow-left, .lucide-arrow-down) { transition: none; transform: none; }
+  #root :is(.route-content, [data-motion-reveal], [data-motion-reveal] > svg) { animation: none; transition: none; opacity: 1; transform: none; }
+  html[data-immersive-snap] { scroll-snap-type: none; }
+  #root [data-motion-reveal] > img { transition: none; transform: none; }
+  #root .range-carousel__slide { animation: none; transform: none; }
+  #root .range-carousel__slide.is-leaving { opacity: 0; visibility: hidden; }
+  #root .range-carousel__slide.is-active { opacity: 1; }
+  #root .range-carousel__dots span { transition: none; transform: none; }
+}

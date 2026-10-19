@@ -1,0 +1,93 @@
+/* Home's denser opening uses the same cue, with a compact composition above it. */
+#root .page-hero.home-landing {
+  --home-hero-height: calc(100dvh - var(--navbar-height) - 1px);
+  --hero-cue-bottom: max(16px, calc(env(safe-area-inset-bottom, 0px) + 12px));
+  height: var(--home-hero-height);
+  min-height: var(--home-hero-height);
+  padding-block: clamp(16px, 2.5dvh, 32px) calc(var(--hero-cue-height) + var(--hero-cue-bottom) + 16px);
+}
+#root .page-hero.home-landing > .page-hero__layout {
+  height: 100%; min-height: 0; flex: 1 1 auto;
+  align-content: center; gap: clamp(16px, 2vw, 32px);
+}
+#root .page-hero.home-landing > .page-hero__entry { bottom: 0; padding-bottom: var(--hero-cue-bottom); }
+#root .page-hero.home-landing .hero-copy { gap: clamp(8px, 1.2dvh, 14px); }
+#root .page-hero.home-landing .display-heading { font-size: clamp(3.5rem, min(7.6vw, 10.5dvh), 7rem); line-height: 0.94; }
+#root .page-hero.home-landing .hero-copy > .lead { max-width: 54ch; font-size: clamp(1rem, 1.2vw, 1.2rem); line-height: 1.5; }
+#root .page-hero.home-landing .hero-copy > .cta-row { flex-direction: row; flex-wrap: wrap; gap: 8px; }
+#root .page-hero.home-landing .hero-copy .button { min-height: 44px; padding: 10px 14px; font-size: 15px; }
+#root .page-hero.home-landing .hero-visual--home {
+  width: 100%; max-width: none; min-height: 0; margin: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto auto;
+  gap: clamp(8px, 1.2dvh, 14px); padding: clamp(8px, 1.5dvh, 18px);
+}
+#root .page-hero.home-landing .home-category-grid {
+  display: grid; grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0, 1fr));
+  min-width: 0; gap: inherit;
+}
+#root .page-hero.home-landing .home-category-heading { margin: 0; font-size: clamp(1.4rem, 2vw, 1.9rem); line-height: 1.15; }
+#root .page-hero.home-landing .hero-visual--home .mini-product {
+  min-height: 0; height: 100%; padding: clamp(8px, 1dvh, 12px);
+  gap: clamp(4px, 0.75dvh, 8px);
+}
+#root .page-hero.home-landing .hero-visual--home .mini-product img { height: clamp(64px, 12dvh, 144px); min-height: 0; object-fit: contain; }
+#root .page-hero.home-landing .mini-product__category { min-height: 2.5em; font-size: clamp(1rem, 1.2vw, 1.15rem); line-height: 1.25; }
+#root .page-hero.home-landing .mini-product__action { display: flex; min-height: 20px; font-size: 14px; line-height: 1.4; }
+#root .page-hero.home-landing .mini-product__action svg { width: 22px; height: 22px; padding: 3px; }
+@media (min-width: 1024px) and (max-height: 850px) {
+  #root .page-hero.home-landing { padding-top: 16px; }
+  #root .page-hero.home-landing .hero-copy { gap: 8px; }
+  #root .page-hero.home-landing .hero-visual--home { padding: 10px; gap: 8px; }
+  #root .page-hero.home-landing .hero-visual--home .mini-product { padding: 8px; gap: 4px; }
+}
+@media (min-width: 1024px) and (max-height: 750px) {
+  #root .page-hero.home-landing .display-heading { font-size: clamp(3.5rem, min(6.5vw, 10.5dvh), 6rem); }
+  #root .page-hero.home-landing .hero-visual--home .mini-product img { height: clamp(56px, 10dvh, 80px); }
+}
+@media (min-width: 701px) and (max-width: 1023px) {
+  #root .page-hero.home-landing > .page-hero__layout { align-content: center; gap: 12px; }
+  #root .page-hero.home-landing .home-headline-break { display: none; }
+  #root .page-hero.home-landing .display-heading { font-size: clamp(3rem, 6vw, 4rem); }
+  #root .page-hero.home-landing .hero-copy { gap: 8px; }
+  #root .page-hero.home-landing .hero-copy > .cta-row { justify-content: center; }
+  #root .page-hero.home-landing .hero-visual--home { max-width: 46rem; margin-inline: auto; gap: 8px; padding: 10px; }
+  #root .page-hero.home-landing .hero-visual--home .mini-product img { height: clamp(48px, 7dvh, 80px); }
+}
+@media (max-width: 700px) {
+  #root .page-hero.home-landing { height: auto; padding-top: 12px; }
+  #root .page-hero.home-landing > .page-hero__layout { height: auto; flex: 0 0 auto; align-content: start; gap: 10px; }
+  #root .page-hero.home-landing .hero-copy { gap: 6px; }
+  #root .page-hero.home-landing .hero-copy > .eyebrow { font-size: 12px; line-height: 1.4; letter-spacing: 0.06em; }
+  #root .page-hero.home-landing .display-heading { font-size: clamp(3rem, 13vw, 4.5rem); line-height: 0.95; }
+  #root .page-hero.home-landing .hero-copy > .lead { font-size: 16px; line-height: 1.4; }
+  #root .page-hero.home-landing .hero-copy > .cta-row { flex-direction: column; gap: 6px; }
+  #root .page-hero.home-landing .hero-copy .button { width: 100%; min-height: 44px; padding: 8px 12px; }
+  #root .page-hero.home-landing .hero-visual--home { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px; padding: 4px; border-radius: 1.25rem; }
+  #root .page-hero.home-landing .home-category-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #root .page-hero.home-landing .home-category-heading { font-size: 20px; }
+  #root .page-hero.home-landing .hero-visual--home .mini-product { padding: 3px; gap: 1px; border-radius: 0.85rem; }
+  #root .page-hero.home-landing .hero-visual--home .mini-product img { height: clamp(32px, calc(10dvh - 52px), 48px); }
+  #root .page-hero.home-landing .mini-product__category { font-size: 14px; line-height: 1.15; min-height: 2.3em; text-align: center; }
+  #root .page-hero.home-landing .mini-product__action { min-height: 16px; font-size: 12px; line-height: 1.25; }
+  #root .page-hero.home-landing .mini-product__action svg { width: 18px; height: 18px; padding: 2px; }
+}
+@media (max-width: 700px) and (max-height: 779px) {
+  #root .page-hero.home-landing > .hero-grid { padding-inline: 10px; }
+  #root .page-hero.home-landing .hero-copy { gap: 4px; }
+  #root .page-hero.home-landing .display-heading { font-size: clamp(2.75rem, 13vw, 3rem); }
+  #root .page-hero.home-landing .hero-copy > .lead { line-height: 1.35; }
+}
+@media (max-width: 700px) {
+  #root .page-hero.home-landing[data-home-overflow] { height: auto; padding-bottom: max(16px, env(safe-area-inset-bottom, 0px)); }
+  #root .page-hero.home-landing[data-home-overflow] > .page-hero__entry {
+    top: calc(var(--home-hero-height) - var(--hero-cue-bottom) - var(--hero-cue-height)); bottom: auto;
+  }
+  #root .page-hero.home-landing[data-home-overflow] .home-category-grid::before {
+    content: ''; grid-column: 1 / -1; grid-row: var(--home-cue-spacer-row);
+    height: var(--home-cue-spacer-height); pointer-events: none;
+  }
+}
+@media (max-width: 700px) and (min-height: 780px) {
+  #root .page-hero.home-landing { height: var(--home-hero-height); }
+}

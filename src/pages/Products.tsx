@@ -1,9 +1,12 @@
-import { ArrowRight, Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, UtensilsCrossed } from 'lucide-react'
-import { useMemo } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
-import { ProductCard } from '../components/ui/ProductCard'
-import { ProductCollection } from '../components/ui/ProductCollection'
+import { PageHero } from '../components/ui/PageHero'
+import { Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, UtensilsCrossed } from 'lucide-react'
+import { useMemo, type CSSProperties } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { RangeCarousel } from '../components/ui/RangeCarousel'
+import { catalogueRanges, toProductSlide } from '../data/catalogueRanges'
 import { categories, catalogueProducts } from '../data/products'
+
+const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
 
 const categoryIcons = {
   'All Products': Grid2X2,
@@ -30,27 +33,32 @@ export function ProductsPage() {
     })
   }, [activeCategory, searchQuery])
 
+  const visibleRanges = catalogueRanges.filter((range) => range.products.some((product) => filteredProducts.some((match) => match.id === product.id)))
   const chooseCategory = (category: string) => {
     setSearchParams(category === 'All Products' ? {} : { category })
   }
 
   return (
     <main className="page-shell page-shell--light products-page">
-      <section className="products-hero">
-        <div className="container products-hero__grid">
-          <div className="products-hero__copy">
-            <p className="eyebrow eyebrow--dark">Nature&apos;s Nurture &amp; Zingo</p>
+      <PageHero className="products-hero" scrollLabel="Explore the catalogue" scrollTarget="catalogue" style={{ '--products-hero-background': `url("${asset('catalogue/products-hero-background.png')}")` } as CSSProperties}>
+        <div className="container products-hero__grid page-hero__layout">
+          <div className="products-hero__copy page-hero__copy">
+            <p className="eyebrow eyebrow--dark">Nature&apos;s Nurture Range</p>
             <h1>The Complete Catalogue</h1>
-            <p className="products-hero__lead">Choose a category, then explore a product or range for detailed information.</p>
-            <a href="#catalogue" className="button button--primary">Browse products <ArrowRight size={16} /></a>
+            <p className="products-hero__lead">Explore our full range of nutrition, wellness and everyday health products — thoughtfully crafted for healthier lives, across Africa and beyond.</p>
           </div>
-          <ProductCollection />
+          <div className="products-hero__image page-hero__visual">
+            <img src={asset('catalogue/products-hero.jpg')} alt="Nature’s Nurture nutrition and wellness products arranged with botanicals, fruit and grains on a stone display" width={3168} height={1344} fetchPriority="high" />
+          </div>
         </div>
-      </section>
+      </PageHero>
 
-      <section className="container catalogue-browser" id="catalogue" aria-labelledby="catalogue-heading">
+      <section className="container catalogue-browser" id="catalogue" tabIndex={-1} aria-labelledby="catalogue-heading">
         <div className="catalogue-browser__heading">
-          <h2 id="catalogue-heading">Choose a category</h2>
+          <div>
+            <p className="catalogue-eyebrow">Explore our range</p>
+            <h2 id="catalogue-heading">Choose a category</h2>
+          </div>
           <label className="search-chip">
             <Search size={20} aria-hidden="true" />
             <input type="search" value={searchQuery} onChange={(event) => {
@@ -79,11 +87,17 @@ export function ProductsPage() {
             )
           })}
         </div>
-        <p className="catalogue-results-summary" role="status">{filteredProducts.length} {filteredProducts.length === 1 ? 'product or range' : 'products and ranges'}{activeCategory === 'All Products' ? '' : ` in ${activeCategory}`}</p>
+        <p className="catalogue-results-summary" role="status">{visibleRanges.length} {visibleRanges.length === 1 ? 'range' : 'ranges'} · {filteredProducts.length} {filteredProducts.length === 1 ? 'product or range' : 'products and ranges'}{searchQuery.trim() ? ' matching your search' : ''}{activeCategory === 'All Products' ? '' : ` in ${activeCategory}`}</p>
         <div id="catalogue-results">
           {filteredProducts.length > 0 ? (
-            <div className="product-grid product-grid--catalogue">
-              {filteredProducts.map((product) => <ProductCard key={product.id} product={product} />)}
+            <div className={`catalogue-ranges${visibleRanges.length === 1 ? ' catalogue-ranges--filtered' : ''}`}>
+              {visibleRanges.map((range) => (
+                <RangeCarousel key={`${range.id}:${searchQuery.trim().toLocaleLowerCase()}`} label={range.title}
+                  slides={range.products.map((product) => toProductSlide(product, range.products.length === 1 || range.id === 'protection'))}
+                  initialSlideId={filteredProducts.find((product) => product.category === range.category)?.id}
+                  autoplay={!searchQuery.trim()}
+                  variant={range.products.length === 1 || range.id === 'protection' ? 'single' : range.id === 'sublingual' ? 'feature' : 'range'} />
+              ))}
             </div>
           ) : (
             <div className="products-empty-state">
@@ -94,11 +108,6 @@ export function ProductsPage() {
         </div>
       </section>
 
-      <section className="container catalogue-support" aria-label="Product and trade information">
-        <Link to="/contact" className="button button--secondary">Request product information <ArrowRight size={16} /></Link>
-        <Link to="/retailers" className="inline-link inline-link--dark">Retail &amp; wholesale enquiries</Link>
-        <a href={`${import.meta.env.BASE_URL}Natures-Nurture-NEW.pdf`} download className="inline-link inline-link--dark">Download Stevia brochure (PDF)</a>
-      </section>
     </main>
   )
 }

@@ -5,16 +5,17 @@ import { Link, NavLink } from 'react-router-dom'
 const links = [
   { label: 'Home', to: '/' },
   { label: 'Products', to: '/products' },
-  { label: 'Brands', to: '/brands' },
+  { label: 'Quality Standards', mobileLabel: 'Certifications & Quality Standards', to: '/certifications' },
   { label: 'About', to: '/about' },
   { label: 'Retailers', to: '/retailers' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuButton = useRef<HTMLButtonElement>(null)
 
-  const getNavClassName = (link: { label: string; to: string }, isActive: boolean) => {
+  const getNavClassName = (isActive: boolean) => {
     return isActive ? 'is-active' : ''
   }
 
@@ -43,12 +44,11 @@ export function Navbar() {
               key={link.to + link.label}
               to={link.to}
               end={link.to === '/'}
-              className={({ isActive }) => getNavClassName(link, isActive)}
+              className={({ isActive }) => getNavClassName(isActive)}
             >
               {link.label}
             </NavLink>
           ))}
-          <NavLink to="/contact" className="nav-contact">Contact</NavLink>
         </nav>
 
         <button
@@ -71,15 +71,12 @@ export function Navbar() {
               key={link.to + link.label}
               to={link.to}
               end={link.to === '/'}
-              className={({ isActive }) => getNavClassName(link, isActive)}
+              className={({ isActive }) => getNavClassName(isActive)}
               onClick={() => setMenuOpen(false)}
             >
-              {link.label}
+              {link.mobileLabel ?? link.label}
             </NavLink>
           ))}
-          <NavLink to="/contact" className="nav-contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </NavLink>
         </nav>
       )}
     </header>

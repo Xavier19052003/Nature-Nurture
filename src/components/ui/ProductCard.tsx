@@ -1,3 +1,4 @@
+import { ProductMedia } from './ProductImagePlaceholder'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { getProductHref, type Product } from '../../data/products'
@@ -6,7 +7,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="product-card" style={{ ['--card-accent' as string]: product.accent ?? '#3e6b3f' }}>
       <div className="product-card__media">
-        <img src={product.image} alt={product.name} loading="lazy" />
+        <ProductMedia product={product} />
       </div>
       <div className="product-card__body">
         <p className="product-card__category">{product.category}</p>

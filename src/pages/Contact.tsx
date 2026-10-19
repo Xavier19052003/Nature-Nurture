@@ -1,4 +1,5 @@
-import { ArrowRight, Mail, MapPin, MapPinned, Phone, Users2 } from 'lucide-react'
+import { PageHero } from '../components/ui/PageHero'
+import { ArrowRight, Box, ChevronDown, Handshake, Mail, MapPin, MessageCircle, Phone, ShoppingCart, Users2 } from 'lucide-react'
 import { useState } from 'react'
 import { contactDetails } from '../data/contact'
 
@@ -7,7 +8,7 @@ type FormState = {
   email: string
   company: string
   phone: string
-  enquiryType?: string
+  enquiryType: string
   message: string
   website: string
 }
@@ -19,6 +20,7 @@ const initialForm: FormState = {
   email: '',
   company: '',
   phone: '',
+  enquiryType: '',
   message: '',
   website: '',
 }
@@ -36,12 +38,25 @@ function validateFieldValues(values: FormState): FormErrors {
     errors.email = 'Please enter a valid email address.'
   }
 
+  if (!values.enquiryType.trim()) {
+    errors.enquiryType = 'Please select an enquiry type.'
+  }
+
   if (!values.message.trim()) {
     errors.message = 'Message is required.'
   }
 
   return errors
 }
+
+const enquiryTypes = ['Product Information', 'Retail Partnership', 'Wholesale & Distribution', 'Export Opportunity', 'General Enquiry']
+
+const helpCategories = [
+  { title: 'Retail Partnerships', description: 'Product information, listings and support.', icon: ShoppingCart },
+  { title: 'Wholesale & Distribution', description: 'Supply, pricing and availability.', icon: Box },
+  { title: 'Export Opportunities', description: 'Partnerships across Africa and international markets.', icon: Handshake },
+  { title: 'General Enquiries', description: 'Product questions, media and other enquiries.', icon: MessageCircle },
+]
 
 export function ContactPage() {
   const [form, setForm] = useState<FormState>(initialForm)
@@ -50,7 +65,7 @@ export function ContactPage() {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [statusMessage, setStatusMessage] = useState('')
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = event.target
     const nextForm = { ...form, [name]: value }
     setForm(nextForm)
@@ -131,150 +146,89 @@ export function ContactPage() {
     }
   }
 
+  const [street, ...region] = contactDetails.address.split(',')
+
   return (
-    <main className="page-shell page-shell--light">
-      <section className="contact-hero">
-        <div className="container contact-hero__grid">
-          <div className="contact-hero__copy">
-            <p className="eyebrow eyebrow--dark">Contact</p>
-            <h1>Speak with the Nature&apos;s Nurture team.</h1>
-            <span className="about-hero__divider" aria-hidden="true" />
-            <p>
-              We’re here to support product enquiries, retail conversations and wellness partnerships across the region.
-            </p>
+    <main className="page-shell page-shell--light contact-page">
+      <PageHero backgroundImage={`${import.meta.env.BASE_URL}contact/contact-hero-background.png`} entryPlacement="bottom" className="contact-design-hero" scrollLabel="Get in touch" scrollTarget="contact-information" labelledBy="contact-heading">
+        <div className="container contact-design-hero__layout page-hero__layout">
+          <div className="contact-design-hero__copy page-hero__copy">
+            <p className="eyebrow eyebrow--dark">Get in touch</p>
+            <h1 id="contact-heading">Let’s grow<br />wellness<br />together.</h1>
+            <p>We’re here to support product enquiries, retail conversations and wellness partnerships across South Africa and beyond.</p>
+
+          </div>
+        </div>
+      </PageHero>
+
+      <section className="contact-design-section" id="contact-information" tabIndex={-1} aria-label="Contact information and enquiry form">
+        <div className="container contact-design-layout">
+          <div className="contact-design-information" aria-labelledby="contact-information-heading">
+            <h2 id="contact-information-heading">Contact information</h2>
+            <p>Get in touch with our team directly or use the form and we’ll get back to you.</p>
+            <div className="contact-design-details">
+              <article><MapPin size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Head Office</h3><address>{street}<br />{region.join(',').trim()}</address></div></article>
+              <article><Phone size={31} strokeWidth={1.6} aria-hidden="true" /><div><h3>Phone</h3><a href={`tel:${contactDetails.phone.replace(/\s/g, '')}`}>{contactDetails.phone}</a></div></article>
+              <article><Mail size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Email</h3><a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a></div></article>
+              <article><Users2 size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Business Enquiries</h3><p>Retail, wholesale &amp; partnerships</p></div></article>
+            </div>
           </div>
 
-          <div className="contact-hero__panel">
-            <div className="contact-hero__item">
-              <MapPinned size={16} />
-              <div>
-                <span>Location</span>
-                <strong>{contactDetails.address}</strong>
-              </div>
+          <form id="contact-form" className="contact-design-form" onSubmit={handleSubmit} noValidate aria-labelledby="contact-form-heading" tabIndex={-1}>
+            <h2 id="contact-form-heading">Send us a message</h2>
+            <p>Fill in your details and our team will get back to you shortly.</p>
+            <div className="contact-design-fields">
+              <label>
+                <span id="contact-name-label">Name <span aria-hidden="true">*</span></span>
+                <input type="text" name="name" aria-labelledby="contact-name-label" autoComplete="name" value={form.name} onChange={handleChange} placeholder="Your name" required aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? 'contact-name-error' : undefined} />
+                {errors.name && <small className="field-error" id="contact-name-error">{errors.name}</small>}
+              </label>
+              <label>
+                <span id="contact-email-label">Email <span aria-hidden="true">*</span></span>
+                <input type="email" name="email" aria-labelledby="contact-email-label" autoComplete="email" value={form.email} onChange={handleChange} placeholder="Your email address" required aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? 'contact-email-error' : undefined} />
+                {errors.email && <small className="field-error" id="contact-email-error">{errors.email}</small>}
+              </label>
+              <label>
+                <span id="contact-company-label">Company</span>
+                <input type="text" name="company" aria-labelledby="contact-company-label" autoComplete="organization" value={form.company} onChange={handleChange} placeholder="Business or retailer name" />
+              </label>
+              <label>
+                <span id="contact-phone-label">Phone</span>
+                <input type="tel" inputMode="tel" name="phone" aria-labelledby="contact-phone-label" autoComplete="tel" value={form.phone} onChange={handleChange} placeholder="Your phone number" />
+              </label>
+              <label className="contact-design-fields__wide">
+                <span id="contact-enquiry-label">Enquiry type <span aria-hidden="true">*</span></span>
+                <span className="contact-design-select">
+                  <select name="enquiryType" aria-labelledby="contact-enquiry-label" value={form.enquiryType} onChange={handleChange} required aria-invalid={Boolean(errors.enquiryType)} aria-describedby={errors.enquiryType ? 'contact-enquiry-error' : undefined}>
+                    <option value="" disabled>Select an enquiry type</option>
+                    {enquiryTypes.map((type) => <option value={type} key={type}>{type}</option>)}
+                  </select>
+                  <ChevronDown size={17} aria-hidden="true" />
+                </span>
+                {errors.enquiryType && <small className="field-error" id="contact-enquiry-error">{errors.enquiryType}</small>}
+              </label>
+              <label className="contact-design-fields__wide">
+                <span id="contact-message-label">Message <span aria-hidden="true">*</span></span>
+                <textarea rows={5} name="message" aria-labelledby="contact-message-label" value={form.message} onChange={handleChange} placeholder="Tell us about your enquiry" required aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? 'contact-message-error' : undefined} />
+                {errors.message && <small className="field-error" id="contact-message-error">{errors.message}</small>}
+              </label>
+              <input type="text" name="website" value={form.website} onChange={handleChange} className="honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             </div>
-            <div className="contact-hero__item">
-              <Phone size={16} />
-              <div>
-                <span>Phone</span>
-                <strong>{contactDetails.phone}</strong>
-              </div>
-            </div>
-            <div className="contact-hero__item">
-              <Mail size={16} />
-              <div>
-                <span>Email</span>
-                <strong>{contactDetails.email}</strong>
-              </div>
-            </div>
-            <div className="contact-hero__item contact-hero__item--subtle">
-              <Users2 size={16} />
-              <div>
-                <span>Business enquiries</span>
-                <strong>Retail, wholesale &amp; partnerships</strong>
-              </div>
-            </div>
-          </div>
+            {statusMessage && <div className={`form-status form-status--${status}`} aria-live="polite">{statusMessage}</div>}
+            <button className="button button--primary" type="submit" disabled={isSubmitting}>{isSubmitting ? 'Sending...' : 'Send Message'} <ArrowRight size={16} aria-hidden="true" /></button>
+          </form>
         </div>
       </section>
 
-      <section className="container contact-layout">
-        <div className="contact-card contact-card--primary">
-          <h3>Get in touch</h3>
-          <ul>
-            <li><Mail size={16} /> {contactDetails.email}</li>
-            <li><Phone size={16} /> {contactDetails.phone}</li>
-            <li><MapPin size={16} /> {contactDetails.address}</li>
-          </ul>
-        </div>
-
-        <form className="contact-form-box" onSubmit={handleSubmit} noValidate>
-          <h3>Send a message</h3>
-          <div className="form-grid">
-            <label>
-              <span>Name</span>
-              <input
-                type="text"
-                name="name"
-                value={form.name}
-                onChange={handleChange}
-                placeholder="Your name"
-                aria-invalid={Boolean(errors.name)}
-              />
-              {errors.name && <small className="field-error">{errors.name}</small>}
-            </label>
-
-            <label>
-              <span>Email</span>
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="you@example.com"
-                aria-invalid={Boolean(errors.email)}
-              />
-              {errors.email && <small className="field-error">{errors.email}</small>}
-            </label>
-
-            <label className="full-width">
-              <span>Company</span>
-              <input
-                type="text"
-                name="company"
-                value={form.company}
-                onChange={handleChange}
-                placeholder="Business or retailer name"
-              />
-            </label>
-
-            <label className="full-width">
-              <span>Phone</span>
-              <input
-                type="tel"
-                name="phone"
-                value={form.phone}
-                onChange={handleChange}
-                placeholder="+27 00 000 0000"
-              />
-            </label>
-
-            <label className="full-width">
-              <span>Message</span>
-              <textarea
-                rows={5}
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Tell us about your enquiry"
-                aria-invalid={Boolean(errors.message)}
-              />
-              {errors.message && <small className="field-error">{errors.message}</small>}
-            </label>
-
-            <input
-              type="text"
-              name="website"
-              value={form.website}
-              onChange={handleChange}
-              className="honeypot"
-              tabIndex={-1}
-              autoComplete="off"
-              aria-hidden="true"
-            />
+      <section className="contact-design-section contact-design-help" aria-labelledby="contact-help-heading">
+        <div className="container">
+          <h2 id="contact-help-heading">How we can help</h2>
+          <p>We work with retail partners, distributors and organisations to make high-quality wellness products more accessible across South Africa and the wider African region.</p>
+          <div className="contact-design-help__grid">
+            {helpCategories.map(({ title, description, icon: Icon }) => <article key={title}><Icon size={30} strokeWidth={1.6} aria-hidden="true" /><h3>{title}</h3><p>{description}</p></article>)}
           </div>
-
-          {statusMessage && (
-            <div className={`form-status form-status--${status}`} aria-live="polite">
-              {statusMessage}
-            </div>
-          )}
-
-          <button className="button button--primary" type="submit" disabled={isSubmitting}>
-            {isSubmitting ? 'Sending...' : 'Send message'} <ArrowRight size={16} />
-          </button>
-        </form>
+        </div>
       </section>
-
     </main>
   )
 }

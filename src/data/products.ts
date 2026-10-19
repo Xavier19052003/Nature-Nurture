@@ -1,3 +1,6 @@
+import { sublingualProducts } from './sublingual'
+import { mosquitoBenefits, mosquitoPatchVariants } from './mosquitoPatches'
+
 export type Product = {
   id: string
   slug: string
@@ -113,82 +116,25 @@ const steviaProduct: Product = {
   accent: '#7fae4a',
 }
 
-// Confirmed final production asset: public-production/products/mosquito-repellent/mosquito-repellent-patches.png
-const mosquitoRepellentProduct: Product = {
-  id: 'mosquito-repellent-patches',
-  slug: 'mosquito-repellent-patches',
-  name: 'Mosquito Repellent Patches',
+// Two approved variants share the same source-supported product positioning.
+const mosquitoRepellentProducts: Product[] = mosquitoPatchVariants.map((variant) => ({
+  id: variant.slug,
+  slug: variant.slug,
+  name: variant.name,
   brand: "Nature's Nurture",
   category: 'Family Protection',
-  description: 'Affordable, non-toxic, 24-hour protection for your family. DEET-free with plant-based ingredients, apply to clothing or nearby objects — do not apply directly to skin.',
-  shortDescription: '24-hour non-toxic protection',
-  image: `${import.meta.env.BASE_URL}products/mosquito-repellent/mosquito-repellent-patches.png`,
-  format: 'Patch',
-  label: 'Family-friendly protection',
-  benefits: ['24-hour protection per patch', 'Non-toxic, DEET-free formula', 'Active ingredient: Oil of Lemon Eucalyptus', 'Safe for children and adults of all ages'],
+  description: variant.hero,
+  shortDescription: variant.shortDescription,
+  image: `${import.meta.env.BASE_URL}products/mosquito-repellent/${variant.image}`,
+  format: 'Peel-and-stick patches',
+  label: 'Long-lasting protection',
+  benefits: mosquitoBenefits.map((benefit) => benefit.title),
   accent: '#4a7a5e',
-}
+}))
 
 export const products: Product[] = [
   ...zingoProducts,
-  {
-    id: 'vitamin-b12-folate',
-    slug: 'vitamin-b12-folate',
-    name: 'B12 + Folate',
-    brand: "Nature's Nurture",
-    category: 'Wellness Nutrition',
-    description: 'Evidence-led daily nutrient support for energy, focus and everyday wellbeing.',
-    shortDescription: 'B6 + Folic Acid · Daily Spray Food Supplement',
-    image: `${import.meta.env.BASE_URL}products/sublingual/b12-folate.png`,
-    format: '30 ml',
-    label: 'Supports daily wellness',
-    benefits: ['Supports energy', 'Red blood cells', 'Immune function'],
-    featured: true,
-    accent: '#d8b7c8',
-  },
-  {
-    id: 'iron',
-    slug: 'iron',
-    name: 'Iron',
-    brand: "Nature's Nurture",
-    category: 'Daily Support',
-    description: 'A practical iron-support formulation designed for modern routines and daily nutrition.',
-    shortDescription: 'Daily Spray Food Supplement',
-    image: `${import.meta.env.BASE_URL}products/sublingual/iron.png`,
-    format: '30 ml',
-    label: 'Iron support formula',
-    benefits: ['Supports energy', 'Supports red blood cells'],
-    accent: '#b0d0a3',
-  },
-  {
-    id: 'vitamin-d3-k2',
-    slug: 'vitamin-d3-k2',
-    name: 'D3 + K2',
-    brand: "Nature's Nurture",
-    category: 'Wellness Nutrition',
-    description: 'A targeted daily formula created to support normal wellness and everyday balance.',
-    shortDescription: 'Daily Spray Food Supplement',
-    image: `${import.meta.env.BASE_URL}products/sublingual/d3-k2.png`,
-    format: '30 ml',
-    label: 'Supports daily balance',
-    benefits: ['Supports bone health', 'Supports immune health'],
-    featured: true,
-    accent: '#b69b6d',
-  },
-  {
-    id: 'calm-complex',
-    slug: 'calm-complex',
-    name: 'Calm Complex',
-    brand: "Nature's Nurture",
-    category: 'Wellness Nutrition',
-    description: 'A calming daily formula created to support focus and emotional balance as part of an everyday wellness routine.',
-    shortDescription: 'Daily Spray Food Supplement',
-    image: `${import.meta.env.BASE_URL}products/sublingual/calm-complex.png`,
-    format: '30 ml',
-    label: 'Supports calm & focus',
-    benefits: ['Supports calm', 'Supports focus', 'Supports emotional balance'],
-    accent: '#7a9b6d',
-  },
+  ...sublingualProducts,
   {
     id: 'infant-formula-stage-1',
     slug: 'infant-formula-stage-1',
@@ -219,7 +165,7 @@ export const products: Product[] = [
   },
   ...cerealProducts,
   steviaProduct,
-  mosquitoRepellentProduct,
+  ...mosquitoRepellentProducts,
 ]
 
 // Keep individual flavours as approved range assets, not separate catalogue entries.
@@ -260,6 +206,8 @@ export const featuredProducts = [
 export const categories = ['All Products', ...new Set(catalogueProducts.map((product) => product.category))]
 
 export function getProductHref(product: Product) {
+  if (cerealVariants.some((variant) => variant.slug === product.slug)) return '/products/cereal-meal-replacement'
+  if (product.slug === 'infant-formula-stage-1' || product.slug === 'infant-formula-stage-2') return '/products/infant-formula'
   return product.slug === 'zingo' || zingoVariants.some((variant) => variant.slug === product.slug)
     ? '/brands/zingo'
     : `/products/${product.slug}`

@@ -1,0 +1,113 @@
+.infant-story { --formula-blush: #f8edf0; --formula-lavender: #f0ecf6; }
+.formula-stage-nav { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0.75rem; margin: 1.75rem 0; }
+.formula-stage-link { display: grid; gap: 0.4rem; border: var(--rule); border-radius: var(--radius-card); padding: 1rem; color: var(--color-deep-forest); text-decoration: none; transition: transform var(--ease-editorial), box-shadow var(--ease-editorial); }
+.formula-stage-link:hover { transform: translateY(-2px); box-shadow: var(--shadow-card); }
+.formula-stage-link > span { display: flex; justify-content: space-between; align-items: center; font: 400 1.3rem/1.2 var(--font-display); }
+.formula-stage-link strong { font: 600 var(--type-small)/1.5 var(--font-body); }
+.formula-stage-link small { font-size: 0.78rem; line-height: 1.5; }
+.formula-stage-link--1, .formula-stage--1 { background: var(--formula-blush); }
+.formula-stage-link--2, .formula-stage--2 { background: var(--formula-lavender); }
+.formula-hero__composition { display: grid; grid-template-columns: minmax(0,1.12fr) minmax(0,0.88fr); align-items: start; gap: 0.65rem; min-width: 0; padding-block: 1.5rem; }
+.formula-hero__pack { margin: 0; padding: 0.5rem; border: var(--rule); border-radius: var(--radius-hero); background: var(--color-card); box-shadow: var(--shadow-soft); overflow: hidden; }
+.formula-hero__pack img { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: contain; border-radius: var(--radius-image); transition: transform 600ms ease; }
+.formula-hero__pack--first { background: var(--formula-blush); }
+.formula-hero__pack--second { margin-top: 6rem; background: var(--formula-lavender); }
+.formula-hero__pack figcaption { display: grid; gap: 0.3rem; padding: 1rem 0.5rem 0.5rem; font: 400 1.3rem/1.2 var(--font-display); }
+.formula-hero__pack figcaption span { font: 500 0.78rem/1.5 var(--font-body); color: var(--color-muted); }
+.formula-summary { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 2rem; }
+.formula-summary > div { display: flex; align-items: flex-start; gap: 0.85rem; padding-top: 1.25rem; border-top: var(--rule); }
+.formula-summary svg { flex-shrink: 0; color: var(--color-nature); }
+.infant-story .formula-summary h3 { font-size: 1.2rem; margin: 0; }
+.formula-grid { display: grid; gap: 1rem; margin-top: 1.75rem; }
+.formula-grid--4 { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.formula-grid--3 { grid-template-columns: repeat(3,minmax(0,1fr)); }
+.formula-grid--2 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.formula-stage { scroll-margin-top: calc(var(--navbar-height) + 1rem); }
+.infant-story .formula-stage__label { font-size: 25px; line-height: 1.35; letter-spacing: 0.03em; }
+.formula-stage__label span { white-space: nowrap; }
+.infant-story .formula-stage__lead { font: 400 1.5rem/1.3 var(--font-display); color: var(--color-nature); }
+.formula-stage__image img { width: 100%; height: auto; object-fit: contain; }
+.infant-story .stevia-art img { object-fit: contain; }
+.formula-stage__information { margin-top: 3rem; }
+.infant-story .formula-subheading { font-size: var(--type-card); margin-bottom: 0; }
+.formula-snapshot { padding: clamp(1.25rem,3vw,2.5rem); border-radius: var(--radius-feature); border: var(--rule); background: var(--color-ivory); }
+.formula-stage--1 .formula-snapshot { margin-top: 2rem; }
+.infant-story .formula-snapshot > h3 { font-size: var(--type-card); }
+.formula-nutrition { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; margin: 1.5rem 0 0; }
+.formula-nutrition--2 { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.formula-nutrition > div { min-width: 0; padding: 1.25rem; border-radius: var(--radius-card); background: var(--color-card); border: var(--rule); }
+.formula-nutrition dt { font-size: var(--type-small); color: var(--color-copy); }
+.formula-nutrition dd { display: grid; gap: 0.5rem; margin: 0.75rem 0 0; }
+.formula-nutrition strong { font: 400 clamp(2rem,4vw,3.5rem)/1 var(--font-display); }
+.formula-nutrition dd span { font-size: var(--type-small); color: var(--color-copy); line-height: 1.5; }
+.formula-transition .stevia-art { width: min(100%,22rem); }
+.formula-transition .stevia-text-link { margin-top: 1rem; }
+.infant-story .formula-note { margin-top: 1.25rem; font-size: var(--type-small); color: var(--color-muted); }
+.infant-story .formula-protein__value { font: 400 clamp(2.4rem,4vw,3.75rem)/1 var(--font-display); color: var(--color-nature); margin-bottom: 1rem; }
+.formula-carnitine { display: grid; grid-template-columns: minmax(0,0.65fr) minmax(0,1.35fr); gap: 1.5rem; align-items: center; margin-top: 2rem; padding-top: 1.5rem; border-top: var(--rule); }
+.formula-carnitine h3 { margin-bottom: 0; }
+.formula-fatty-acids { margin-top: 0; }
+.infant-story .formula-fatty-acids h3 { margin-bottom: 0; }
+.formula-nurture ul, .formula-ingredients ul { margin: 0; padding-left: 1.15rem; color: var(--color-copy); font-size: 0.94rem; line-height: 1.7; }
+.formula-ingredients li + li { margin-top: 0.5rem; }
+.formula-allergen { display: flex; gap: 1.25rem; align-items: center; padding: clamp(1.25rem,3vw,2rem); border: 1px solid var(--color-outline); border-left: 5px solid var(--color-forest); border-radius: var(--radius-card); background: var(--color-cream); margin-top: 2rem; }
+.formula-allergen > svg { flex-shrink: 0; color: var(--color-forest); }
+.infant-story .formula-allergen h3 { margin-bottom: 0.5rem; }
+.infant-story .formula-allergen p { font-size: clamp(1.1rem,1.8vw,1.4rem); color: var(--color-deep-forest); font-weight: 600; }
+.formula-priorities h3 { max-width: 30ch; }
+.formula-priorities-intro .stevia-art { width: min(100%,22rem); }
+.formula-safety, .formula-trade { background: linear-gradient(120deg,var(--color-feature-start),var(--color-feature-end)); }
+.infant-story :is(.formula-safety,.formula-trade) :is(h2,h3,p) { color: var(--color-ivory); }
+.infant-story :is(.formula-safety,.formula-trade) .eyebrow { color: var(--color-on-forest); }
+.formula-safety .stevia-art { width: min(100%,22rem); background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+.formula-process { list-style: none; display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 1rem; padding: 0; margin: 2rem 0 0; }
+.formula-process li { min-width: 0; display: flex; align-items: flex-start; gap: 1rem; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 1.25rem; }
+.formula-process__number { flex-shrink: 0; color: var(--color-on-forest); font: 400 1.4rem/1.3 var(--font-display); }
+.infant-story .formula-process h3 { font-size: 1.2rem; margin-bottom: 0.7rem; }
+.infant-story .formula-process p { font-size: 0.94rem; color: var(--color-on-forest); }
+.formula-preparation__guidance { padding: clamp(1.25rem,3vw,2rem); background: var(--color-card); border: var(--rule); border-radius: var(--radius-card); }
+.formula-preparation__guidance > svg { color: var(--color-nature); margin-bottom: 1rem; }
+.infant-story .formula-preparation__primary { font: 400 clamp(1.4rem,2vw,1.8rem)/1.25 var(--font-display); color: var(--color-deep-forest); }
+.formula-information__panel { border-top: var(--rule); border-bottom: var(--rule); padding-block: 1.5rem; display: grid; grid-template-columns: minmax(0,0.7fr) minmax(0,1.3fr); gap: 2rem; }
+.infant-story .formula-information h2 { font-size: var(--type-card); }
+.formula-information .stevia-checklist li { font-size: var(--type-small); }
+.formula-trade .cta-row { margin-top: 1.5rem; }
+.infant-story .button svg { transition: transform 240ms ease; }
+.infant-story .button:hover svg { transform: translateX(3px); }
+.formula-trade .button:focus-visible { outline-color: var(--color-ivory); }
+.formula-related-item { display: flex; min-width: 0; }
+.formula-related-item > .product-card { width: 100%; }
+.infant-story .formula-related-item:nth-child(2) { transition-delay: 70ms; }
+.infant-story .formula-related-item:nth-child(3) { transition-delay: 140ms; }
+@media (hover:hover) and (min-width:901px) {
+  .formula-hero__pack:hover img { transform: scale(1.015); }
+}
+@media (max-width:1100px) {
+  .formula-grid--4, .formula-grid--3, .formula-summary { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .formula-process { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:900px) {
+  .formula-hero__composition { width: min(100%,35rem); justify-self: center; }
+  .formula-stage .stevia-split > .stevia-art { order: 2; }
+  .formula-carnitine, .formula-information__panel { grid-template-columns: minmax(0,1fr); }
+}
+@media (max-width:700px) {
+  .formula-grid, .formula-summary, .formula-nutrition, .formula-process { grid-template-columns: minmax(0,1fr); }
+  .formula-hero__composition { gap: 0.5rem; padding-block: 0; }
+  .formula-hero__pack--second { margin-top: 3rem; }
+  .formula-hero__pack figcaption { font-size: 1.1rem; padding-inline: 0.15rem; }
+  .formula-hero__pack { padding: 0.35rem; }
+  .formula-stage-nav { gap: 0.5rem; }
+  .formula-stage-link { padding: 0.8rem; }
+  .formula-stage-link small { font-size: 0.75rem; }
+  .formula-stage__information { margin-top: 2rem; }
+  .formula-nutrition > div { display: grid; grid-template-columns: minmax(0,0.8fr) minmax(0,1.2fr); gap: 0.75rem; align-items: center; }
+  .formula-nutrition dd { margin: 0; }
+  .formula-nutrition dd span { font-size: 0.8rem; }
+  .formula-allergen { align-items: flex-start; gap: 0.8rem; }
+  .formula-allergen > svg { width: 23px; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .formula-stage-link, .formula-hero__pack img, .infant-story .button svg { transition: none; }
+  .formula-stage-link:hover, .formula-hero__pack:hover img, .infant-story .button:hover svg { transform: none; }
+}
