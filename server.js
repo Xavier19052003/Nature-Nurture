@@ -57,6 +57,7 @@ app.post('/api/contact', async (request, response) => {
   const email = trimString(form.email)
   const company = trimString(form.company)
   const phone = trimString(form.phone)
+  const enquiryType = trimString(form.enquiryType)
   const message = trimString(form.message)
   const honeypot = trimString(form.website)
 
@@ -79,7 +80,7 @@ app.post('/api/contact', async (request, response) => {
     return
   }
 
-  const emailTo = process.env.EMAIL_TO
+  const emailTo = process.env.EMAIL_TO || 'Sales@RainmakerFMCG.co.za'
   const emailFrom = process.env.EMAIL_FROM || 'no-reply@naturesnurture.co.za'
   const emailMode = process.env.EMAIL_MODE || 'mock'
 
@@ -127,6 +128,7 @@ app.post('/api/contact', async (request, response) => {
         `Email: ${email}`,
         company ? `Company: ${company}` : '',
         phone ? `Phone: ${phone}` : '',
+        enquiryType ? `Enquiry type: ${enquiryType}` : '',
         '',
         'Message:',
         message,

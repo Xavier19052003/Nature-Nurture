@@ -1,0 +1,1030 @@
+{
+  "about/about-hero-africa.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/about-hero-africa-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/about-hero-africa-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/about-hero-africa-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "about/about-hero-africa.webp"
+      }
+    ]
+  },
+  "about/about-hero.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/about-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/about-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/about-hero-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "about/about-hero.webp"
+      }
+    ]
+  },
+  "about/africa-market-map.png": {
+    "width": 1896,
+    "height": 829,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/africa-market-map-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/africa-market-map-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/africa-market-map-1200.webp"
+      },
+      {
+        "width": 1896,
+        "src": "about/africa-market-map.webp"
+      }
+    ]
+  },
+  "about/energy-hydration.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/energy-hydration-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/energy-hydration-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/energy-hydration-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "about/energy-hydration.webp"
+      }
+    ]
+  },
+  "about/ethical-sourcing.png": {
+    "width": 2172,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/ethical-sourcing-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/ethical-sourcing-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/ethical-sourcing-1200.webp"
+      },
+      {
+        "width": 1920,
+        "src": "about/ethical-sourcing.webp"
+      }
+    ]
+  },
+  "about/infant-family-nutrition.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/infant-family-nutrition-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/infant-family-nutrition-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/infant-family-nutrition-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "about/infant-family-nutrition.webp"
+      }
+    ]
+  },
+  "about/manufacturing-facility.png": {
+    "width": 2172,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/manufacturing-facility-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/manufacturing-facility-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/manufacturing-facility-1200.webp"
+      },
+      {
+        "width": 1920,
+        "src": "about/manufacturing-facility.webp"
+      }
+    ]
+  },
+  "about/natural-lifestyle.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/natural-lifestyle-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/natural-lifestyle-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/natural-lifestyle-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "about/natural-lifestyle.webp"
+      }
+    ]
+  },
+  "about/sublingual-nutrition.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "about/sublingual-nutrition-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "about/sublingual-nutrition-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "about/sublingual-nutrition-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "about/sublingual-nutrition.webp"
+      }
+    ]
+  },
+  "catalogue/products-hero-background.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "catalogue/products-hero-background-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "catalogue/products-hero-background-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "catalogue/products-hero-background-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "catalogue/products-hero-background.webp"
+      }
+    ]
+  },
+  "catalogue/products-hero.jpg": {
+    "width": 3168,
+    "height": 1344,
+    "variants": [
+      {
+        "width": 480,
+        "src": "catalogue/products-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "catalogue/products-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "catalogue/products-hero-1200.webp"
+      },
+      {
+        "width": 1920,
+        "src": "catalogue/products-hero.webp"
+      }
+    ]
+  },
+  "contact/contact-hero-background.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "contact/contact-hero-background-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "contact/contact-hero-background-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "contact/contact-hero-background-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "contact/contact-hero-background.webp"
+      }
+    ]
+  },
+  "contact/contact-hero.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "contact/contact-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "contact/contact-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "contact/contact-hero-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "contact/contact-hero.webp"
+      }
+    ]
+  },
+  "home/manufacturing-quality-control.png": {
+    "width": 1168,
+    "height": 1347,
+    "variants": [
+      {
+        "width": 480,
+        "src": "home/manufacturing-quality-control-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "home/manufacturing-quality-control-800.webp"
+      },
+      {
+        "width": 1168,
+        "src": "home/manufacturing-quality-control.webp"
+      }
+    ]
+  },
+  "products/cereal/banana-bliss.png": {
+    "width": 768,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/banana-bliss-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "products/cereal/banana-bliss.webp"
+      }
+    ]
+  },
+  "products/cereal/cereal-range-hero.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/cereal-range-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/cereal/cereal-range-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "products/cereal/cereal-range-hero-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "products/cereal/cereal-range-hero.webp"
+      }
+    ]
+  },
+  "products/cereal/cereal-range-story.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/cereal-range-story-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/cereal/cereal-range-story-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "products/cereal/cereal-range-story-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "products/cereal/cereal-range-story.webp"
+      }
+    ]
+  },
+  "products/cereal/chocolate-crave.png": {
+    "width": 710,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/chocolate-crave-480.webp"
+      },
+      {
+        "width": 710,
+        "src": "products/cereal/chocolate-crave.webp"
+      }
+    ]
+  },
+  "products/cereal/custard-dream.png": {
+    "width": 718,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/custard-dream-480.webp"
+      },
+      {
+        "width": 718,
+        "src": "products/cereal/custard-dream.webp"
+      }
+    ]
+  },
+  "products/cereal/pineapple-paradise.png": {
+    "width": 768,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/pineapple-paradise-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "products/cereal/pineapple-paradise.webp"
+      }
+    ]
+  },
+  "products/cereal/strawberry-spotlight.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/strawberry-spotlight-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/cereal/strawberry-spotlight-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "products/cereal/strawberry-spotlight-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "products/cereal/strawberry-spotlight.webp"
+      }
+    ]
+  },
+  "products/cereal/strawberry-sunrise.png": {
+    "width": 711,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/cereal/strawberry-sunrise-480.webp"
+      },
+      {
+        "width": 711,
+        "src": "products/cereal/strawberry-sunrise.webp"
+      }
+    ]
+  },
+  "products/infant-formula/infant-quality.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/infant-formula/infant-quality-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/infant-formula/infant-quality-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "products/infant-formula/infant-quality-1200.webp"
+      },
+      {
+        "width": 1254,
+        "src": "products/infant-formula/infant-quality.webp"
+      }
+    ]
+  },
+  "products/infant-formula/infant-range.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/infant-formula/infant-range-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/infant-formula/infant-range-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "products/infant-formula/infant-range-1200.webp"
+      },
+      {
+        "width": 1254,
+        "src": "products/infant-formula/infant-range.webp"
+      }
+    ]
+  },
+  "products/infant-formula/infant-stage-2-lifestyle.png": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/infant-formula/infant-stage-2-lifestyle-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/infant-formula/infant-stage-2-lifestyle-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "products/infant-formula/infant-stage-2-lifestyle-1200.webp"
+      },
+      {
+        "width": 1254,
+        "src": "products/infant-formula/infant-stage-2-lifestyle.webp"
+      }
+    ]
+  },
+  "products/infant-formula/stage-1.png": {
+    "width": 768,
+    "height": 775,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/infant-formula/stage-1-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "products/infant-formula/stage-1.webp"
+      }
+    ]
+  },
+  "products/infant-formula/stage-2.png": {
+    "width": 768,
+    "height": 776,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/infant-formula/stage-2-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "products/infant-formula/stage-2.webp"
+      }
+    ]
+  },
+  "products/mosquito-repellent/mosquito-repellent-patches-adults.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-adults-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-adults-800.webp"
+      },
+      {
+        "width": 1122,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-adults.webp"
+      }
+    ]
+  },
+  "products/mosquito-repellent/mosquito-repellent-patches-kids.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-kids-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-kids-800.webp"
+      },
+      {
+        "width": 1122,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-kids.webp"
+      }
+    ]
+  },
+  "products/mosquito-repellent/mosquito-repellent-patches.png": {
+    "width": 768,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "products/mosquito-repellent/mosquito-repellent-patches.webp"
+      }
+    ]
+  },
+  "products/stevia/stevia-baking.png": {
+    "width": 1198,
+    "height": 1313,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/stevia/stevia-baking-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/stevia/stevia-baking-800.webp"
+      },
+      {
+        "width": 1198,
+        "src": "products/stevia/stevia-baking.webp"
+      }
+    ]
+  },
+  "products/stevia/stevia-hero.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/stevia/stevia-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/stevia/stevia-hero-800.webp"
+      },
+      {
+        "width": 1024,
+        "src": "products/stevia/stevia-hero.webp"
+      }
+    ]
+  },
+  "products/stevia/stevia-sachets-lifestyle.png": {
+    "width": 1086,
+    "height": 1448,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/stevia/stevia-sachets-lifestyle-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/stevia/stevia-sachets-lifestyle-800.webp"
+      },
+      {
+        "width": 1086,
+        "src": "products/stevia/stevia-sachets-lifestyle.webp"
+      }
+    ]
+  },
+  "products/stevia/stevia-sachets.png": {
+    "width": 768,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/stevia/stevia-sachets-480.webp"
+      },
+      {
+        "width": 768,
+        "src": "products/stevia/stevia-sachets.webp"
+      }
+    ]
+  },
+  "products/stevia/stevia-trade.png": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/stevia/stevia-trade-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/stevia/stevia-trade-800.webp"
+      },
+      {
+        "width": 1024,
+        "src": "products/stevia/stevia-trade.webp"
+      }
+    ]
+  },
+  "products/sublingual/b12-folate.png": {
+    "width": 1198,
+    "height": 1313,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/sublingual/b12-folate-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/sublingual/b12-folate-800.webp"
+      },
+      {
+        "width": 1198,
+        "src": "products/sublingual/b12-folate.webp"
+      }
+    ]
+  },
+  "products/sublingual/calm-complex.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/sublingual/calm-complex-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/sublingual/calm-complex-800.webp"
+      },
+      {
+        "width": 1122,
+        "src": "products/sublingual/calm-complex.webp"
+      }
+    ]
+  },
+  "products/sublingual/d3-k2.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/sublingual/d3-k2-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/sublingual/d3-k2-800.webp"
+      },
+      {
+        "width": 1122,
+        "src": "products/sublingual/d3-k2.webp"
+      }
+    ]
+  },
+  "products/sublingual/iron.png": {
+    "width": 1122,
+    "height": 1402,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/sublingual/iron-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/sublingual/iron-800.webp"
+      },
+      {
+        "width": 1122,
+        "src": "products/sublingual/iron.webp"
+      }
+    ]
+  },
+  "products/zingo/berry-burst.png": {
+    "width": 863,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/berry-burst-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/zingo/berry-burst-800.webp"
+      },
+      {
+        "width": 863,
+        "src": "products/zingo/berry-burst.webp"
+      }
+    ]
+  },
+  "products/zingo/cola-classic.png": {
+    "width": 863,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/cola-classic-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/zingo/cola-classic-800.webp"
+      },
+      {
+        "width": 863,
+        "src": "products/zingo/cola-classic.webp"
+      }
+    ]
+  },
+  "products/zingo/guava-glow.png": {
+    "width": 863,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/guava-glow-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/zingo/guava-glow-800.webp"
+      },
+      {
+        "width": 863,
+        "src": "products/zingo/guava-glow.webp"
+      }
+    ]
+  },
+  "products/zingo/lemon-zest.png": {
+    "width": 713,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/lemon-zest-480.webp"
+      },
+      {
+        "width": 713,
+        "src": "products/zingo/lemon-zest.webp"
+      }
+    ]
+  },
+  "products/zingo/mango-magic.png": {
+    "width": 713,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/mango-magic-480.webp"
+      },
+      {
+        "width": 713,
+        "src": "products/zingo/mango-magic.webp"
+      }
+    ]
+  },
+  "products/zingo/orange-boost.png": {
+    "width": 710,
+    "height": 724,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/orange-boost-480.webp"
+      },
+      {
+        "width": 710,
+        "src": "products/zingo/orange-boost.webp"
+      }
+    ]
+  },
+  "products/zingo/peach-delight.png": {
+    "width": 903,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/peach-delight-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/zingo/peach-delight-800.webp"
+      },
+      {
+        "width": 903,
+        "src": "products/zingo/peach-delight.webp"
+      }
+    ]
+  },
+  "products/zingo/pineapple-power.png": {
+    "width": 905,
+    "height": 768,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/pineapple-power-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/zingo/pineapple-power-800.webp"
+      },
+      {
+        "width": 905,
+        "src": "products/zingo/pineapple-power.webp"
+      }
+    ]
+  },
+  "quality/quality-botanical-background.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "quality/quality-botanical-background-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "quality/quality-botanical-background-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "quality/quality-botanical-background-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "quality/quality-botanical-background.webp"
+      }
+    ]
+  },
+  "quality/quality-hero.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "quality/quality-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "quality/quality-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "quality/quality-hero-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "quality/quality-hero.webp"
+      }
+    ]
+  },
+  "quality/quality-standards-hero.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "quality/quality-standards-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "quality/quality-standards-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "quality/quality-standards-hero-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "quality/quality-standards-hero.webp"
+      }
+    ]
+  },
+  "retailers/retailers-focus.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "retailers/retailers-focus-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "retailers/retailers-focus-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "retailers/retailers-focus-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "retailers/retailers-focus.webp"
+      }
+    ]
+  },
+  "retailers/retailers-hero-background.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "retailers/retailers-hero-background-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "retailers/retailers-hero-background-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "retailers/retailers-hero-background-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "retailers/retailers-hero-background.webp"
+      }
+    ]
+  },
+  "retailers/retailers-hero.png": {
+    "width": 1448,
+    "height": 1086,
+    "variants": [
+      {
+        "width": 480,
+        "src": "retailers/retailers-hero-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "retailers/retailers-hero-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "retailers/retailers-hero-1200.webp"
+      },
+      {
+        "width": 1448,
+        "src": "retailers/retailers-hero.webp"
+      }
+    ]
+  },
+  "retailers/retailers-market-reach.png": {
+    "width": 1672,
+    "height": 941,
+    "variants": [
+      {
+        "width": 480,
+        "src": "retailers/retailers-market-reach-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "retailers/retailers-market-reach-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "retailers/retailers-market-reach-1200.webp"
+      },
+      {
+        "width": 1672,
+        "src": "retailers/retailers-market-reach.webp"
+      }
+    ]
+  }
+}

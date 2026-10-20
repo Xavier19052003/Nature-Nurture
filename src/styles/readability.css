@@ -108,3 +108,48 @@
   #root .product-image-placeholder__content > svg { width: 26px; height: 26px; }
   #root .product-image-placeholder__content > strong { font-size: 1.5rem; }
 }
+
+/* Mobile cards grow with readable copy instead of relying on intrinsic widths. */
+@media (max-width: 700px) {
+  #root main :is(article, .home-info-card, .quality-logo-tile, .quality-framework-grid li,
+    .about-design-purpose dl > div, .formula-summary > div, .formula-nutrition > div,
+    .cereal-nutrition > div, .cereal-vitamins > div, .patch-comparison__row > div) {
+    min-width: 0; max-width: 100%; height: auto; overflow-wrap: anywhere;
+  }
+  #root main :is(article, .home-info-card, .quality-logo-tile, .quality-framework-grid li,
+    .about-design-purpose dl > div, .formula-summary > div, .formula-nutrition > div,
+    .cereal-nutrition > div, .cereal-vitamins > div, .patch-comparison__row > div) > * {
+    min-width: 0; max-width: 100%;
+  }
+  #root main :is(article, .home-info-card, .about-design-purpose, .formula-nutrition, .cereal-nutrition, .cereal-vitamins) :is(h3, h4, p, dt, dd) {
+    white-space: normal; overflow-wrap: anywhere;
+  }
+  #root main :is(article, .home-info-card) p:not(:is(.eyebrow, .formula-stage__lead, .formula-protein__value, .formula-preparation__primary, .cereal-flavour-panel__description, .cereal-feature-line)) {
+    font-size: 16px;
+  }
+
+  /* Explicit logo dimensions avoid percentage-height grid sizing on iOS. */
+  #root .quality-logo-tile {
+    grid-template-columns: minmax(0, 1fr); grid-template-rows: 76px auto;
+    align-content: start; gap: 8px; padding: 12px; overflow: hidden;
+  }
+  #root .quality-logo-tile img {
+    width: 100%; height: 76px; min-width: 0; min-height: 0;
+    max-width: 100%; max-height: 76px; object-fit: contain; object-position: center;
+  }
+  #root main .quality-logo-tile figcaption {
+    min-width: 0; height: auto; font-size: 16px; line-height: 1.4;
+    white-space: normal; overflow-wrap: anywhere;
+  }
+
+  /* Stack the icon above copy so two-column channel cards have real text space. */
+  #root .home-info-card { grid-template-columns: minmax(0, 1fr); gap: 8px; align-content: start; }
+  #root .home-info-card__icon { grid-row: auto; }
+  #root .home-info-card :is(h3, p) { grid-column: 1; }
+  #root .home-retail .home-info-card { padding: 14px; }
+  #root .home-retail .home-info-card h3 { font-size: clamp(18px, 4.65vw, 20px); line-height: 1.25; }
+  #root :is(.home-snapshot__grid, .home-retail__grid) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 379px) {
+  #root :is(.home-snapshot__grid, .home-retail__grid) { grid-template-columns: minmax(0, 1fr); }
+}

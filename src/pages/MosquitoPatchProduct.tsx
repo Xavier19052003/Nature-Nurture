@@ -1,6 +1,8 @@
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { ArrowRight, Backpack, BriefcaseBusiness, Check, Clock3, Coins, Hand, Info, Leaf, Luggage, Moon, PackageCheck, School, Shirt, Sun, Tent, Users, Waves } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { getCategoryHref, getProductHref, products, type Product } from '../data/products'
+import { DetailTable } from '../components/ui/DetailTable'
+import { getProductHref, products, type Product } from '../data/products'
 import { mosquitoBenefits, mosquitoCommunity, mosquitoComparison, mosquitoDirections, mosquitoMechanism, mosquitoPatchVariants, mosquitoTraditionalMethods, mosquitoUsage, mosquitoValue, type MosquitoPatchVariant } from '../data/mosquitoPatches'
 import '../styles/mosquito-product.css'
 
@@ -25,12 +27,12 @@ export function MosquitoPatchProduct({ product, variant }: { product: Product; v
               <span>Non-toxic</span><span>DEET-free</span><span>Long-lasting protection</span>
             </div>
             <div className="cta-row">
-              <Link to="/contact" className="button button--primary">Request product details <ArrowRight size={18} aria-hidden="true" /></Link>
+
               <a href="#patch-directions" className="button button--secondary">See how to use <ArrowRight size={18} aria-hidden="true" /></a>
             </div>
           </div>
           <div className="patch-hero__visual">
-            <img src={product.image} alt={product.name} width={1122} height={1402} fetchPriority="high" />
+            <OptimizedImage src={product.image} alt={product.name} width={1122} height={1402} fetchPriority="high" />
           </div>
         </div>
       </section>
@@ -45,7 +47,7 @@ export function MosquitoPatchProduct({ product, variant }: { product: Product; v
       <section className="patch-section patch-section--soft" aria-labelledby="patch-benefits-heading">
         <div className="container">
           <p className="eyebrow">Practical protection</p>
-          <h2 id="patch-benefits-heading">UNIQUE BENEFITS</h2>
+          <h2 id="patch-benefits-heading">Unique Benefits</h2>
           <div className="patch-benefits">
             {benefits.map(({ id, title, description }) => {
               const Icon = benefitIcons[id]
@@ -91,12 +93,7 @@ export function MosquitoPatchProduct({ product, variant }: { product: Product; v
       <section className="patch-section" aria-labelledby="patch-comparison-heading">
         <div className="container">
           <p className="eyebrow">A practical alternative</p><h2 id="patch-comparison-heading">WHY CHOOSE THE PATCH FORMAT?</h2>
-          <div className="patch-comparison">
-            {mosquitoComparison.map(({ spray, patch }) => <div className="patch-comparison__row" key={spray}>
-              <div><h3>TRADITIONAL SPRAYS</h3><p>{spray}</p></div>
-              <div><h3>NATURE’S NURTURE PATCHES</h3><p>{patch}</p></div>
-            </div>)}
-          </div>
+          <DetailTable caption="Traditional sprays and Nature’s Nurture patches" columns={['Traditional Sprays', 'Nature’s Nurture Patches']} rows={mosquitoComparison.map(({ spray, patch }) => ({ id: spray, values: [spray, patch] }))} />
           <h3 className="patch-methods-heading">The patch format &amp; traditional methods</h3>
           <div className="patch-methods">
             {mosquitoTraditionalMethods.map(({ title, points }) => <article className="patch-card" key={title}><h4>{title}</h4><ul>{points.map((point) => <li key={point}>{point}</li>)}</ul></article>)}
@@ -122,17 +119,11 @@ export function MosquitoPatchProduct({ product, variant }: { product: Product; v
 
       <section className="patch-section patch-related" aria-labelledby="patch-related-heading">
         <div className="container patch-related__layout">
-          <div className="patch-related__visual"><img src={related.image} alt={related.name} width={1122} height={1402} loading="lazy" /></div>
+          <div className="patch-related__visual"><OptimizedImage src={related.image} alt={related.name} width={1122} height={1402} loading="lazy" /></div>
           <div><p className="eyebrow">Family Protection</p><h2 id="patch-related-heading">Also available for {relatedVariant.audience.toLowerCase()}</h2><h3>{related.name}</h3><p>{relatedVariant.hero}</p><Link to={getProductHref(related)} className="button button--primary">Explore {relatedVariant.audience === 'Adults' ? 'adult' : 'kids'} patches <ArrowRight size={18} aria-hidden="true" /></Link></div>
         </div>
       </section>
 
-      <section className="patch-section patch-section--forest patch-cta" aria-labelledby="patch-cta-heading">
-        <div className="container patch-editorial">
-          <div><p className="eyebrow">Family Protection</p><h2 id="patch-cta-heading">Talk to our team</h2></div>
-          <div className="cta-row"><Link to="/contact" className="button button--inverted">Request product details <ArrowRight size={18} aria-hidden="true" /></Link><Link to={getCategoryHref('Family Protection')} className="button button--ghost">View Family Protection <ArrowRight size={18} aria-hidden="true" /></Link></div>
-        </div>
-      </section>
     </main>
   )
 }

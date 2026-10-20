@@ -1,3 +1,4 @@
+import { OptimizedImage } from './OptimizedImage'
 import { Leaf, Sprout } from 'lucide-react'
 import type { CSSProperties } from 'react'
 import '../../styles/product-image-placeholder.css'
@@ -9,6 +10,6 @@ export function ProductImagePlaceholder({ name, accent = '#e3eadc', compact = fa
   </div>
 }
 
-export function ProductMedia({ product, compact = true }: { product: { name: string; image: string; accent?: string }; compact?: boolean }) {
-  return product.image ? <img src={product.image} alt={product.name} loading="lazy" /> : <ProductImagePlaceholder name={product.name} accent={product.accent} compact={compact} />
+export function ProductMedia({ product, compact = true, eager = false, sizes = '(max-width: 700px) 90vw, 400px' }: { product: { name: string; image: string; accent?: string }; compact?: boolean; eager?: boolean; sizes?: string }) {
+  return product.image ? <OptimizedImage src={product.image} alt={product.name} loading={eager ? 'eager' : 'lazy'} sizes={sizes} /> : <ProductImagePlaceholder name={product.name} accent={product.accent} compact={compact} />
 }

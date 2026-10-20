@@ -1,3 +1,4 @@
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { ArrowRight, BriefcaseBusiness, Check, Coffee, Cookie, CupSoda, Heart, Home, Leaf, Luggage, PackageCheck, Sprout, Utensils, Wheat, Zap } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ProductCard } from '../components/ui/ProductCard'
@@ -44,11 +45,11 @@ export function SteviaProduct() {
               <span>Zero-Calorie Sweetness</span><span>Natural &amp; Plant-Based</span><span>50 Convenient Sachets</span><span>Single-Serve Convenience</span>
             </div>
             <div className="cta-row">
-              <Link to="/contact" className="button button--primary">Request product details <ArrowRight size={18} aria-hidden="true" /></Link>
+
               <Link to="/products" className="stevia-text-link">Back to catalogue <ArrowRight size={17} aria-hidden="true" /></Link>
             </div>
           </div>
-          <figure className="stevia-art stevia-hero__art"><img src={image('stevia-hero')} alt="Nature’s Nurture Stevia Sachets pack beside tea, loose sachets and botanicals" width={1024} height={1536} fetchPriority="high" /></figure>
+          <figure className="stevia-art stevia-hero__art"><OptimizedImage src={image('stevia-hero')} alt="Nature’s Nurture Stevia Sachets pack beside tea, loose sachets and botanicals" width={1024} height={1536} fetchPriority="high" /></figure>
         </div>
       </section>
 
@@ -84,7 +85,7 @@ export function SteviaProduct() {
 
       <section className="stevia-section stevia-section--white" aria-labelledby="stevia-applications">
         <div className="container stevia-split stevia-applications" data-stevia-reveal>
-          <figure className="stevia-art"><img src={image('stevia-baking')} alt="Stevia Sachets being poured into a baking bowl beside the pack and cookies" width={1198} height={1313} loading="lazy" /></figure>
+          <figure className="stevia-art"><OptimizedImage src={image('stevia-baking')} alt="Stevia Sachets being poured into a baking bowl beside the pack and cookies" width={1198} height={1313} loading="lazy" /></figure>
           <div><p className="eyebrow">From the first sip to a sweet treat</p><h2 id="stevia-applications">Perfect For</h2><p>The concentrated powder format is positioned for flexible use across everyday drinks, baking and food preparation.</p><div className="stevia-applications__grid">{applications.map(({ icon: Icon, title }) => <article className="stevia-card" key={title}><Icon size={24} aria-hidden="true" /><h3>{title}</h3></article>)}</div></div>
         </div>
       </section>
@@ -92,7 +93,7 @@ export function SteviaProduct() {
       <section className="stevia-section stevia-section--sage" aria-labelledby="stevia-convenience">
         <div className="container stevia-split" data-stevia-reveal>
           <div><p className="eyebrow">A little sweetness, wherever life goes</p><h2 id="stevia-convenience">Designed for Everyday Convenience</h2><p>The single-serve sachet format makes Stevia easy to keep at home, take to work, or use while travelling and commuting.</p><div className="stevia-places">{[{ icon: Home, title: 'Home' }, { icon: BriefcaseBusiness, title: 'Office' }, { icon: Luggage, title: 'On the Go' }].map(({ icon: Icon, title }) => <div key={title}><Icon size={25} aria-hidden="true" /><h3>{title}</h3></div>)}</div></div>
-          <figure className="stevia-art stevia-convenience__art"><img src={image('stevia-sachets-lifestyle')} alt="Individual Nature’s Nurture Stevia sachets arranged with green leaves and white flowers" width={1086} height={1448} loading="lazy" /></figure>
+          <figure className="stevia-art stevia-convenience__art"><OptimizedImage src={image('stevia-sachets-lifestyle')} alt="Individual Nature’s Nurture Stevia sachets arranged with green leaves and white flowers" width={1086} height={1448} loading="lazy" /></figure>
         </div>
       </section>
 
@@ -117,7 +118,7 @@ export function SteviaProduct() {
       </section>
 
       <section className="stevia-section stevia-trade" aria-labelledby="stevia-trade">
-        <div className="container stevia-split" data-stevia-reveal><div><p className="eyebrow">Retail &amp; wholesale</p><h2 id="stevia-trade">Interested in stocking Nature’s Nurture Stevia?</h2><p>Connect with us for product information, retail opportunities and wholesale enquiries.</p><div className="cta-row"><Link to="/retailers" className="button button--inverted">Retail &amp; wholesale enquiries <ArrowRight size={18} aria-hidden="true" /></Link><Link to="/contact" className="button button--ghost">Contact us <ArrowRight size={18} aria-hidden="true" /></Link></div></div><figure className="stevia-art stevia-trade__art"><img src={image('stevia-trade')} alt="Nature’s Nurture Stevia Sachets presented with tea, sugar cubes and botanicals on a dark green background" width={1024} height={1536} loading="lazy" /></figure></div>
+        <div className="container stevia-split" data-stevia-reveal><div><p className="eyebrow">Retail &amp; wholesale</p><h2 id="stevia-trade">Interested in stocking Nature’s Nurture Stevia?</h2><p>Connect with us for product information, retail opportunities and wholesale enquiries.</p><div className="cta-row"><Link to="/retailers" className="button button--inverted">Retail &amp; wholesale enquiries <ArrowRight size={18} aria-hidden="true" /></Link><Link to="/contact" className="button button--ghost">Contact us <ArrowRight size={18} aria-hidden="true" /></Link></div></div><figure className="stevia-art stevia-trade__art"><OptimizedImage src={image('stevia-trade')} alt="Nature’s Nurture Stevia Sachets presented with tea, sugar cubes and botanicals on a dark green background" width={1024} height={1536} loading="lazy" /></figure></div>
       </section>
     </main>
   )

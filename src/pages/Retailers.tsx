@@ -1,3 +1,4 @@
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
 import { ArrowRight, Box, ChartNoAxesColumnIncreasing, ClipboardCheck, MessageSquare, Settings, Store, Truck, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
@@ -54,7 +55,7 @@ export function RetailersPage() {
       </section>
 
       <section className="retailers-focus" aria-labelledby="retailers-focus-heading">
-        <img className="retailers-focus__image" src={retailerImage('retailers-focus')} alt="An Everyday Wellness sign on a wooden counter in a leafy retail interior" width={1672} height={941} loading="lazy" />
+        <OptimizedImage className="retailers-focus__image" src={retailerImage('retailers-focus')} alt="An Everyday Wellness sign on a wooden counter in a leafy retail interior" width={1672} height={941} loading="lazy" />
         <div className="container">
           <div className="retailers-focus__copy">
             <p className="eyebrow">Our Focus</p>
@@ -98,7 +99,7 @@ export function RetailersPage() {
             </div>
           </div>
           <figure className="retailers-reach__map">
-            <img src={retailerImage('retailers-market-reach')} alt="Illustrative world map emphasising Africa and connections from South Africa" width={1672} height={941} loading="lazy" />
+            <OptimizedImage src={retailerImage('retailers-market-reach')} alt="Illustrative world map emphasising Africa and connections from South Africa" width={1672} height={941} loading="lazy" />
           </figure>
         </div>
       </section>

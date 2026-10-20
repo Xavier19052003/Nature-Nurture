@@ -1,6 +1,6 @@
 import { useLayoutEffect, type RefObject } from 'react'
 
-const chapters = '.home-platform, .home-presence, .home-commitment, .home-retail, .about-design-story, .about-design-mission, .about-design-manufacturing, .about-design-accessibility, .retailers-focus, .quality-process'
+const chapters = '.home-platform, .home-presence, .home-commitment, .home-retail, .about-design-story, .about-design-mission, .quality-co-manufacturing, .about-design-accessibility, .retailers-focus, .quality-process'
 const safety = '.stevia-information, .cereal-information, .formula-safety, .formula-information, [aria-labelledby="patch-usage-heading"]'
 const cards = 'article, .home-info-card, .home-presence__indicator, .quality-logo-tile, .quality-framework-grid > li, .about-design-purpose dl > div, .formula-summary > div, .formula-nutrition > div, .cereal-nutrition > div, .patch-directions > li, .zing-preparation > li'
 type Reveal = 'fade-up' | 'fade-in' | 'fade-left' | 'fade-right' | 'scale-in' | 'image' | 'map' | 'benefit'
@@ -51,10 +51,10 @@ export function useMotionReveals(scope: RefObject<HTMLDivElement>, route: string
       const benefits = /benefits/.test(section.getAttribute('aria-labelledby') || '')
       section.querySelectorAll<HTMLElement>('form, .sublingual-table, .patch-comparison').forEach((element) => register(element, 'fade-in', 100))
       section.querySelectorAll<HTMLElement>(cards).forEach((element) => register(element, benefits ? 'benefit' : 'fade-up', 80, true))
-      section.querySelectorAll<HTMLElement>('figure, .home-manufacturing__visual, .quality-process__image, .about-design-manufacturing__image').forEach((element) => register(element, element.matches('.about-design-map, .retailers-reach__map') ? 'map' : 'image', 100))
+      section.querySelectorAll<HTMLElement>('figure, .home-manufacturing__visual, .quality-process__image, .quality-co-manufacturing__image').forEach((element) => register(element, element.matches('.about-design-map, .retailers-reach__map') ? 'map' : 'image', 100))
       section.querySelectorAll<HTMLElement>('h1, h2, h3, p, .cta-row, .inline-link, .stevia-text-link, .button, .cereal-tabs, .zing-collection-tabs, ul.stevia-checklist, .sublingual-use-panel, .formula-snapshot').forEach((element) => {
         const phase = element.matches('.eyebrow') ? 0 : element.matches('.cta-row, a, button') ? 200 : element.matches('h1, h2, h3') ? 80 : 140
-        const variant: Reveal = element.matches('.zing-litre-display') ? 'scale-in' : element.matches('.stevia-text-link, .inline-link') ? 'fade-in' : element.matches('.quality-process__copy > p, .about-design-manufacturing__copy > p') ? 'fade-right' : element.matches('.retailers-focus__copy > p') ? 'fade-left' : 'fade-up'
+        const variant: Reveal = element.matches('.zing-litre-display') ? 'scale-in' : element.matches('.stevia-text-link, .inline-link') ? 'fade-in' : element.matches('.quality-process__copy > p, .quality-co-manufacturing__copy > p') ? 'fade-right' : element.matches('.retailers-focus__copy > p') ? 'fade-left' : 'fade-up'
         register(element, variant, phase)
       })
     }

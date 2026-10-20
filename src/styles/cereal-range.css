@@ -19,7 +19,7 @@
 .cereal-tabs button:hover { border-color: var(--color-forest); }
 .cereal-tabs button:focus-visible, .cereal-flavour-panel:focus-visible { outline: 2px solid var(--color-nature); outline-offset: 3px; }
 .cereal-flavour-panel { padding: clamp(1.25rem,3vw,2.5rem); border: var(--rule); border-radius: var(--radius-feature); background: var(--flavour-accent); transition: background 300ms ease; }
-.cereal-flavour-panel__content { animation: cereal-flavour-enter 300ms ease both; }
+.cereal-flavour-panel__content { animation: cereal-flavour-enter 400ms ease both; }
 .cereal-flavour-panel__image { margin: 0; width: 100%; height: 23rem; min-width: 0; }
 .cereal-flavour-panel__image img { width: 100%; height: 100%; object-fit: contain; }
 .cereal-story .cereal-flavour-panel h3 { font-size: var(--type-section-compact); line-height: 1.05; }
@@ -44,7 +44,7 @@
 .cereal-nutrition--secondary { gap: 0.75rem; }
 .cereal-nutrition--secondary > div { padding: 0.8rem; }
 .cereal-nutrition--secondary strong { font-size: 1.5rem; }
-.cereal-protein-values { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.cereal-protein-values { display: grid; grid-template-columns: minmax(0,1fr); gap: 1rem; }
 .cereal-story .cereal-protein-values p { display: grid; margin: 0; gap: 0.7rem; border-left: var(--rule); padding-left: 1.5rem; }
 .cereal-protein-values strong { font: 400 clamp(2rem,4vw,3.5rem)/1 var(--font-display); color: var(--color-forest); }
 .cereal-protein-values span { font-size: var(--type-small); }

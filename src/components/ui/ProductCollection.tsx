@@ -1,3 +1,4 @@
+import { OptimizedImage } from './OptimizedImage'
 import { sublingualProducts } from '../../data/sublingual'
 import { ProductMedia } from './ProductImagePlaceholder'
 import { ArrowUpRight } from 'lucide-react'
@@ -24,7 +25,7 @@ export function ProductCollection({ homepage = false }: { homepage?: boolean }) 
   const cards = visiblePreviews.map((preview) => (
         <div key={preview.category} className={`product-stack product-stack--${preview.position}`}>
           <Link className={`mini-product mini-product--${preview.tone}`} to={getCategoryHref(preview.category === 'Infant & Family Nutrition' ? 'Infant Nutrition' : preview.category)}>
-            {preview.image ? <img src={`${import.meta.env.BASE_URL}products/${preview.image}`} alt={preview.alt} width={400} height={400} /> : <ProductMedia product={sublingualProducts[0]} />}
+            {preview.image ? <OptimizedImage src={`${import.meta.env.BASE_URL}products/${preview.image}`} alt={preview.alt} loading={homepage ? 'eager' : 'lazy'} sizes="180px" width={400} height={400} /> : <ProductMedia product={sublingualProducts[0]} eager={homepage} sizes="180px" />}
             <span className="mini-product__category">{preview.category}</span>
             <span className="mini-product__action">Browse category <ArrowUpRight size={16} aria-hidden="true" /></span>
           </Link>

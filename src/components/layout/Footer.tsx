@@ -1,4 +1,4 @@
-import { ArrowUpRight, Mail, MapPin, Phone } from 'lucide-react'
+import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { contactDetails } from '../../data/contact'
 
@@ -44,8 +44,9 @@ export function Footer() {
           <h4>Head office contact</h4>
           <ul>
             <li><MapPin size={15} /> {contactDetails.address}</li>
-            <li><Phone size={15} /> {contactDetails.phone}</li>
-            <li><Mail size={15} /> {contactDetails.email}</li>
+            <li><Phone size={15} /><a href={`tel:${contactDetails.phoneInternational}`}>{contactDetails.phone}</a></li>
+            <li><Mail size={15} /><a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a></li>
+            <li><MessageCircle size={15} aria-hidden="true" /><div className="footer-whatsapp"><span>WhatsApp</span>{contactDetails.whatsapp.map((number) => <a key={number} href={`https://wa.me/${number.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">{number}</a>)}</div></li>
           </ul>
         </div>
       </div>

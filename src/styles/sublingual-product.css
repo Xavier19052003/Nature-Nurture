@@ -7,6 +7,25 @@
 .sublingual-hero__art > img { display: block; width: 100%; aspect-ratio: 4 / 5; height: auto; object-fit: contain; border-radius: var(--radius-image); }
 .sublingual-secondary-art { width: min(100%,28rem); margin: 0; justify-self: center; }
 .sublingual-secondary-art .product-image-placeholder { aspect-ratio: 1; }
+.sublingual-story-art { min-width: 0; max-width: 100%; margin: 0; justify-self: center; border-radius: var(--radius-hero); }
+.sublingual-story-art > img { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; border-radius: inherit; }
+.sublingual-overview__art { width: min(100%,32rem); border: var(--rule); box-shadow: var(--shadow-soft); }
+.sublingual-editorial__art { width: min(100%,30rem); border: var(--rule); box-shadow: var(--shadow-card); }
+.sublingual-delivery__story { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(2rem,5vw,5rem); align-items: center; margin-top: clamp(2rem,4vw,3rem); }
+.sublingual-delivery__story > * { min-width: 0; }
+.sublingual-delivery__story .sublingual-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); margin-top: 0; }
+.sublingual-routine__copy .sublingual-use-panel { margin-top: 1.75rem; }
+@media (min-width:901px) {
+  .sublingual-overview__layout > div { grid-column: 2; grid-row: 1; }
+  .sublingual-overview__layout > figure { grid-column: 1; grid-row: 1; }
+}
+@media (max-width:900px) {
+  .sublingual-delivery__story { grid-template-columns: minmax(0,1fr); }
+  .sublingual-overview__art { width: min(100%,30rem); }
+}
+@media (max-width:700px) {
+  .sublingual-delivery__story .sublingual-card-grid { grid-template-columns: minmax(0,1fr); }
+}
 .sublingual-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; padding: 0; margin: 1.5rem 0 2rem; list-style: none; }
 .sublingual-chips li { border: var(--rule); border-radius: var(--radius-pill); background: var(--color-card); color: var(--color-forest); padding: 0.6rem 0.85rem; font-size: 0.8rem; line-height: 1.4; }
 .sublingual-card-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 1rem; margin-top: 1.75rem; }
@@ -40,6 +59,11 @@
 .sublingual-use-panel { padding: clamp(1.5rem,3vw,2.5rem); border: var(--rule); border-radius: var(--radius-feature); background: var(--color-mist); }
 .sublingual-use-panel svg { color: var(--color-nature); margin-bottom: 1rem; }
 .sublingual-use-panel > span { display: block; color: var(--color-muted); font-size: 0.8rem; line-height: 1.5; margin-top: 1rem; }
+.sublingual-use-section { background: radial-gradient(ellipse at top right, rgba(168,184,155,0.2), transparent 60%), var(--color-deep-forest); border-block: 1px solid rgba(168,184,155,0.3); }
+.sublingual-use-section #sublingual-use { color: var(--color-ivory); }
+.sublingual-use-section .eyebrow { color: var(--color-on-forest); }
+.sublingual-use-section .sublingual-use-panel { background: var(--color-ivory); border-left: 4px solid var(--color-sage); box-shadow: 0 1rem 2rem rgba(0,0,0,0.12); }
+.sublingual-use-section .sublingual-use-panel > svg { box-sizing: content-box; padding: 0.85rem; background: var(--color-forest); border-radius: 50%; color: var(--color-ivory); }
 .sublingual-related-card { display: flex; min-width: 0; }
 .sublingual-related-card .product-card { width: 100%; }
 .sublingual-story a:focus-visible { outline: 2px solid var(--color-nature); outline-offset: 4px; }

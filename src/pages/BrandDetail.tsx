@@ -1,3 +1,4 @@
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { ProductImagePlaceholder, ProductMedia } from '../components/ui/ProductImagePlaceholder'
 import { ArrowRight, Check } from 'lucide-react'
 import { Link, useParams } from 'react-router-dom'
@@ -25,7 +26,7 @@ function NaturesNurtureDetail() {
           <div className="nn-hero__collage">
             {nn.hero.images.map((src) => (
               <div key={src} className="nn-hero__collage-item">
-                {src ? <img src={src} alt="" loading="lazy" /> : <ProductImagePlaceholder name="Vitamin B12 + Folate" compact />}
+                {src ? <OptimizedImage src={src} alt="" loading="eager" sizes="(max-width: 700px) 45vw, 25vw" /> : <ProductImagePlaceholder name="Vitamin B12 + Folate" compact />}
               </div>
             ))}
           </div>
@@ -119,7 +120,7 @@ function NaturesNurtureDetail() {
             {nn.infant.products.map((product) => (
               <Link key={product.slug} to={getProductHref(product)} className="nn-infant-card">
                 <div className="nn-infant-card__media">
-                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <OptimizedImage src={product.image} alt={product.name} loading="lazy" />
                 </div>
                 <div>
                   <h3>{product.name}</h3>
@@ -141,7 +142,7 @@ function NaturesNurtureDetail() {
             {nn.cereal.products.map((product) => (
               <Link key={product.slug} to={getProductHref(product)} className="nn-cereal-card">
                 <div className="nn-cereal-card__media">
-                  <img src={product.image} alt={product.name} loading="lazy" />
+                  <OptimizedImage src={product.image} alt={product.name} loading="lazy" />
                 </div>
                 <span>{product.name}</span>
               </Link>
@@ -153,7 +154,7 @@ function NaturesNurtureDetail() {
       <section className="section section--light nn-stevia">
         <div className="container nn-stevia__grid">
           <div className="nn-stevia__media">
-            {nn.stevia.product ? <img src={nn.stevia.product.image} alt={nn.stevia.product.name} loading="lazy" /> : null}
+            {nn.stevia.product ? <OptimizedImage src={nn.stevia.product.image} alt={nn.stevia.product.name} loading="lazy" /> : null}
           </div>
           <div>
             <p className="eyebrow eyebrow--dark">{nn.stevia.eyebrow}</p>
@@ -180,7 +181,7 @@ function NaturesNurtureDetail() {
           </div>
           <div className="nn-mosquito__media nn-mosquito__variants">
             {nn.mosquito.products.map((product) => <Link className="nn-product-card" key={product.slug} to={getProductHref(product)}>
-              <div className="nn-product-card__media"><img src={product.image} alt={product.name} loading="lazy" /></div>
+              <div className="nn-product-card__media"><OptimizedImage src={product.image} alt={product.name} loading="lazy" /></div>
               <h3>{product.name}</h3><span className="nn-card-action">Explore product <ArrowRight size={16} aria-hidden="true" /></span>
             </Link>)}
           </div>

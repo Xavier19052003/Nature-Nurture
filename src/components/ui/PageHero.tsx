@@ -1,3 +1,4 @@
+import { OptimizedImage } from './OptimizedImage'
 import { ArrowDown } from 'lucide-react'
 import { createContext, useContext, type CSSProperties, type ReactNode } from 'react'
 import { SectionLink } from './SectionLink'
@@ -26,7 +27,7 @@ export function PageHero({ children, className, labelledBy, style, scrollLabel, 
   backgroundImage?: string
 }) {
   return <EntryContext.Provider value={{ scrollLabel, scrollTarget, scrollAriaLabel }}><section className={`page-hero ${className}${backgroundImage ? ' page-hero--background' : ''}`} aria-labelledby={labelledBy} style={style}>
-    {backgroundImage && <div className="page-hero__background" aria-hidden="true"><img src={backgroundImage} alt="" width={1672} height={941} fetchPriority="high" /></div>}
+    {backgroundImage && <div className="page-hero__background" aria-hidden="true"><OptimizedImage src={backgroundImage} sizes="100vw" alt="" width={1672} height={941} fetchPriority="high" /></div>}
     {children}
     {entryPlacement === 'bottom' && <HeroEntry bottom />}
   </section></EntryContext.Provider>

@@ -1,3 +1,4 @@
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { SublingualProduct } from './SublingualProduct'
 import { ProductMedia } from '../components/ui/ProductImagePlaceholder'
 import { sublingualRange } from '../data/sublingual'
@@ -59,7 +60,7 @@ export function ProductDetailPage() {
       <section className="container product-detail">
         <div className="product-detail__media">
           <div className="product-detail__image-frame" style={{ ['--card-accent' as string]: product.accent ?? '#3e6b3f' }}>
-            <img src={product.image} alt={product.name} />
+            <OptimizedImage src={product.image} alt={product.name} />
           </div>
         </div>
 
@@ -74,12 +75,12 @@ export function ProductDetailPage() {
           </div>
 
           <div className="product-detail__actions">
-            <Link to="/contact" className="button button--primary">Request product details</Link>
+
             <Link to="/products" className="inline-link inline-link--dark">Back to catalogue <ArrowRight size={16} /></Link>
           </div>
 
           <div className="detail-list">
-            <h3>Benefits</h3>
+            <h3>Unique Benefits</h3>
             <ul>
               {benefits.map((benefit) => (
                 <li key={benefit}><CheckCircle2 size={15} /> {benefit}</li>

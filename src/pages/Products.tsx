@@ -1,3 +1,5 @@
+import { optimizedImageUrl } from '../data/optimizedImages'
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
 import { Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, UtensilsCrossed } from 'lucide-react'
 import { useMemo, type CSSProperties } from 'react'
@@ -6,7 +8,7 @@ import { RangeCarousel } from '../components/ui/RangeCarousel'
 import { catalogueRanges, toProductSlide } from '../data/catalogueRanges'
 import { categories, catalogueProducts } from '../data/products'
 
-const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
+const asset = (path: string) => optimizedImageUrl(`${import.meta.env.BASE_URL}${path}`)
 
 const categoryIcons = {
   'All Products': Grid2X2,
@@ -48,7 +50,7 @@ export function ProductsPage() {
             <p className="products-hero__lead">Explore our full range of nutrition, wellness and everyday health products — thoughtfully crafted for healthier lives, across Africa and beyond.</p>
           </div>
           <div className="products-hero__image page-hero__visual">
-            <img src={asset('catalogue/products-hero.jpg')} alt="Nature’s Nurture nutrition and wellness products arranged with botanicals, fruit and grains on a stone display" width={3168} height={1344} fetchPriority="high" />
+            <OptimizedImage src={asset('catalogue/products-hero.jpg')} alt="Nature’s Nurture nutrition and wellness products arranged with botanicals, fruit and grains on a stone display" width={3168} height={1344} fetchPriority="high" />
           </div>
         </div>
       </PageHero>

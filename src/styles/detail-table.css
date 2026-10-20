@@ -1,0 +1,15 @@
+/* Shared table treatment, based on the patch comparison rows. */
+.detail-table { display: block; width: 100%; margin-top: 1.75rem; border: 0; border-spacing: 0; color: var(--color-deep-forest); font-family: var(--font-body); }
+.detail-table tbody { display: grid; gap: 0.75rem; }
+.detail-table tbody tr { display: grid; grid-template-columns: repeat(var(--table-columns), minmax(0, 1fr)); border: var(--rule); border-radius: var(--radius-card); overflow: hidden; }
+.detail-table tbody :is(th, td) { display: block; min-width: 0; padding: 1.25rem 1.5rem; background: var(--color-card); text-align: left; vertical-align: top; font-weight: 400; overflow-wrap: anywhere; }
+.detail-table tbody :is(th, td) + :is(th, td) { background: var(--color-section-soft); border-left: var(--rule); }
+.detail-table__label { display: block; margin-bottom: 0.5rem; font-size: var(--type-eyebrow); font-weight: 700; letter-spacing: 0.1em; line-height: 1.5; text-transform: uppercase; }
+.detail-table__value { display: block; font-size: 1rem; line-height: 1.65; }
+.detail-table__note { display: block; margin-top: 0.35rem; color: var(--color-muted); font-size: 0.9375rem; line-height: 1.5; }
+.detail-table .detail-table__visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 700px) {
+  .detail-table tbody tr { grid-template-columns: minmax(0, 1fr); }
+  .detail-table tbody :is(th, td) { padding: 1.1rem; }
+  .detail-table tbody :is(th, td) + :is(th, td) { border-left: 0; border-top: var(--rule); }
+}

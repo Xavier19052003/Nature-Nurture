@@ -1,8 +1,11 @@
+import { optimizedImageUrl } from '../data/optimizedImages'
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
 import type { CSSProperties } from 'react'
-import { ClipboardCheck, Factory, FlaskConical, Globe2, Handshake, ShieldCheck, Sprout, PackageCheck, FileCheck2, Users2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { ClipboardCheck, Factory, FlaskConical, Globe2, Handshake, ShieldCheck, Sprout, PackageCheck, FileCheck2, Users2, Truck, ArrowRight } from 'lucide-react'
 
-const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`
+const asset = (path: string) => optimizedImageUrl(`${import.meta.env.BASE_URL}${path}`)
 
 const productAccreditations = [
   { name: 'World Health Organization', image: 'world-health-organization' },
@@ -32,16 +35,22 @@ const frameworks = [
 
 const manufacturing = [
   { title: 'GMP & HACCP', text: 'Manufacturing operates in alignment with Good Manufacturing Practice and HACCP protocols.', icon: Factory },
-  { title: 'Batch Traceability', text: 'End-to-end traceability systems support accountability from raw material intake through to dispatch.', icon: ClipboardCheck },
+  { title: 'Batch Traceability', text: 'Complete traceability supports transparency across the supply chain, from raw material intake through to finished product dispatch.', icon: ClipboardCheck },
   { title: 'Third-Party Testing', text: 'Independent microbiological and safety testing supports market release.', icon: FlaskConical },
   { title: 'Export Readiness', text: 'Production and documentation are aligned with international regulatory and import requirements.', icon: Globe2 },
   { title: 'Partner-Centric Solutions', text: 'Flexible solutions designed around partner requirements, packaging, pricing and collaboration models.', icon: Handshake },
   { title: 'BEE Compliance', text: 'Broad-Based Black Economic Empowerment (B-BBEE) compliant, supporting inclusive growth and economic transformation in South Africa.', icon: Users2 },
 ]
 
+const capabilities = [
+  { title: 'Product Development', description: 'Commercially focused concepts for real consumer needs.', icon: FlaskConical },
+  { title: 'Manufacturing & Co-Manufacturing', description: 'Flexible production capability supporting branded and partner opportunities.', icon: Factory },
+  { title: 'Multi-Channel Distribution', description: 'Retail, pharmacy, wholesale, e-commerce and export.', icon: Truck },
+  { title: 'Private Label & Partnerships', description: 'Commercial collaboration models for B2B partners.', icon: Handshake },
+]
+
 const ongoingCommitments = [
   { title: 'Ingredient Sourcing', text: 'Ethical sourcing guides our wellness and nutrition portfolio.', icon: Sprout },
-  { title: 'Batch Testing', text: 'Independent microbiological and safety testing supports product release.', icon: ClipboardCheck },
   { title: 'Product Integrity', text: 'Product development, testing and release align with applicable regulatory frameworks.', icon: ShieldCheck },
 ]
 
@@ -69,7 +78,7 @@ export function CertificationsPage() {
           <div className="quality-logo-grid">
             {productAccreditations.map(({ name, image }) => (
               <figure key={name} className="quality-logo-tile">
-                <img src={asset(`quality/accreditations/${image}.png`)} alt={`${name} accreditation logo`} loading="lazy" />
+                <OptimizedImage src={asset(`quality/accreditations/${image}.png`)} alt={`${name} accreditation logo`} loading="lazy" />
                 <figcaption>{name}</figcaption>
               </figure>
             ))}
@@ -87,7 +96,7 @@ export function CertificationsPage() {
           <div className="quality-regulatory-grid">
             {regulatoryAccreditations.map(({ name, type, number, image }) => (
               <article key={name} className="quality-card quality-regulatory-card">
-                <img src={asset(`quality/accreditations/${image}.png`)} alt={`${name} logo`} loading="lazy" />
+                <OptimizedImage src={asset(`quality/accreditations/${image}.png`)} alt={`${name} logo`} loading="lazy" />
                 <h3>{name}</h3>
                 <dl><dt>{type}</dt><dd>{number}</dd></dl>
               </article>
@@ -118,7 +127,41 @@ export function CertificationsPage() {
             <p>This approach supports consumer safety, market access and export readiness.</p>
           </div>
           <div className="quality-process__image">
-            <img src={asset('home/manufacturing-quality-control.png')} alt="Quality control worker inspecting a product bottle on a production line" width={1168} height={1347} loading="lazy" />
+            <OptimizedImage src={asset('home/manufacturing-quality-control.png')} alt="Quality control worker inspecting a product bottle on a production line" width={1168} height={1347} loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section className="quality-section quality-development" aria-labelledby="quality-needs-heading">
+        <div className="container quality-development__layout" data-stevia-reveal>
+          <div>
+            <p className="eyebrow eyebrow--dark">Our Approach</p>
+            <h2 id="quality-needs-heading">Developed Around Real Consumer Needs</h2>
+            <p>Nature’s Nurture begins with practical consumer needs — nutrition, convenience, wellness and everyday care — and develops products and formats intended to meet those needs in modern lifestyles and retail environments.</p>
+          </div>
+          <div aria-labelledby="quality-capabilities-heading">
+            <h2 className="quality-development__label" id="quality-capabilities-heading">What We Do</h2>
+            <div className="quality-capabilities">
+              {capabilities.map(({ title, description, icon: Icon }) => <article key={title}><Icon size={28} strokeWidth={1.5} aria-hidden="true" /><div><h3>{title}</h3><p>{description}</p></div></article>)}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="quality-co-manufacturing" aria-labelledby="quality-co-manufacturing-heading">
+        <div className="quality-co-manufacturing__image"><OptimizedImage src={asset('about/manufacturing-facility.png')} sizes="100vw" alt="Stainless-steel processing tanks and pipework, illustrating manufacturing capability" width={2172} height={724} loading="lazy" /></div>
+        <div className="container quality-co-manufacturing__copy" data-stevia-reveal>
+          <div>
+          <p className="eyebrow eyebrow--dark">From Product Development to Market</p>
+          <h2 id="quality-co-manufacturing-heading">Manufacturing &amp; Co-Manufacturing</h2>
+          <p>Rainmaker FMCG supports branded and partner-led product opportunities through manufacturing and co-manufacturing capability, commercially focused product development and flexible collaboration models.</p>
+          <p>Capabilities span product development, formulation, quality testing, regulatory consideration, packaging and multi-channel distribution. Relevant stages and checks vary by product category and market.</p>
+          <Link className="button button--primary" to="/retailers">Learn More <ArrowRight size={16} aria-hidden="true" /></Link>
+          </div>
+          <div className="quality-from-start">
+            <h3>Quality from the Start</h3>
+            <p>A compliance-first approach considers relevant raw-material inspection, batch testing, supplier verification, microbiological safety testing and production monitoring. Applicable checks depend on the product category.</p>
+            <a className="inline-link" href="#quality-framework">Explore our quality framework <ArrowRight size={15} aria-hidden="true" /></a>
           </div>
         </div>
       </section>
@@ -148,10 +191,6 @@ export function CertificationsPage() {
                   <p>{text}</p>
                 </article>
               ))}
-              <article className="quality-card quality-traceability">
-                <Globe2 size={32} aria-hidden="true" />
-                <div><h4>Full Traceability</h4><p>Complete traceability supports transparency across the supply chain, from raw material intake through to finished product dispatch.</p></div>
-              </article>
             </div>
           </div>
         </div>

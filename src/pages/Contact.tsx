@@ -1,7 +1,7 @@
 import { PageHero } from '../components/ui/PageHero'
-import { ArrowRight, Box, ChevronDown, Handshake, Mail, MapPin, MessageCircle, Phone, ShoppingCart, Users2 } from 'lucide-react'
+import { ArrowRight, ChevronDown, Mail, MapPin, MessageCircle, Phone, Users2 } from 'lucide-react'
 import { useState } from 'react'
-import { contactDetails } from '../data/contact'
+import { buildContactMailto, contactDetails } from '../data/contact'
 
 type FormState = {
   name: string
@@ -51,12 +51,6 @@ function validateFieldValues(values: FormState): FormErrors {
 
 const enquiryTypes = ['Product Information', 'Retail Partnership', 'Wholesale & Distribution', 'Export Opportunity', 'General Enquiry']
 
-const helpCategories = [
-  { title: 'Retail Partnerships', description: 'Product information, listings and support.', icon: ShoppingCart },
-  { title: 'Wholesale & Distribution', description: 'Supply, pricing and availability.', icon: Box },
-  { title: 'Export Opportunities', description: 'Partnerships across Africa and international markets.', icon: Handshake },
-  { title: 'General Enquiries', description: 'Product questions, media and other enquiries.', icon: MessageCircle },
-]
 
 export function ContactPage() {
   const [form, setForm] = useState<FormState>(initialForm)
@@ -95,20 +89,7 @@ export function ContactPage() {
     }
 
     if (import.meta.env.PROD) {
-      const emailBody = [
-        `Name: ${form.name.trim()}`,
-        `Email: ${form.email.trim()}`,
-        form.company.trim() ? `Company: ${form.company.trim()}` : '',
-        form.phone.trim() ? `Phone: ${form.phone.trim()}` : '',
-        form.enquiryType?.trim() ? `Enquiry type: ${form.enquiryType.trim()}` : '',
-        '',
-        'Message:',
-        form.message.trim(),
-      ].filter(Boolean).join('\n')
-      const subject = `Website enquiry from ${form.name.trim()}`
-      const mailto = `mailto:${contactDetails.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`
-
-      window.location.href = mailto
+      window.location.href = buildContactMailto(form)
       setStatus('success')
       setStatusMessage('Your email app should open with your enquiry details. Review and send the message there.')
       return
@@ -146,7 +127,6 @@ export function ContactPage() {
     }
   }
 
-  const [street, ...region] = contactDetails.address.split(',')
 
   return (
     <main className="page-shell page-shell--light contact-page">
@@ -167,9 +147,10 @@ export function ContactPage() {
             <h2 id="contact-information-heading">Contact information</h2>
             <p>Get in touch with our team directly or use the form and we’ll get back to you.</p>
             <div className="contact-design-details">
-              <article><MapPin size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Head Office</h3><address>{street}<br />{region.join(',').trim()}</address></div></article>
-              <article><Phone size={31} strokeWidth={1.6} aria-hidden="true" /><div><h3>Phone</h3><a href={`tel:${contactDetails.phone.replace(/\s/g, '')}`}>{contactDetails.phone}</a></div></article>
+              <article><MapPin size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Head Office</h3><address>{contactDetails.address}</address></div></article>
+              <article><Phone size={31} strokeWidth={1.6} aria-hidden="true" /><div><h3>Phone</h3><a href={`tel:${contactDetails.phoneInternational}`}>{contactDetails.phone}</a></div></article>
               <article><Mail size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Email</h3><a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a></div></article>
+              <article className="contact-design-whatsapp"><MessageCircle size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>WhatsApp</h3><div className="contact-whatsapp-links">{contactDetails.whatsapp.map((number) => <a key={number} href={`https://wa.me/${number.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">{number}</a>)}</div></div></article>
               <article><Users2 size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Business Enquiries</h3><p>Retail, wholesale &amp; partnerships</p></div></article>
             </div>
           </div>
@@ -220,15 +201,6 @@ export function ContactPage() {
         </div>
       </section>
 
-      <section className="contact-design-section contact-design-help" aria-labelledby="contact-help-heading">
-        <div className="container">
-          <h2 id="contact-help-heading">How we can help</h2>
-          <p>We work with retail partners, distributors and organisations to make high-quality wellness products more accessible across South Africa and the wider African region.</p>
-          <div className="contact-design-help__grid">
-            {helpCategories.map(({ title, description, icon: Icon }) => <article key={title}><Icon size={30} strokeWidth={1.6} aria-hidden="true" /><h3>{title}</h3><p>{description}</p></article>)}
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

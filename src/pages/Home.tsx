@@ -1,9 +1,9 @@
+import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
 import type { CSSProperties } from 'react'
 import { ArrowRight, ClipboardCheck, Factory, FlaskConical, Handshake, Globe2, PackageCheck, ShieldCheck, Store, Truck } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { ProductCollection } from '../components/ui/ProductCollection'
-import { useHomeHeroFit } from '../components/ui/useHomeHeroFit'
 
 const presenceIndicators = [
   { title: 'SADC', text: 'Regional Market Reach', icon: Globe2 },
@@ -55,7 +55,6 @@ const tradeCapabilities = [
 const compliance = ['GMP-Compliant', 'HACCP', 'SAHPRA-Aligned', 'Codex-Compliant', 'ISO-Aligned']
 
 export function Home() {
-  useHomeHeroFit()
   return (
     <>
       <main>
@@ -110,7 +109,7 @@ export function Home() {
 
         <section className="home-lower-section home-presence" id="home-philosophy">
           <div className="home-presence__art" aria-hidden="true">
-            <img src={`${import.meta.env.BASE_URL}about/about-hero.png`} alt="" loading="lazy" />
+            <OptimizedImage src={`${import.meta.env.BASE_URL}about/about-hero.png`} alt="" loading="lazy" />
           </div>
           <div className="container">
             <div className="home-lower-split">
@@ -153,7 +152,7 @@ export function Home() {
 
         <section className="home-lower-section home-commitment">
           <div className="home-commitment__art" aria-hidden="true">
-            <img src={`${import.meta.env.BASE_URL}about/about-hero.png`} alt="" loading="lazy" />
+            <OptimizedImage src={`${import.meta.env.BASE_URL}about/about-hero.png`} alt="" loading="lazy" />
           </div>
           <div className="container home-lower-split">
             <div className="home-lower-heading">

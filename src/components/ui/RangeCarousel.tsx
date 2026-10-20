@@ -1,9 +1,10 @@
+import { OptimizedImage } from './OptimizedImage'
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react'
 import { ProductImagePlaceholder } from './ProductImagePlaceholder'
-import { useEffect, useId, useRef, useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-const AUTOPLAY_INTERVAL_MS = 3000
+import { useAutoplay } from './useAutoplay'
 
 type RangeSlide = {
   id: string
@@ -37,49 +38,16 @@ export function RangeCarousel({ label, slides, initialSlideId, autoplay = true, 
     const initial = Math.max(0, slides.findIndex((slide) => slide.id === initialSlideId))
     return { active: initial, previous: -1, direction: 1, visited: [initial] }
   })
-  const [visible, setVisible] = useState(false)
-  const [hovered, setHovered] = useState(false)
-  const [focused, setFocused] = useState(false)
-  const [navigationVersion, setNavigationVersion] = useState(0)
-  const [documentVisible, setDocumentVisible] = useState(!document.hidden)
-  const [reducedMotion, setReducedMotion] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches)
   const multiple = slides.length > 1
-  const rotating = multiple && autoplay && visible && documentVisible && !reducedMotion && !hovered && !focused
-
-  useEffect(() => {
-    const element = root.current
-    if (!element || !multiple) return
-    const observer = new IntersectionObserver(([entry]) => setVisible(entry.isIntersecting && entry.intersectionRatio >= 0.4), { threshold: [0, 0.4] })
-    observer.observe(element)
-    return () => observer.disconnect()
-  }, [multiple])
-
-  useEffect(() => {
-    const media = window.matchMedia('(prefers-reduced-motion: reduce)')
-    const motionChanged = () => setReducedMotion(media.matches)
-    const visibilityChanged = () => setDocumentVisible(!document.hidden)
-    media.addEventListener('change', motionChanged)
-    document.addEventListener('visibilitychange', visibilityChanged)
-    return () => {
-      media.removeEventListener('change', motionChanged)
-      document.removeEventListener('visibilitychange', visibilityChanged)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (!rotating) return
-    const timer = window.setInterval(() => setSlide((current) => {
-      const next = (current.active + 1) % slides.length
-      return { active: next, previous: current.active, direction: 1, visited: current.visited.includes(next) ? current.visited : [...current.visited, next] }
-    }), AUTOPLAY_INTERVAL_MS)
-    return () => window.clearInterval(timer)
-  }, [rotating, navigationVersion, slides.length])
+  const { reset, playing: rotating } = useAutoplay(() => setSlide((current) => {
+    const next = (current.active + 1) % slides.length
+    return { active: next, previous: current.active, direction: 1, visited: current.visited.includes(next) ? current.visited : [...current.visited, next] }
+  }), multiple && autoplay, root)
 
   const selectSlide = (index: number, movement = index < active ? -1 : 1) => {
     const next = (index + slides.length) % slides.length
     setSlide((current) => next === current.active ? current : ({ active: next, previous: current.active, direction: movement, visited: current.visited.includes(next) ? current.visited : [...current.visited, next] }))
-    // Restart the shared interval after any manual navigation, once hover/focus allows it.
-    setNavigationVersion((version) => version + 1)
+    reset()
   }
 
   const ProductHeading = variant === 'single' ? 'h3' : 'h4'
@@ -88,10 +56,6 @@ export function RangeCarousel({ label, slides, initialSlideId, autoplay = true, 
     <section ref={root} className={`range-carousel range-carousel--${variant}`} aria-label={label}
       aria-roledescription={multiple ? 'carousel' : undefined} data-rotating={rotating} data-direction={direction < 0 ? 'previous' : 'next'}
       tabIndex={multiple ? 0 : undefined}
-      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)} onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false)
-      }}
       onKeyDown={(event) => {
         if (!multiple || event.ctrlKey || event.metaKey || event.altKey || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return
         event.preventDefault()
@@ -119,7 +83,7 @@ export function RangeCarousel({ label, slides, initialSlideId, autoplay = true, 
             role={multiple ? 'group' : undefined} aria-roledescription={multiple ? 'slide' : undefined}
             aria-label={multiple ? `${index + 1} of ${slides.length}: ${slide.title}` : undefined} aria-hidden={active !== index}>
             <div className="range-carousel__image">
-              {visited.includes(index) && (slide.highlights ? <Link to={slide.href} className="range-carousel__image-link" tabIndex={active === index ? 0 : -1} aria-label={slide.actionLabel}>{slide.placeholder ? <ProductImagePlaceholder name={slide.title} accent={slide.accent} compact /> : <img src={slide.image} alt={slide.imageAlt} loading="lazy" width={640} height={480} />}</Link> : <img src={slide.image} alt={slide.imageAlt} loading="lazy" width={640} height={480} />)}
+              {(visited.includes(index) || index === (active + 1) % slides.length) && (slide.highlights ? <Link to={slide.href} className="range-carousel__image-link" tabIndex={active === index ? 0 : -1} aria-label={slide.actionLabel}>{slide.placeholder ? <ProductImagePlaceholder name={slide.title} accent={slide.accent} compact /> : <OptimizedImage src={slide.image} alt={slide.imageAlt} loading={rotating && (index === active || index === (active + 1) % slides.length) ? 'eager' : 'lazy'} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 400px" width={640} height={480} />}</Link> : <OptimizedImage src={slide.image} alt={slide.imageAlt} loading={rotating && (index === active || index === (active + 1) % slides.length) ? 'eager' : 'lazy'} sizes="(max-width: 700px) 90vw, (max-width: 1100px) 45vw, 400px" width={640} height={480} />)}
             </div>
             <div className="range-carousel__copy">
               <p className="range-carousel__category">{slide.category}</p>
