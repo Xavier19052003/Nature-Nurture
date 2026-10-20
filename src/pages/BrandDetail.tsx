@@ -120,7 +120,7 @@ function NaturesNurtureDetail() {
             {nn.infant.products.map((product) => (
               <Link key={product.slug} to={getProductHref(product)} className="nn-infant-card">
                 <div className="nn-infant-card__media">
-                  <OptimizedImage src={product.image} alt={product.name} loading="lazy" />
+                  <ProductMedia product={product} />
                 </div>
                 <div>
                   <h3>{product.name}</h3>
@@ -142,7 +142,7 @@ function NaturesNurtureDetail() {
             {nn.cereal.products.map((product) => (
               <Link key={product.slug} to={getProductHref(product)} className="nn-cereal-card">
                 <div className="nn-cereal-card__media">
-                  <OptimizedImage src={product.image} alt={product.name} loading="lazy" />
+                  <ProductMedia product={product} />
                 </div>
                 <span>{product.name}</span>
               </Link>
@@ -159,6 +159,7 @@ function NaturesNurtureDetail() {
           <div>
             <p className="eyebrow eyebrow--dark">{nn.stevia.eyebrow}</p>
             <h2>{nn.stevia.headline}</h2>
+            <p>{nn.stevia.product?.format}</p>
             <ul className="nn-checklist">
               {nn.stevia.points.map((point) => (
                 <li key={point}><Check size={15} /> {point}</li>
@@ -181,7 +182,7 @@ function NaturesNurtureDetail() {
           </div>
           <div className="nn-mosquito__media nn-mosquito__variants">
             {nn.mosquito.products.map((product) => <Link className="nn-product-card" key={product.slug} to={getProductHref(product)}>
-              <div className="nn-product-card__media"><OptimizedImage src={product.image} alt={product.name} loading="lazy" /></div>
+              <div className="nn-product-card__media"><ProductMedia product={product} /></div>
               <h3>{product.name}</h3><span className="nn-card-action">Explore product <ArrowRight size={16} aria-hidden="true" /></span>
             </Link>)}
           </div>

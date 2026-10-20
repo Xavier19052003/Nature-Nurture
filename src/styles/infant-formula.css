@@ -111,3 +111,12 @@
   .formula-stage-link, .formula-hero__pack img, .infant-story .button svg { transition: none; }
   .formula-stage-link:hover, .formula-hero__pack:hover img, .infant-story .button:hover svg { transform: none; }
 }
+
+.formula-stage-editorial { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.formula-stage-editorial__card { padding:clamp(1.25rem,3vw,2.5rem); min-width:0; border-radius:var(--radius-image); background:#f1dfe3; border:1px solid #173d2a15; }
+.formula-stage-editorial__card--2 { background:#e7e1f0; margin-top:2rem; }
+.formula-stage-editorial__card h2 { font-size:clamp(1.6rem,2.5vw,2.5rem); }
+.formula-text-intro { max-width:var(--container-width,1200px); }
+.formula-text-intro > div { max-width:850px; }
+.formula-transition .formula-text-intro,.formula-stage > .container > .formula-text-intro { border-left:3px solid #173d2a30; padding-left:clamp(1rem,3vw,2rem); }
+@media(max-width:400px) { .formula-stage-editorial { grid-template-columns:1fr; } .formula-stage-editorial__card--2 { margin-top:0; } }

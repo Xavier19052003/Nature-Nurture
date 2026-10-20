@@ -1026,5 +1026,63 @@
         "src": "retailers/retailers-market-reach.webp"
       }
     ]
+  },
+  "home/manufacturing-spray-line-inspection.webp": {
+    "width": 1166,
+    "height": 1349,
+    "variants": [
+      {
+        "width": 480,
+        "src": "home/manufacturing-spray-line-inspection-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "home/manufacturing-spray-line-inspection-800.webp"
+      },
+      {
+        "width": 1166,
+        "src": "home/manufacturing-spray-line-inspection.webp"
+      }
+    ]
+  },
+  "catalogue/portfolio-lineup-no-infant-formula.webp": {
+    "width": 1356,
+    "height": 1159,
+    "variants": [
+      {
+        "width": 480,
+        "src": "catalogue/portfolio-lineup-no-infant-formula-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "catalogue/portfolio-lineup-no-infant-formula-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "catalogue/portfolio-lineup-no-infant-formula-1200.webp"
+      },
+      {
+        "width": 1356,
+        "src": "catalogue/portfolio-lineup-no-infant-formula.webp"
+      }
+    ]
+  },
+  "products/zingo/zingo-mango-product.webp": {
+    "width": 1024,
+    "height": 1536,
+    "variants": [
+      {
+        "width": 480,
+        "src": "products/zingo/zingo-mango-product-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "products/zingo/zingo-mango-product-800.webp"
+      },
+      {
+        "width": 1024,
+        "src": "products/zingo/zingo-mango-product.webp"
+      }
+    ]
   }
 }

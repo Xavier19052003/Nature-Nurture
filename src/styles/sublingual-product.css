@@ -89,3 +89,10 @@
   .sublingual-table__caption { display: block; padding: 1rem; }
 }
 @media (prefers-reduced-motion:reduce) { .sublingual-hero__art .product-image-placeholder { transition: none; } .sublingual-hero__art:hover .product-image-placeholder { transform: none; } }
+
+.sublingual-combined__routine { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1fr); align-items:center; gap:clamp(1.5rem,5vw,4rem); margin-top:2.5rem; }
+.sublingual-video { display:block; width:100%; max-width:420px; max-height:640px; aspect-ratio:30/53; object-fit:contain; background:#102c1f; border-radius:var(--radius-image); justify-self:center; }
+.sublingual-combined__instructions { min-width:0; color:var(--color-forest); }
+.sublingual-combined__instructions .eyebrow { color:inherit; }
+.sublingual-combined__instructions .sublingual-use-panel { border:1px solid #173d2a20; }
+@media(max-width:700px) { .sublingual-combined__routine { grid-template-columns:1fr; } .sublingual-video { max-height:520px; width:min(100%,340px); } }

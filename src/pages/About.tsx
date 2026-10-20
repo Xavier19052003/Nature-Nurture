@@ -1,6 +1,6 @@
 import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
-import { ArrowRight, Baby, BadgeCheck, Droplets, FlaskConical, HandCoins, Leaf, Users } from 'lucide-react'
+import { ArrowRight, Baby, Factory, BadgeCheck, Droplets, FlaskConical, HandCoins, Leaf, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { CSSProperties } from 'react'
 
@@ -28,6 +28,11 @@ const principles = [
   { title: 'International', description: 'Considered for different markets, regulatory environments and retail channels.' },
   { title: 'Wellness-Led', description: 'Meaningful roles in everyday wellness routines.' },
 ]
+
+// Replace these illustrative slots with client-approved manufacturing photography.
+function ManufacturingMediaSlot({ title }: { title: string }) {
+  return <div className="about-manufacturing-slot" role="img" aria-label={`${title} — manufacturing illustration`}><Factory size={64} strokeWidth={1} aria-hidden="true" /><span>{title}</span></div>
+}
 
 export function AboutPage() {
   return (
@@ -87,6 +92,8 @@ export function AboutPage() {
         </div>
       </section>
 
+      <section className="about-design-section about-manufacturing-section" aria-label="Manufacturing environment"><div className="container" data-stevia-reveal><ManufacturingMediaSlot title="Inside the Manufacturing Environment" /></div></section>
+
       <section className="about-design-section about-design-portfolio" aria-labelledby="about-portfolio-heading">
         <div className="container">
           <h2 className="about-design-label" id="about-portfolio-heading">Four Pillars of the Portfolio</h2>
@@ -129,6 +136,8 @@ export function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section className="about-design-section about-manufacturing-section" aria-label="Production and quality"><div className="container" data-stevia-reveal><ManufacturingMediaSlot title="Production & Quality in Focus" /></div></section>
 
       <section className="about-design-section about-design-reach" aria-labelledby="about-africa-heading">
         <div className="container about-design-reach__layout">

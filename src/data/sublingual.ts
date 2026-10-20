@@ -131,17 +131,18 @@ export const sublingualDifference: Benefit[] = [
   { title: 'Easy Daily Routine', text: 'Compact spray format designed for everyday convenience.' },
   { title: 'Controlled Spray Delivery', text: 'Designed around accurate and consistent spray application.' },
 ]
+// Source: sublingual _ NEW .pdf, pp. 13–15 (tolerance) and pp. 1, 3–4 (delivery).
 export const ironFormat = [
   { title: 'Traditional Iron Tablets', points: [
     { title: 'Digestive Processing', text: 'Traditional tablets pass through the digestive system before absorption.' },
     { title: 'Swallowing', text: 'Tablet formats require swallowing.' },
     { title: 'Taste', text: 'Some conventional iron formats may have a metallic taste.' },
-    { title: 'Digestive Comfort', text: 'The supplied material identifies stomach upset, nausea and constipation as common concerns associated with traditional iron supplementation.' },
+    { title: 'Digestive Comfort', text: 'Conventional iron pills may cause nausea, constipation or stomach upset as they pass through the digestive system.' },
   ] },
   { title: 'Sublingual Iron', points: [
     { title: 'Spray Format', text: 'Simple spray application.' },
     { title: 'No Tablet Swallowing', text: 'No conventional tablet or capsule is required.' },
     { title: 'Convenient Use', text: 'Designed for easy everyday supplementation.' },
-    { title: 'Ferrous Bisglycinate', text: 'The source positions the chosen iron form as gentler on the stomach.' },
+    { title: 'Ferrous Bisglycinate', text: 'Ferrous bisglycinate is positioned as gentle on the stomach. Sublingual delivery is designed to reduce reliance on digestive processing; individual tolerance can vary.' },
   ] },
 ]

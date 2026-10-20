@@ -1,8 +1,8 @@
 // Client-supplied formula brief. Verify nutrition against current production panels before launch.
 // Do not infer stage applicability, preparation ratios or approvals from packaging artwork.
 export const formulaStages = [
-  { number: '1', age: '0–6 Months', title: 'Infant Starter Formula', positioning: 'Gentle nutrition for life’s first moments.', image: 'stage-1.png', alt: 'Nature’s Nurture Stage 1 Infant Starter Formula', copy: 'Stage 1 is the Nature’s Nurture Infant Starter Formula for babies aged 0–6 months. The supplied product material positions the formula around balanced nutrition, gentle digestion, essential nutrients and support for early growth and development.' },
-  { number: '2', age: '6–12 Months', title: 'Follow-On Formula', image: 'stage-2.png', alt: 'Nature’s Nurture Stage 2 Follow-On Formula', copy: 'Stage 2 is the Nature’s Nurture Follow-On Formula for babies aged 6–12 months. The supplied material positions it around continued nourishment as babies grow, with protein, essential fatty acids, vitamins and minerals forming part of the nutritional profile.' },
+  { number: '1', age: '0–6 Months', title: 'Infant Starter Formula', positioning: 'Gentle nutrition for life’s first moments.', copy: 'Stage 1 is the Nature’s Nurture Infant Starter Formula for babies aged 0–6 months. The supplied product material positions the formula around balanced nutrition, gentle digestion, essential nutrients and support for early growth and development.' },
+  { number: '2', age: '6–12 Months', title: 'Follow-On Formula', copy: 'Stage 2 is the Nature’s Nurture Follow-On Formula for babies aged 6–12 months. The supplied material positions it around continued nourishment as babies grow, with protein, essential fatty acids, vitamins and minerals forming part of the nutritional profile.' },
 ] as const
 
 export const stageOnePositioning = [

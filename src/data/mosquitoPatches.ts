@@ -1,3 +1,5 @@
+// Fly-related naming and general positioning follow client feedback dated 2026-10-20.
+// The source PDF does not establish fly-specific efficacy or duration.
 // Client-supplied patch brief: shared technology, distinct everyday-use contexts.
 // Do not infer ingredients, age suitability or disease claims from the pack artwork.
 export const mosquitoBenefits = [
@@ -59,12 +61,12 @@ export const mosquitoPatchVariants = [
   {
     audience: 'Kids',
     slug: 'mosquito-repellent-patches-kids',
-    name: 'Mosquito Repellent Patches — Kids',
+    name: 'Flies and Mosquito Patches — Kids',
     image: 'mosquito-repellent-patches-kids.png',
     hero: 'Portable mosquito protection for children during everyday outdoor activities.',
-    supporting: 'Easy to use on clothing or nearby objects, with no direct skin application.',
+    supporting: 'A peel-and-stick format for everyday routines around flies and mosquitoes. Apply to clothing or nearby objects, with no direct skin application.',
     shortDescription: 'Portable mosquito protection for school, outdoor play and family travel.',
-    overview: 'Nature’s Nurture Mosquito Repellent Patches for Kids are designed as an easy-to-use, portable mosquito-protection format for school, outdoor play, family outings and travel. The patch is applied to clothing or nearby objects rather than directly to skin.',
+    overview: 'Nature’s Nurture Flies and Mosquito Patches for Kids are designed as an easy-to-use, portable mosquito-protection format for school, outdoor play, family outings and travel. The patch is applied to clothing or nearby objects rather than directly to skin.',
     benefits: ['application', 'clothing', 'portable', 'deet', 'lasting', 'family', 'equipment', 'outdoors', 'value'],
     useCases: [
       { title: 'Camping & Hiking', description: 'Positioned as practical outdoor protection for family adventures.', icon: 'tent' },
@@ -76,12 +78,12 @@ export const mosquitoPatchVariants = [
   {
     audience: 'Adults',
     slug: 'mosquito-repellent-patches-adults',
-    name: 'Mosquito Repellent Patches — Adults',
+    name: 'Flies and Mosquito Patches — Adults',
     image: 'mosquito-repellent-patches-adults.png',
     hero: 'Portable mosquito protection for travel, work, outdoor activities and everyday life.',
-    supporting: 'Easy peel-and-stick protection designed for use on clothing or nearby objects.',
+    supporting: 'A convenient patch format for outdoor routines around flies and mosquitoes, designed for use on clothing or nearby objects.',
     shortDescription: 'Portable mosquito protection for outdoor work, travel and active lifestyles.',
-    overview: 'Nature’s Nurture Mosquito Repellent Patches for Adults provide a convenient, portable mosquito-protection format for work, travel, camping, hiking and outdoor activities. The patch is designed for use on clothing or nearby objects rather than directly on skin.',
+    overview: 'Nature’s Nurture Flies and Mosquito Patches for Adults provide a convenient, portable mosquito-protection format for work, travel, camping, hiking and outdoor activities. The patch is designed for use on clothing or nearby objects rather than directly on skin.',
     benefits: ['portable', 'application', 'clothing', 'equipment', 'lasting', 'outdoors', 'deet', 'family', 'value'],
     useCases: [
       { title: 'Camping & Hiking', icon: 'tent' },

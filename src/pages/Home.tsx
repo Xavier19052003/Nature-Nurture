@@ -201,11 +201,11 @@ export function Home() {
               ))}
             </div>
             <div className="home-manufacturing__visual">
-              <img
-                src={`${import.meta.env.BASE_URL}home/manufacturing-quality-control.png`}
-                alt="Quality control worker inspecting a product bottle on a production line"
-                width={1168}
-                height={1347}
+              <OptimizedImage
+                src={`${import.meta.env.BASE_URL}home/manufacturing-spray-line-inspection.webp`}
+                alt="Worker in laboratory PPE inspecting a Nature’s Nurture spray bottle on the production line"
+                width={1166}
+                height={1349}
                 loading="lazy"
               />
             </div>

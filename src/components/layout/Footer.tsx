@@ -2,7 +2,7 @@ import { ArrowUpRight, Mail, MapPin, MessageCircle, Phone } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { contactDetails } from '../../data/contact'
 
-const productCategories = ['Sublingual sprays', 'Cereal & meal replacement', 'Infant formula', 'Zingo', 'Mosquito repellent', 'Natural ingredients']
+const productCategories = ['Sublingual sprays', 'Cereal & meal replacement', 'Infant formula', 'Zingo', 'Flies and Mosquito Patches', 'Natural ingredients']
 
 export function Footer() {
   return (

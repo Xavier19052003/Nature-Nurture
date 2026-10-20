@@ -42,7 +42,7 @@ export function SteviaProduct() {
             <p className="stevia-hero__tagline">Plant-based sweetness{' '}<br />for everyday life.</p>
             <p>Nature’s Nurture Stevia Sachets are positioned as a convenient, zero-calorie sweetening solution for consumers looking for a natural alternative to sugar in everyday foods and drinks.</p>
             <div className="stevia-highlights" aria-label="Product highlights">
-              <span>Zero-Calorie Sweetness</span><span>Natural &amp; Plant-Based</span><span>50 Convenient Sachets</span><span>Single-Serve Convenience</span>
+              <span>Zero-Calorie Sweetness</span><span>Natural &amp; Plant-Based</span><span>100-sachet and 50-sachet packs</span><span>Single-Serve Convenience</span>
             </div>
             <div className="cta-row">
 
@@ -102,7 +102,7 @@ export function SteviaProduct() {
       </section>
 
       <section className="stevia-section stevia-section--compact stevia-format" aria-labelledby="stevia-format">
-        <div className="container" data-stevia-reveal><div className="stevia-format__panel"><div><h2 className="eyebrow" id="stevia-format">Product Format</h2><h3>50 Convenient Sachets</h3><p>A portable single-serve format designed for everyday sweetness.</p></div><PackageCheck size={64} strokeWidth={1} aria-hidden="true" /></div></div>
+        <div className="container" data-stevia-reveal><div className="stevia-format__panel"><div><h2 className="eyebrow" id="stevia-format">Product Format</h2><h3>100-sachet and 50-sachet packs</h3><p>Available in 100-sachet and 50-sachet packs. A portable single-serve format designed for everyday sweetness.</p></div><PackageCheck size={64} strokeWidth={1} aria-hidden="true" /></div></div>
       </section>
 
       <section className="stevia-section stevia-section--white" aria-labelledby="stevia-reasons">

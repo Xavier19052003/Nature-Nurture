@@ -3823,7 +3823,7 @@ button.button:hover { transform: translateY(-1px); }
 .products-page .range-carousel--range { grid-column: span 3; display: flex; flex-direction: column; }
 .products-page .range-carousel--range .range-carousel__slides { flex: 1; }
 .products-page .range-carousel--range .range-carousel__image { aspect-ratio: 2.3 / 1; }
-.products-page .range-carousel--single { grid-column: span 2; }
+.products-page .range-carousel--single { grid-column: span 3; }
 .products-page .range-carousel--single .range-carousel__image { aspect-ratio: 16 / 10; }
 .products-page .range-carousel--single .range-carousel__slide { grid-template-rows: auto 1fr; height: 100%; }
 .products-page .range-carousel--single .range-carousel__slides { height: 100%; }
@@ -3833,8 +3833,6 @@ button.button:hover { transform: translateY(-1px); }
 @media (min-width: 701px) and (max-width: 1100px) {
   .products-page .range-carousel--range .range-carousel__header { min-height: 5.4rem; }
   .products-page .range-carousel--single { grid-column: span 3; }
-  .products-page .range-carousel--single:last-child { grid-column: 1 / -1; }
-  .products-page .range-carousel--single:last-child .range-carousel__slide { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
 }
 @media (max-width: 1100px) {
   .products-page .products-hero__grid { grid-template-columns: minmax(0, 1fr); }
@@ -4464,3 +4462,27 @@ img[src*="/products/sublingual/"] { object-fit: contain; }
 }
 
 .carousel-image-preload { position: absolute; width: 1px; height: 1px; overflow: hidden; opacity: 0; pointer-events: none; }
+
+/* Client feedback: scoped additions retain the site's editorial and motion systems. */
+.quality-formula-controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; list-style:none; margin:1.5rem 0 0; padding:0; }
+.quality-formula-controls li { min-width:0; border-top:1px solid #ffffff35; padding-top:.75rem; }
+.quality-formula-controls strong,.quality-formula-controls span { display:block; }
+.quality-formula-controls strong { font-size:.88rem; margin-bottom:.35rem; }
+.quality-formula-controls span { font-size:.8rem; line-height:1.6; opacity:.85; }
+.quality-process__image img { object-position:50% 48%; }
+.contact-region { transition:background-color .3s ease; }
+.contact-region--australia { background:#faeadc; }
+.contact-region--india { background:#f4e3e5; }
+.contact-country-tabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:650px; gap:.5rem; margin-bottom:2.5rem; }
+.contact-country-tabs button { min-width:0; padding:.85rem .4rem; border:1px solid #173d2a30; border-radius:12px; background:#ffffff80; color:var(--color-forest); font:inherit; cursor:pointer; }
+.contact-country-tabs button[aria-selected="true"] { background:var(--color-forest); color:var(--color-ivory); }
+.contact-country-tabs button:focus-visible { outline:3px solid var(--color-nature); outline-offset:3px; }
+.about-manufacturing-section { padding-block:clamp(1.5rem,3vw,3rem); }
+.about-manufacturing-slot { min-width:0; aspect-ratio:4/1; display:flex; align-items:center; justify-content:center; gap:2rem; padding:1.5rem; color:var(--color-forest); border:1px solid #173d2a20; border-radius:var(--radius-image); background:repeating-linear-gradient(90deg,transparent 0,transparent 15%,#173d2a05 15%,#173d2a05 15.2%),linear-gradient(125deg,#e2e9dd,#f6f2e8); }
+.about-manufacturing-slot span { font:400 clamp(1.25rem,2.5vw,2rem)/1.2 var(--font-display); }
+@media(max-width:600px) { .quality-formula-controls { grid-template-columns:1fr; } .contact-country-tabs { gap:.35rem; } .contact-country-tabs button { font-size:.8rem; } .about-manufacturing-slot { aspect-ratio:2/1; gap:1rem; } .about-manufacturing-slot svg { width:40px; flex-shrink:0; } }
+@media(prefers-reduced-motion:reduce) { .contact-region { transition:none; } }
+
+/* The approved replacement lineup has a taller crop than the previous panorama. */
+#root .products-page .products-hero .products-hero__image.page-hero__visual { aspect-ratio:1356/1159; }
+#root .products-page .products-hero .products-hero__image.page-hero__visual img { object-fit:contain; object-position:center; }

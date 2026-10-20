@@ -3,10 +3,10 @@ import { catalogueProducts, getProductHref, type Product } from './products'
 // Group existing catalogue records; product copy, assets and detail routes stay in products.ts.
 const rangeDefinitions = [
   { id: 'sublingual', title: 'Sublingual Nutrition', category: 'Sublingual Nutrition' },
-  { id: 'infant', title: 'Infant Formula', category: 'Infant Nutrition' },
+  { id: 'protection', title: 'Flies and Mosquito Patches', category: 'Family Protection' },
   { id: 'cereal', title: 'Cereal & Meal Replacement', category: 'Cereal & Meal Replacement' },
   { id: 'sweeteners', title: 'Natural Sweeteners', category: 'Natural Sweeteners' },
-  { id: 'protection', title: 'Family Protection', category: 'Family Protection' },
+  { id: 'infant', title: 'Infant Formula', category: 'Infant Nutrition' },
   { id: 'zingo', title: 'Energy & Hydration', category: 'Energy & Hydration' },
 ]
 
@@ -26,7 +26,7 @@ export function toProductSlide(product: Product, concise = false) {
     accent: product.accent,
     highlights: product.category === 'Sublingual Nutrition' ? product.features : undefined,
     description: concise ? product.shortDescription ?? product.description : product.description,
-    detail: concise ? undefined : product.category === 'Infant Nutrition' ? product.shortDescription : product.format,
+    detail: product.slug === 'stevia-sachets' ? product.format : concise ? undefined : product.category === 'Infant Nutrition' ? product.shortDescription : product.format,
     href: getProductHref(product),
     action: product.id === 'zingo-range' ? 'Explore Range' : 'Explore Product',
     actionLabel: `Explore ${product.name}`,

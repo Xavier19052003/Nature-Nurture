@@ -4,9 +4,9 @@ import type { CSSProperties } from 'react'
 import '../../styles/product-image-placeholder.css'
 
 export function ProductImagePlaceholder({ name, accent = '#e3eadc', compact = false, supporting = false }: { name: string; accent?: string; compact?: boolean; supporting?: boolean }) {
-  return <div className={`product-image-placeholder${compact ? ' product-image-placeholder--compact' : ''}`} style={{ '--placeholder-accent': accent } as CSSProperties} role="img" aria-label={`${name} — ${supporting ? 'additional supporting' : 'product'} image placeholder`}>
+  return <div className={`product-image-placeholder${compact ? ' product-image-placeholder--compact' : ''}`} style={{ '--placeholder-accent': accent } as CSSProperties} role="img" aria-label={`${name} — ${supporting ? 'supporting' : 'botanical category'} illustration`}>
     <Leaf className="product-image-placeholder__leaf" size={160} strokeWidth={0.6} aria-hidden="true" />
-    <div className="product-image-placeholder__content"><Sprout size={38} strokeWidth={1} aria-hidden="true" /><span className="product-image-placeholder__brand">Nature’s Nurture</span><strong>{name}</strong><span className="product-image-placeholder__label">{supporting ? 'Supporting imagery' : 'Sublingual Nutrition'}</span>{!compact && <span className="product-image-placeholder__pending">{supporting ? 'Additional photography to follow' : 'Product photography to follow'}</span>}</div>
+    <div className="product-image-placeholder__content"><Sprout size={38} strokeWidth={1} aria-hidden="true" /><span className="product-image-placeholder__brand">Nature’s Nurture</span><strong>{name}</strong><span className="product-image-placeholder__label">{supporting ? 'Thoughtfully developed' : 'Nutrition & Everyday Wellness'}</span></div>
   </div>
 }
 

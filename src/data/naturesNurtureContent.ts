@@ -51,7 +51,7 @@ export const naturesNurtureContent = {
     lead: "Nature's Nurture brings together convenient nutrition, everyday wellness and family-focused essentials — from fast-absorbing sublingual sprays to infant formula, cereals and natural, protective products for daily life.",
     images: [
       sublingualProducts[0].image,
-      asset('products/infant-formula/stage-1.png'),
+      asset('products/mosquito-repellent/mosquito-repellent-patches-kids.png'),
       asset('products/cereal/banana-bliss.png'),
       asset('products/stevia/stevia-sachets.png'),
     ],

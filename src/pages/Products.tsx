@@ -50,7 +50,7 @@ export function ProductsPage() {
             <p className="products-hero__lead">Explore our full range of nutrition, wellness and everyday health products — thoughtfully crafted for healthier lives, across Africa and beyond.</p>
           </div>
           <div className="products-hero__image page-hero__visual">
-            <OptimizedImage src={asset('catalogue/products-hero.jpg')} alt="Nature’s Nurture nutrition and wellness products arranged with botanicals, fruit and grains on a stone display" width={3168} height={1344} fetchPriority="high" />
+            <OptimizedImage src={asset('catalogue/portfolio-lineup-no-infant-formula.webp')} alt="Nature’s Nurture nutrition and wellness products arranged with botanicals, fruit and grains on a stone display" width={1356} height={1159} fetchPriority="high" />
           </div>
         </div>
       </PageHero>
@@ -98,7 +98,7 @@ export function ProductsPage() {
                   slides={range.products.map((product) => toProductSlide(product, range.products.length === 1 || range.id === 'protection'))}
                   initialSlideId={filteredProducts.find((product) => product.category === range.category)?.id}
                   autoplay={!searchQuery.trim()}
-                  variant={range.products.length === 1 || range.id === 'protection' ? 'single' : range.id === 'sublingual' ? 'feature' : 'range'} />
+                  variant={range.id === 'sublingual' || range.id === 'protection' ? 'feature' : range.products.length === 1 ? 'single' : 'range'} />
               ))}
             </div>
           ) : (

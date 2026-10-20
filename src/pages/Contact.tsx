@@ -1,7 +1,7 @@
 import { PageHero } from '../components/ui/PageHero'
 import { ArrowRight, ChevronDown, Mail, MapPin, MessageCircle, Phone, Users2 } from 'lucide-react'
 import { useState } from 'react'
-import { buildContactMailto, contactDetails } from '../data/contact'
+import { buildContactMailto, contactRegions } from '../data/contact'
 
 type FormState = {
   name: string
@@ -53,6 +53,13 @@ const enquiryTypes = ['Product Information', 'Retail Partnership', 'Wholesale & 
 
 
 export function ContactPage() {
+  const [countryIndex, setCountryIndex] = useState(0)
+  const region = contactRegions[countryIndex]
+  const contactDetails = region.details
+  const selectCountry = (index: number) => {
+    setCountryIndex(index)
+    document.getElementById(`contact-tab-${contactRegions[index].id}`)?.focus()
+  }
   const [form, setForm] = useState<FormState>(initialForm)
   const [errors, setErrors] = useState<FormErrors>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -141,8 +148,12 @@ export function ContactPage() {
         </div>
       </PageHero>
 
-      <section className="contact-design-section" id="contact-information" tabIndex={-1} aria-label="Contact information and enquiry form">
-        <div className="container contact-design-layout">
+      <section className={`contact-design-section contact-region contact-region--${region.id}`} id="contact-information" tabIndex={-1} aria-label="Contact information and enquiry form">
+        <div className="container"><div className="contact-country-tabs" role="tablist" aria-label="Contact country">{contactRegions.map((country, index) => <button key={country.id} type="button" role="tab" id={`contact-tab-${country.id}`} aria-selected={countryIndex === index} aria-controls="contact-country-panel" tabIndex={countryIndex === index ? 0 : -1} onClick={() => selectCountry(index)} onKeyDown={(event) => {
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? contactRegions.length - 1 : event.key === 'ArrowRight' ? (index + 1) % contactRegions.length : event.key === 'ArrowLeft' ? (index + contactRegions.length - 1) % contactRegions.length : null
+          if (next !== null) { event.preventDefault(); selectCountry(next) }
+        }}>{country.name}</button>)}</div></div>
+        <div id="contact-country-panel" role="tabpanel" aria-labelledby={`contact-tab-${region.id}`} className="container contact-design-layout">
           <div className="contact-design-information" aria-labelledby="contact-information-heading">
             <h2 id="contact-information-heading">Contact information</h2>
             <p>Get in touch with our team directly or use the form and we’ll get back to you.</p>

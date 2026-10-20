@@ -1,5 +1,6 @@
 import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { ArrowRight, Backpack, BriefcaseBusiness, Check, Clock3, Coins, Hand, Info, Leaf, Luggage, Moon, PackageCheck, School, Shirt, Sun, Tent, Users, Waves } from 'lucide-react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { DetailTable } from '../components/ui/DetailTable'
 import { getProductHref, products, type Product } from '../data/products'
@@ -10,6 +11,14 @@ const benefitIcons = { lasting: Clock3, clothing: Shirt, deet: Leaf, application
 const useCaseIcons = { tent: Tent, waves: Waves, school: School, luggage: Luggage, briefcase: BriefcaseBusiness, sun: Sun, moon: Moon }
 
 export function MosquitoPatchProduct({ product, variant }: { product: Product; variant: MosquitoPatchVariant }) {
+  useEffect(() => {
+    const previousTitle = document.title
+    const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]')
+    const previousDescription = meta?.content
+    document.title = `${product.name} | Nature’s Nurture`
+    if (meta) meta.content = variant.supporting
+    return () => { document.title = previousTitle; if (meta && previousDescription !== undefined) meta.content = previousDescription }
+  }, [product.name, variant.supporting])
   const relatedVariant = mosquitoPatchVariants.find((item) => item.slug !== variant.slug)!
   const related = products.find((item) => item.slug === relatedVariant.slug)!
   const benefits = variant.benefits.map((id) => mosquitoBenefits.find((benefit) => benefit.id === id)!)
@@ -20,7 +29,7 @@ export function MosquitoPatchProduct({ product, variant }: { product: Product; v
         <div className="container patch-split">
           <div className="patch-hero__copy">
             <p className="eyebrow">Family Protection</p>
-            <h1>Mosquito Repellent Patches{' '}<span>for {variant.audience}</span></h1>
+            <h1>Flies and Mosquito Patches{' '}<span>for {variant.audience}</span></h1>
             <p className="patch-lead">{variant.hero}</p>
             <p>{variant.supporting}</p>
             <div className="patch-tags" aria-label="Product features">

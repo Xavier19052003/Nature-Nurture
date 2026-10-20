@@ -17,11 +17,12 @@ export const zingoAssets = {
     ]
   },
   "mango": {
-    "width": 713,
-    "height": 724,
+    "width": 1024,
+    "height": 1536,
     "sizes": [
       480,
-      713
+      800,
+      1024
     ]
   },
   "guava": {

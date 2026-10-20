@@ -6,6 +6,14 @@ export const contactDetails = {
   address: 'Ground Floor Block 1, Ridge 63, 8 Sinembe Park, Douglas Saunders Drive, La Lucia Ridge, 4319, Durban, KZN, South Africa',
 }
 
+export const contactRegions = [
+  { id: 'south-africa', name: 'South Africa', details: contactDetails },
+  // TEMPORARY — replace when client provides local contact details.
+  { id: 'australia', name: 'Australia', details: contactDetails },
+  // TEMPORARY — replace when client provides local contact details.
+  { id: 'india', name: 'India', details: contactDetails },
+] as const
+
 type ContactEnquiry = { name: string; email: string; company: string; phone: string; enquiryType: string; message: string }
 
 export function buildContactMailto(form: ContactEnquiry) {

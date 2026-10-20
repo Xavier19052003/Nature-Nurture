@@ -1,5 +1,6 @@
 import { optimizedImageUrl } from '../data/optimizedImages'
 import { OptimizedImage } from '../components/ui/OptimizedImage'
+import { formulaSafety } from '../data/infantFormula'
 import { PageHero } from '../components/ui/PageHero'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
@@ -121,13 +122,14 @@ export function CertificationsPage() {
       <section className="quality-section quality-process" aria-labelledby="compliance-first">
         <div className="container quality-process__layout">
           <div className="quality-process__copy">
-            <p className="eyebrow">Compliance in every batch</p>
+            <p className="eyebrow">Compliance-led from the start</p>
             <h2 id="compliance-first">Compliance-First Manufacturing</h2>
             <p>RainmakerFMCG operates under a compliance-first manufacturing philosophy, with products developed, tested and released in alignment with applicable national and international regulatory frameworks.</p>
-            <p>This approach supports consumer safety, market access and export readiness.</p>
+            <p>For Infant Formula, this means checking ingredients before production, verifying key nutrients in each batch, working with verified suppliers, screening for pathogens and monitoring production throughout manufacturing.</p>
+            <ul className="quality-formula-controls">{formulaSafety.map(({ title, text }) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
           </div>
           <div className="quality-process__image">
-            <OptimizedImage src={asset('home/manufacturing-quality-control.png')} alt="Quality control worker inspecting a product bottle on a production line" width={1168} height={1347} loading="lazy" />
+            <OptimizedImage src={asset('home/manufacturing-spray-line-inspection.webp')} alt="Worker in laboratory PPE inspecting a Nature’s Nurture spray bottle on the production line" width={1166} height={1349} loading="lazy" />
           </div>
         </div>
       </section>
