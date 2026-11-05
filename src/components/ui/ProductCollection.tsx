@@ -1,6 +1,6 @@
 import { OptimizedImage } from './OptimizedImage'
 import { sublingualProducts } from '../../data/sublingual'
-import { ProductImagePlaceholder, ProductMedia } from './ProductImagePlaceholder'
+import { ProductMedia } from './ProductImagePlaceholder'
 import { ArrowUpRight } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { getCategoryHref } from '../../data/products'
@@ -15,7 +15,6 @@ export function ProductCollection({ homepage = false }: { homepage?: boolean }) 
   const visiblePreviews = homepage
     ? [
         previews[0],
-        { category: 'Infant Nutrition', image: '', alt: "Nature's Nurture Stage 1 infant formula", tone: 'sage', position: 'infant' },
         previews[1],
         { ...previews[2], tone: 'peach' },
         { category: 'Natural Sweeteners', image: 'stevia/stevia-sachets.png', alt: "Nature's Nurture Stevia sachets", tone: 'mint', position: 'sweeteners' },
@@ -24,8 +23,8 @@ export function ProductCollection({ homepage = false }: { homepage?: boolean }) 
     : previews
   const cards = visiblePreviews.map((preview) => (
         <div key={preview.category} className={`product-stack product-stack--${preview.position}`}>
-          <Link className={`mini-product mini-product--${preview.tone}`} to={getCategoryHref(preview.category === 'Infant & Family Nutrition' ? 'Infant Nutrition' : preview.category)}>
-            {preview.image ? <OptimizedImage src={`${import.meta.env.BASE_URL}products/${preview.image}`} alt={preview.alt} loading={homepage ? 'eager' : 'lazy'} sizes="180px" width={400} height={400} /> : preview.category === 'Infant Nutrition' ? <ProductImagePlaceholder name="Infant Nutrition" accent="#dce5cc" compact /> : <ProductMedia product={sublingualProducts[0]} eager={homepage} sizes="180px" />}
+          <Link className={`mini-product mini-product--${preview.tone}`} to={getCategoryHref(preview.category)}>
+            {preview.image ? <OptimizedImage src={`${import.meta.env.BASE_URL}products/${preview.image}`} alt={preview.alt} loading={homepage ? 'eager' : 'lazy'} sizes="180px" width={400} height={400} /> : <ProductMedia product={sublingualProducts[0]} eager={homepage} sizes="180px" />}
             <span className="mini-product__category">{preview.category}</span>
             <span className="mini-product__action">Browse category <ArrowUpRight size={16} aria-hidden="true" /></span>
           </Link>

@@ -4477,14 +4477,11 @@ img[src*="/products/sublingual/"] { object-fit: contain; }
 .contact-country-tabs button { min-width:0; padding:.85rem .4rem; border:1px solid #173d2a30; border-radius:12px; background:#ffffff80; color:var(--color-forest); font:inherit; cursor:pointer; }
 .contact-country-tabs button[aria-selected="true"] { background:var(--color-forest); color:var(--color-ivory); }
 .contact-country-tabs button:focus-visible { outline:3px solid var(--color-nature); outline-offset:3px; }
-.about-manufacturing-section { padding-block:clamp(1.5rem,3vw,3rem); }
-.about-manufacturing-slot { min-width:0; aspect-ratio:4/1; display:flex; align-items:center; justify-content:center; gap:2rem; padding:1.5rem; color:var(--color-forest); border:1px solid #173d2a20; border-radius:var(--radius-image); background:repeating-linear-gradient(90deg,transparent 0,transparent 15%,#173d2a05 15%,#173d2a05 15.2%),linear-gradient(125deg,#e2e9dd,#f6f2e8); }
-.about-manufacturing-slot span { font:400 clamp(1.25rem,2.5vw,2rem)/1.2 var(--font-display); }
-@media(max-width:600px) { .quality-formula-controls { grid-template-columns:1fr; } .contact-country-tabs { gap:.35rem; } .contact-country-tabs button { font-size:.8rem; } .about-manufacturing-slot { aspect-ratio:2/1; gap:1rem; } .about-manufacturing-slot svg { width:40px; flex-shrink:0; } }
+@media(max-width:600px) { .quality-formula-controls { grid-template-columns:1fr; } .contact-country-tabs { gap:.35rem; } .contact-country-tabs button { font-size:.8rem; } }
 @media(prefers-reduced-motion:reduce) { .contact-region { transition:none; } }
 
 /* The approved replacement lineup has a taller crop than the previous panorama. */
-#root .products-page .products-hero .products-hero__image.page-hero__visual { aspect-ratio:1356/1159; }
+#root .products-page .products-hero .products-hero__image.page-hero__visual { aspect-ratio:1/1; }
 #root .products-page .products-hero .products-hero__image.page-hero__visual img { object-fit:contain; object-position:center; }
 
 /* Regional addresses and supplied certification evidence, November 2026. */
@@ -4502,3 +4499,11 @@ img[src*="/products/sublingual/"] { object-fit: contain; }
 .quality-premises-card dd { font-size:.95rem; }
 @media(max-width:1100px) { .quality-logo-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .quality-logo-tile,.quality-logo-tile:nth-child(6),.quality-logo-tile:nth-child(7) { grid-column:auto; } }
 @media(max-width:700px) { .quality-logo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* Five active ranges: the final hydration range spans the catalogue row. */
+@media(min-width:701px) { .products-page .catalogue-ranges:not(.catalogue-ranges--filtered) > .range-carousel:last-child { grid-column:1 / -1; } .products-page .catalogue-ranges:not(.catalogue-ranges--filtered) > .range-carousel:last-child .range-carousel__slide { grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; gap:2rem; } }
+
+/* Historical About manufacturing photograph, retaining current reveal/image systems. */
+.about-restored-manufacturing { margin:0; }
+.about-restored-manufacturing img { display:block; width:100%; height:auto; aspect-ratio:3/1; object-fit:cover; object-position:center; }
+@media(max-width:700px) { .about-restored-manufacturing img { aspect-ratio:2/1; } }

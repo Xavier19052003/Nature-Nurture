@@ -12,7 +12,7 @@ import '../styles/cereal-range.css'
 
 const image = (file: string) => `${import.meta.env.BASE_URL}products/cereal/${file}`
 const icons = [Clock3, Sprout, Wheat, Utensils, Milk, Leaf, Coffee, Droplets]
-const related = ['stevia-sachets', 'zingo', 'infant-formula-stage-1'].map((slug) => catalogueProducts.find((product) => product.slug === slug)).filter((product) => product !== undefined).map((product) => product.slug === 'infant-formula-stage-1' ? { ...product, name: 'Infant Formula' } : product)
+const related = ['stevia-sachets', 'zingo', 'mosquito-repellent-patches-kids'].map((slug) => catalogueProducts.find((product) => product.slug === slug)).filter((product) => product !== undefined)
 
 function Cards({ items, columns = 4 }: { items: readonly { title: string; text: string }[]; columns?: number }) {
   return <div className={`cereal-grid cereal-grid--${columns}`}>{items.map(({ title, text }, index) => { const Icon = icons[index % icons.length]; return <article className="stevia-card" key={title}><Icon size={25} aria-hidden="true" /><h3>{title}</h3><p>{text}</p></article> })}</div>

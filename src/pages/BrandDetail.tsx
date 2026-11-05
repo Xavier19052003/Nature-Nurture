@@ -109,29 +109,6 @@ function NaturesNurtureDetail() {
         </div>
       </section>
 
-      <section className="section section--light nn-infant">
-        <div className="container nn-infant__grid">
-          <div>
-            <p className="eyebrow eyebrow--dark">{nn.infant.eyebrow}</p>
-            <h2>{nn.infant.headline}</h2>
-            <p>{nn.infant.lead}</p>
-          </div>
-          <div className="nn-infant__products">
-            {nn.infant.products.map((product) => (
-              <Link key={product.slug} to={getProductHref(product)} className="nn-infant-card">
-                <div className="nn-infant-card__media">
-                  <ProductMedia product={product} />
-                </div>
-                <div>
-                  <h3>{product.name}</h3>
-                  <p>{product.shortDescription}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section section--dark-cta nn-cereal">
         <div className="container">
           <div className="section-heading section-heading--left">

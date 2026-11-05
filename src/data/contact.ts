@@ -7,11 +7,11 @@ export const contactDetails = {
 }
 
 export const contactRegions = [
-  { id: 'south-africa', name: 'South Africa', details: contactDetails },
-  // TEMPORARY — replace phone/email/WhatsApp when client supplies Australia-specific details.
-  { id: 'australia', name: 'Australia', details: { ...contactDetails, address: 'RainmakerHealth\nSuite 301\n51 Birmingham Street\nSpotswood, Victoria 3015\nAustralia' } },
-  // TEMPORARY — replace phone/email/WhatsApp when client supplies India-specific details.
-  { id: 'india', name: 'India', details: { ...contactDetails, address: 'RainmakerFMCG\nOffice No. 20–21, 2nd Floor\n72/78, Chapsey Building\nPrincess Street\nMumbai 400 002\nIndia' } },
+  { id: 'south-africa', name: 'South Africa', details: { ...contactDetails, whatsapp: contactDetails.whatsapp.filter((number) => number.startsWith('+27')) } },
+  // No verified Australian phone/WhatsApp supplied. Keep the central sales email.
+  { id: 'australia', name: 'Australia', details: { ...contactDetails, phone: null, phoneInternational: null, whatsapp: [] as string[], address: 'RainmakerHealth\nSuite 301\n51 Birmingham Street\nSpotswood, Victoria 3015\nAustralia' } },
+  // Only the existing +91 WhatsApp is verified for India; no local phone supplied.
+  { id: 'india', name: 'India', details: { ...contactDetails, phone: null, phoneInternational: null, whatsapp: contactDetails.whatsapp.filter((number) => number.startsWith('+91')), address: 'RainmakerFMCG\nOffice No. 20–21, 2nd Floor\n72/78, Chapsey Building\nPrincess Street\nMumbai 400 002\nIndia' } },
 ] as const
 
 type ContactEnquiry = { name: string; email: string; company: string; phone: string; enquiryType: string; message: string }

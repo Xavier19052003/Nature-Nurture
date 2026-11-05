@@ -7,7 +7,6 @@ import { Link, Navigate, useParams } from 'react-router-dom'
 import { mosquitoPatchVariants } from '../data/mosquitoPatches'
 import { MosquitoPatchProduct } from './MosquitoPatchProduct'
 import { SteviaProduct } from './SteviaProduct'
-import { InfantFormula } from './InfantFormula'
 import { CerealRange } from './CerealRange'
 import { cerealFlavours } from '../data/cerealRange'
 import { catalogueProducts, getCategoryHref, getProductHref, products } from '../data/products'
@@ -25,10 +24,7 @@ export function ProductDetailPage() {
     return <Navigate to="/products/cereal-meal-replacement" replace />
   }
 
-  if (slug === 'infant-formula') return <InfantFormula />
-  if (slug === 'infant-formula-stage-1' || slug === 'infant-formula-stage-2') {
-    return <Navigate to="/products/infant-formula" replace />
-  }
+  if (['infant-formula', 'infant-formula-stage-1', 'infant-formula-stage-2', 'stage-1', 'stage-2'].includes(slug ?? '')) return <Navigate to="/products" replace />
 
   if (slug === 'mosquito-repellent-patches') {
     return <Navigate to={getCategoryHref('Family Protection')} replace />

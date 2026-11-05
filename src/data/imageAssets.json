@@ -1084,5 +1084,27 @@
         "src": "products/zingo/zingo-mango-product.webp"
       }
     ]
+  },
+  "catalogue/natures-nurture-product-lineup.webp": {
+    "width": 1254,
+    "height": 1254,
+    "variants": [
+      {
+        "width": 480,
+        "src": "catalogue/natures-nurture-product-lineup-480.webp"
+      },
+      {
+        "width": 800,
+        "src": "catalogue/natures-nurture-product-lineup-800.webp"
+      },
+      {
+        "width": 1200,
+        "src": "catalogue/natures-nurture-product-lineup-1200.webp"
+      },
+      {
+        "width": 1254,
+        "src": "catalogue/natures-nurture-product-lineup.webp"
+      }
+    ]
   }
 }

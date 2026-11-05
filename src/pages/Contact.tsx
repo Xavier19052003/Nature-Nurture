@@ -159,9 +159,9 @@ export function ContactPage() {
             <p>Get in touch with our team directly or use the form and we’ll get back to you.</p>
             <div className="contact-design-details">
               <article><MapPin size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>{region.id === 'south-africa' ? 'Head Office' : 'Office'}</h3><address>{contactDetails.address}</address></div></article>
-              <article><Phone size={31} strokeWidth={1.6} aria-hidden="true" /><div><h3>Phone</h3><a href={`tel:${contactDetails.phoneInternational}`}>{contactDetails.phone}</a></div></article>
+              {contactDetails.phone && contactDetails.phoneInternational && <article><Phone size={31} strokeWidth={1.6} aria-hidden="true" /><div><h3>Phone</h3><a href={`tel:${contactDetails.phoneInternational}`}>{contactDetails.phone}</a></div></article>}
               <article><Mail size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Email</h3><a href={`mailto:${contactDetails.email}`}>{contactDetails.email}</a></div></article>
-              <article className="contact-design-whatsapp"><MessageCircle size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>WhatsApp</h3><div className="contact-whatsapp-links">{contactDetails.whatsapp.map((number) => <a key={number} href={`https://wa.me/${number.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">{number}</a>)}</div></div></article>
+              {contactDetails.whatsapp.length > 0 && <article className="contact-design-whatsapp"><MessageCircle size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>WhatsApp</h3><div className="contact-whatsapp-links">{contactDetails.whatsapp.map((number) => <a key={number} href={`https://wa.me/${number.replace(/\D/g, '')}`} target="_blank" rel="noopener noreferrer">{number}</a>)}</div></div></article>}
               <article><Users2 size={32} strokeWidth={1.6} aria-hidden="true" /><div><h3>Business Enquiries</h3><p>Retail, wholesale &amp; partnerships</p></div></article>
             </div>
           </div>

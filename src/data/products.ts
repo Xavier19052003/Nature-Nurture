@@ -135,34 +135,6 @@ const mosquitoRepellentProducts: Product[] = mosquitoPatchVariants.map((variant)
 export const products: Product[] = [
   ...zingoProducts,
   ...sublingualProducts,
-  {
-    id: 'infant-formula-stage-1',
-    slug: 'infant-formula-stage-1',
-    name: 'Infant Formula — Stage 1',
-    brand: "Nature's Nurture",
-    category: 'Child Nutrition',
-    description: 'Gentle early-life nutrition built to help families support growth and everyday feeding confidence.',
-    shortDescription: '0–6 months · Complete nutrition',
-    image: '',
-    format: '450g · 0–6 months',
-    label: 'Family essentials',
-    benefits: ['Nutrient dense to support healthy growth', 'Supports brain development & immune function', 'Gentle on tiny tummies'],
-    accent: '#e7c6a8',
-  },
-  {
-    id: 'infant-formula-stage-2',
-    slug: 'infant-formula-stage-2',
-    name: 'Infant Formula — Stage 2',
-    brand: "Nature's Nurture",
-    category: 'Child Nutrition',
-    description: 'Follow-on nutrition designed to support active growth and development from six months.',
-    shortDescription: '6–12 months · Complete nutrition',
-    image: '',
-    format: '450g · 6–12 months',
-    label: 'Family essentials',
-    benefits: ['Supports active growth & development', 'Nutrient dense with key protein & choline', 'Supports digestive comfort'],
-    accent: '#b7a8d9',
-  },
   ...cerealProducts,
   steviaProduct,
   ...mosquitoRepellentProducts,
@@ -185,7 +157,6 @@ export const zingoRange: Product = {
 const catalogueCategoryByProductCategory: Record<string, string> = {
   'Wellness Nutrition': 'Sublingual Nutrition',
   'Daily Support': 'Sublingual Nutrition',
-  'Child Nutrition': 'Infant Nutrition',
   'Family Nutrition': 'Cereal & Meal Replacement',
   'Everyday Wellness': 'Natural Sweeteners',
   'Family Protection': 'Family Protection',
@@ -207,7 +178,6 @@ export const categories = ['All Products', ...new Set(catalogueProducts.map((pro
 
 export function getProductHref(product: Product) {
   if (cerealVariants.some((variant) => variant.slug === product.slug)) return '/products/cereal-meal-replacement'
-  if (product.slug === 'infant-formula-stage-1' || product.slug === 'infant-formula-stage-2') return '/products/infant-formula'
   return product.slug === 'zingo' || zingoVariants.some((variant) => variant.slug === product.slug)
     ? '/brands/zingo'
     : `/products/${product.slug}`

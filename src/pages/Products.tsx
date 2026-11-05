@@ -1,7 +1,7 @@
 import { optimizedImageUrl } from '../data/optimizedImages'
 import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
-import { Baby, Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, UtensilsCrossed } from 'lucide-react'
+import { Bug, Droplets, FlaskConical, Grid2X2, Leaf, Search, UtensilsCrossed } from 'lucide-react'
 import { useMemo, type CSSProperties } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { RangeCarousel } from '../components/ui/RangeCarousel'
@@ -13,7 +13,6 @@ const asset = (path: string) => optimizedImageUrl(`${import.meta.env.BASE_URL}${
 const categoryIcons = {
   'All Products': Grid2X2,
   'Sublingual Nutrition': FlaskConical,
-  'Infant Nutrition': Baby,
   'Cereal & Meal Replacement': UtensilsCrossed,
   'Natural Sweeteners': Leaf,
   'Family Protection': Bug,
@@ -50,7 +49,7 @@ export function ProductsPage() {
             <p className="products-hero__lead">Explore our full range of nutrition, wellness and everyday health products — thoughtfully crafted for healthier lives, across Africa and beyond.</p>
           </div>
           <div className="products-hero__image page-hero__visual">
-            <OptimizedImage src={asset('catalogue/portfolio-lineup-no-infant-formula.webp')} alt="Nature’s Nurture nutrition and wellness products arranged with botanicals, fruit and grains on a stone display" width={1356} height={1159} fetchPriority="high" />
+            <OptimizedImage src={asset('catalogue/natures-nurture-product-lineup.webp')} alt="Nature’s Nurture wellness product range with cereal, supplements, sweetener, patches and Zingo" width={1254} height={1254} fetchPriority="high" />
           </div>
         </div>
       </PageHero>

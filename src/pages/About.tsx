@@ -1,6 +1,6 @@
 import { OptimizedImage } from '../components/ui/OptimizedImage'
 import { PageHero } from '../components/ui/PageHero'
-import { ArrowRight, Baby, Factory, BadgeCheck, Droplets, FlaskConical, HandCoins, Leaf, Users } from 'lucide-react'
+import { ArrowRight, Baby, BadgeCheck, Droplets, FlaskConical, HandCoins, Leaf, Users } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import type { CSSProperties } from 'react'
 
@@ -17,7 +17,7 @@ const values = [
 const pillars = [
   { title: 'Sublingual Nutrition', description: 'Micronutrient sprays and practical alternative nutrient-delivery formats.', image: 'sublingual-nutrition', icon: FlaskConical, accent: '#3e6b3f', tint: '#e6eddf', alt: 'Fresh green leaves with water droplets' },
   { title: 'Energy & Hydration', description: 'Functional powdered drinks developed around hydration, refreshment and everyday vitality.', image: 'energy-hydration', icon: Droplets, accent: '#286779', tint: '#e3eff1', alt: 'Water ripples with fresh lemon and green leaves' },
-  { title: 'Infant & Family Nutrition', description: 'Formula, cereals and nutritional products designed around different life stages and family needs.', image: 'infant-family-nutrition', icon: Baby, accent: '#996334', tint: '#f4e9d9', alt: 'Oats, grains and milk in a warm natural setting' },
+  { title: 'Family Nutrition', description: 'Cereals and nutritional products designed around different life stages and family needs.', image: 'infant-family-nutrition', icon: Baby, accent: '#996334', tint: '#f4e9d9', alt: 'Oats, grains and milk in a warm natural setting' },
   { title: 'Natural & Lifestyle', description: 'Natural sweeteners and family-protection / everyday wellness formats.', image: 'natural-lifestyle', icon: Leaf, accent: '#727336', tint: '#ececd9', alt: 'Coconut, seeds and botanical ingredients' },
 ]
 
@@ -28,11 +28,6 @@ const principles = [
   { title: 'International', description: 'Considered for different markets, regulatory environments and retail channels.' },
   { title: 'Wellness-Led', description: 'Meaningful roles in everyday wellness routines.' },
 ]
-
-// Replace these illustrative slots with client-approved manufacturing photography.
-function ManufacturingMediaSlot({ title }: { title: string }) {
-  return <div className="about-manufacturing-slot" role="img" aria-label={`${title} — manufacturing illustration`}><Factory size={64} strokeWidth={1} aria-hidden="true" /><span>{title}</span></div>
-}
 
 export function AboutPage() {
   return (
@@ -92,8 +87,6 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="about-design-section about-manufacturing-section" aria-label="Manufacturing environment"><div className="container" data-stevia-reveal><ManufacturingMediaSlot title="Inside the Manufacturing Environment" /></div></section>
-
       <section className="about-design-section about-design-portfolio" aria-labelledby="about-portfolio-heading">
         <div className="container">
           <h2 className="about-design-label" id="about-portfolio-heading">Four Pillars of the Portfolio</h2>
@@ -105,13 +98,15 @@ export function AboutPage() {
               </article>
             ))}
           </div>
-          <p className="about-design-portfolio__families">Nature’s Nurture spans Sublingual Nutrition, Infant Nutrition, Cereal &amp; Meal Replacement, Natural Sweeteners and Family Protection. Zingo sits separately within the wider Rainmaker FMCG Energy &amp; Hydration portfolio.</p>
+          <p className="about-design-portfolio__families">Nature’s Nurture spans Sublingual Nutrition, Cereal &amp; Meal Replacement, Natural Sweeteners and Family Protection. Zingo sits separately within the wider Rainmaker FMCG Energy &amp; Hydration portfolio.</p>
           <div className="about-design-purpose" aria-labelledby="about-purpose-heading">
             <h3 id="about-purpose-heading">Built on Purpose</h3>
             <dl>{principles.map(({ title, description }, index) => <div key={title}><dt><span className="about-design-purpose__number" aria-hidden="true">0{index + 1}</span>{title}</dt><dd>{description}</dd></div>)}</dl>
           </div>
         </div>
       </section>
+
+      <section className="about-restored-manufacturing" aria-label="Manufacturing environment"><div data-stevia-reveal><OptimizedImage src={aboutImage('manufacturing-facility')} alt="Stainless-steel processing tanks and pipework, illustrating manufacturing capability" sizes="100vw" width={2172} height={724} loading="lazy" /></div></section>
 
       <section className="about-design-band about-design-accessibility" aria-labelledby="about-accessibility-heading">
         <OptimizedImage className="about-design-band__image" src={aboutImage('ethical-sourcing')} alt="" aria-hidden="true" width={2172} height={724} loading="lazy" />
@@ -136,8 +131,6 @@ export function AboutPage() {
           </div>
         </div>
       </section>
-
-      <section className="about-design-section about-manufacturing-section" aria-label="Production and quality"><div className="container" data-stevia-reveal><ManufacturingMediaSlot title="Production & Quality in Focus" /></div></section>
 
       <section className="about-design-section about-design-reach" aria-labelledby="about-africa-heading">
         <div className="container about-design-reach__layout">

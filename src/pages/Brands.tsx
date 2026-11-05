@@ -1,6 +1,5 @@
 import { optimizedImageUrl } from '../data/optimizedImages'
 import { OptimizedImage } from '../components/ui/OptimizedImage'
-import { formulaSafety } from '../data/infantFormula'
 import { PageHero } from '../components/ui/PageHero'
 import type { CSSProperties } from 'react'
 import { Link } from 'react-router-dom'
@@ -86,7 +85,7 @@ export function CertificationsPage() {
               </figure>
             ))}
           </div>
-          <details className="quality-certificate-details"><summary>NIHT Halaal certification — Cereals &amp; Formula</summary><p>National Independent Halaal Trust · Certificate H786/NR 1377 · Certificate holder: Rainmaker FMCG.</p><p>Scope: Receiving, Storage, Processing, Packaging, Storage and Dispatch of Cereals &amp; Formula. Product category: CIV – Processing of ambient stable products. Standard: NIHT HAP Manufacturing. Exclusions: None.</p><p>Initial certification and issue date: 20 October 2026. Valid to 28 February 2027. Revision: 0.</p><p>Certified formats listed: Infant Formula – Starter (NN-01) and Follow On (NN-02), 400g each; Cereal – Strawberry (NN-03), Pineapple (NN-04), Chocolate (NN-05), Banana (NN-06) and Custard (NN-07), 500g each. Certification applies to these listed products and formats.</p></details>
+          <details className="quality-certificate-details"><summary>NIHT Halaal certification — Listed cereals</summary><p>National Independent Halaal Trust · Certificate H786/NR 1377 · Certificate holder: Rainmaker FMCG.</p><p>Applicable cereal scope: Receiving, Storage, Processing, Packaging, Storage and Dispatch. Product category: CIV – Processing of ambient stable products. Standard: NIHT HAP Manufacturing. Exclusions: None.</p><p>Initial certification and issue date: 20 October 2026. Valid to 28 February 2027. Revision: 0.</p><p>Certified formats listed: Cereal – Strawberry (NN-03), Pineapple (NN-04), Chocolate (NN-05), Banana (NN-06) and Custard (NN-07), 500g each. Certification applies to these listed products and formats.</p></details>
         </div>
       </section>
 
@@ -129,8 +128,7 @@ export function CertificationsPage() {
             <p className="eyebrow">Compliance-led from the start</p>
             <h2 id="compliance-first">Compliance-First Manufacturing</h2>
             <p>RainmakerFMCG operates under a compliance-first manufacturing philosophy, with products developed, tested and released in alignment with applicable national and international regulatory frameworks.</p>
-            <p>For Infant Formula, this means checking ingredients before production, verifying key nutrients in each batch, working with verified suppliers, screening for pathogens and monitoring production throughout manufacturing.</p>
-            <ul className="quality-formula-controls">{formulaSafety.map(({ title, text }) => <li key={title}><strong>{title}</strong><span>{text}</span></li>)}</ul>
+            <p>The documented food premises, Nature’s Way Supplements Pty Ltd, hold a City of Johannesburg Certificate of Acceptability covering manufacturing, blending, filling, packaging and storage of cereal-based food products, nutritional supplements and complementary food products.</p>
           </div>
           <div className="quality-process__image">
             <OptimizedImage src={asset('home/manufacturing-spray-line-inspection.webp')} alt="Worker in laboratory PPE inspecting a Nature’s Nurture spray bottle on the production line" width={1166} height={1349} loading="lazy" />

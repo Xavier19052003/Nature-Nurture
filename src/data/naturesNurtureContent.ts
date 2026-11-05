@@ -33,7 +33,6 @@ const cerealSlugs = [
   'cereal-chocolate-crave',
   'cereal-custard-dream',
 ]
-const infantSlugs = ['infant-formula-stage-1', 'infant-formula-stage-2']
 
 function findProducts(slugs: string[]): Product[] {
   return slugs
@@ -48,7 +47,7 @@ export const naturesNurtureContent = {
   hero: {
     eyebrow: "Nature's Nurture",
     headline: 'Wellness, Reimagined for Everyday Life',
-    lead: "Nature's Nurture brings together convenient nutrition, everyday wellness and family-focused essentials — from fast-absorbing sublingual sprays to infant formula, cereals and natural, protective products for daily life.",
+    lead: "Nature's Nurture brings together convenient nutrition, everyday wellness and family-focused essentials — from fast-absorbing sublingual sprays to cereals and natural, protective products for daily life.",
     images: [
       sublingualProducts[0].image,
       asset('products/mosquito-repellent/mosquito-repellent-patches-kids.png'),
@@ -60,7 +59,7 @@ export const naturesNurtureContent = {
   intro: {
     eyebrow: "What is Nature's Nurture?",
     headline: 'Everyday nutrition. Thoughtfully delivered.',
-    copy: "Nature's Nurture is a science-led wellness brand built around practical, everyday products for the whole family — spanning sublingual micronutrient sprays, infant nutrition, cereals, natural sweeteners and family protection essentials.",
+    copy: "Nature's Nurture is a science-led wellness brand built around practical, everyday products for the whole family — spanning sublingual micronutrient sprays, cereals, natural sweeteners and family protection essentials.",
   },
 
   sublingual: {
@@ -85,19 +84,12 @@ export const naturesNurtureContent = {
     lead: "Nature's Nurture is more than the spray range — the portfolio extends into everyday family nutrition and lifestyle essentials.",
     areas: [
       { number: '01', title: 'Sublingual Nutrition', description: 'Fast-absorbing micronutrient sprays.' },
-      { number: '02', title: 'Infant & Family Nutrition', description: 'Formula designed for the earliest stages of life.' },
-      { number: '03', title: 'Cereal & Meal Replacement', description: 'Convenient nutrition for busy family routines.' },
-      { number: '04', title: 'Natural Sweeteners', description: 'Plant-based sweetness for everyday use.' },
-      { number: '05', title: 'Family Protection', description: 'Practical, protective everyday essentials.' },
+      { number: '02', title: 'Cereal & Meal Replacement', description: 'Convenient nutrition for busy family routines.' },
+      { number: '03', title: 'Natural Sweeteners', description: 'Plant-based sweetness for everyday use.' },
+      { number: '04', title: 'Family Protection', description: 'Practical, protective everyday essentials.' },
     ] as NNPortfolioArea[],
   },
 
-  infant: {
-    eyebrow: 'Infant & Family Nutrition',
-    headline: "A foundation for your baby's future",
-    lead: 'Nutrient-packed formulas designed for the crucial first year.',
-    products: findProducts(infantSlugs),
-  },
 
   cereal: {
     eyebrow: 'Cereal & Meal Replacement',
@@ -130,7 +122,7 @@ export const naturesNurtureContent = {
     areas: [
       { number: '01', title: 'Sublingual Nutrition', description: 'Fast-absorbing sprays delivering micronutrients directly into the bloodstream.' },
       { number: '02', title: 'Energy & Hydration', description: 'Functional powdered drinks engineered for hydration, refreshment and everyday vitality.' },
-      { number: '03', title: 'Infant & Family Nutrition', description: 'Trusted formulas and cereals designed to nourish from the earliest stages of life.' },
+      { number: '03', title: 'Family Nutrition', description: 'Cereals and meal replacements for busy family routines.' },
       { number: '04', title: 'Natural & Lifestyle', description: 'Botanical sweeteners and protective wellness patches for clean, conscious living.' },
     ] as NNPortfolioArea[],
   },

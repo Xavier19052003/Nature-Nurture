@@ -80,7 +80,7 @@ export function RetailersPage() {
               </article>
             ))}
           </div>
-          <p className="retailers-support__portfolio">The portfolio spans Sublingual Nutrition, Infant Nutrition, Cereal &amp; Meal Replacement, Natural Sweeteners and Family Protection, with Energy &amp; Hydration represented by Zingo within the wider Rainmaker FMCG portfolio.</p>
+          <p className="retailers-support__portfolio">The portfolio spans Sublingual Nutrition, Cereal &amp; Meal Replacement, Natural Sweeteners and Family Protection, with Energy &amp; Hydration represented by Zingo within the wider Rainmaker FMCG portfolio.</p>
         </div>
       </section>
 
