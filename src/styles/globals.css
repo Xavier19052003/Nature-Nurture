@@ -4486,3 +4486,19 @@ img[src*="/products/sublingual/"] { object-fit: contain; }
 /* The approved replacement lineup has a taller crop than the previous panorama. */
 #root .products-page .products-hero .products-hero__image.page-hero__visual { aspect-ratio:1356/1159; }
 #root .products-page .products-hero .products-hero__image.page-hero__visual img { object-fit:contain; object-position:center; }
+
+/* Regional addresses and supplied certification evidence, November 2026. */
+.contact-design-details address { white-space:pre-line; overflow-wrap:anywhere; }
+.quality-logo-grid { grid-template-columns:repeat(12,minmax(0,1fr)); }
+.quality-logo-tile,.quality-logo-tile:nth-child(6) { grid-column:span 2; }
+.quality-logo-tile:nth-child(7) { grid-column:2 / span 2; }
+.quality-logo-tile img { max-width:100%; max-height:100%; }
+.quality-certificate-details { margin-top:1.5rem; padding:1rem; border:var(--rule); border-radius:var(--radius-card); min-width:0; }
+.quality-certificate-details p,.quality-premises-card p { overflow-wrap:anywhere; }
+.quality-certificate-details summary,.quality-premises-card summary { cursor:pointer; font-weight:600; line-height:1.5; }
+.quality-premises-card details { margin-top:1rem; }
+.quality-premises-card details p { margin-top:.75rem; }
+.quality-premises-card dt:not(:first-child) { margin-top:.75rem; }
+.quality-premises-card dd { font-size:.95rem; }
+@media(max-width:1100px) { .quality-logo-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .quality-logo-tile,.quality-logo-tile:nth-child(6),.quality-logo-tile:nth-child(7) { grid-column:auto; } }
+@media(max-width:700px) { .quality-logo-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }

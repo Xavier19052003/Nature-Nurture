@@ -18,6 +18,8 @@ const productAccreditations = [
   { name: 'SAHPRA', image: 'sahpra' },
   { name: 'FSSAI', image: 'fssai' },
   { name: 'Proudly South African', image: 'proudly-south-african' },
+  { name: 'NIHT Halaal Certified', image: 'niht' },
+  { name: 'SHUDDHA / SAHMS', image: 'shuddha-sahms' },
 ]
 
 const regulatoryAccreditations = [
@@ -79,11 +81,12 @@ export function CertificationsPage() {
           <div className="quality-logo-grid">
             {productAccreditations.map(({ name, image }) => (
               <figure key={name} className="quality-logo-tile">
-                <OptimizedImage src={asset(`quality/accreditations/${image}.png`)} alt={`${name} accreditation logo`} loading="lazy" />
+                <OptimizedImage src={asset(`quality/accreditations/${image}.png`)} alt={image === 'niht' ? 'National Independent Halaal Trust NIHT logo' : image === 'shuddha-sahms' ? 'SHUDDHA SAHMS logo' : `${name} accreditation logo`} loading="lazy" />
                 <figcaption>{name}</figcaption>
               </figure>
             ))}
           </div>
+          <details className="quality-certificate-details"><summary>NIHT Halaal certification — Cereals &amp; Formula</summary><p>National Independent Halaal Trust · Certificate H786/NR 1377 · Certificate holder: Rainmaker FMCG.</p><p>Scope: Receiving, Storage, Processing, Packaging, Storage and Dispatch of Cereals &amp; Formula. Product category: CIV – Processing of ambient stable products. Standard: NIHT HAP Manufacturing. Exclusions: None.</p><p>Initial certification and issue date: 20 October 2026. Valid to 28 February 2027. Revision: 0.</p><p>Certified formats listed: Infant Formula – Starter (NN-01) and Follow On (NN-02), 400g each; Cereal – Strawberry (NN-03), Pineapple (NN-04), Chocolate (NN-05), Banana (NN-06) and Custard (NN-07), 500g each. Certification applies to these listed products and formats.</p></details>
         </div>
       </section>
 
@@ -91,7 +94,7 @@ export function CertificationsPage() {
         <div className="container">
           <div className="quality-heading">
             <p className="eyebrow eyebrow--dark">Regulatory compliance worldwide</p>
-            <h2 id="regulatory-accreditations">Regulatory Accreditations</h2>
+            <h2 id="regulatory-accreditations">Regulatory &amp; Premises Compliance</h2>
             <p>We operate in line with national and international regulatory requirements.</p>
           </div>
           <div className="quality-regulatory-grid">
@@ -102,6 +105,7 @@ export function CertificationsPage() {
                 <dl><dt>{type}</dt><dd>{number}</dd></dl>
               </article>
             ))}
+            <article className="quality-card quality-regulatory-card quality-premises-card"><ShieldCheck size={32} aria-hidden="true" /><h3>Certificate of Acceptability</h3><p>City of Johannesburg Environmental Health · Region C</p><dl><dt>Certificate number</dt><dd>COJ/RC/COA/26-27/8697</dd><dt>Food premises</dt><dd>Nature’s Way Supplements Pty Ltd</dd></dl><details><summary>Premises compliance details</summary><p>Dated 22 October 2026. Covers manufacturing, blending, filling, packaging and storage of foodstuffs, restricted to cereal-based food products, nutritional supplements and complementary food products.</p><p>Registration/location: Stand No 409, Hoogland Ext 47.</p><p>Processing address: Unit 7 and 8 Angus Minis, 14 Angus Crescent, Northlands Business Park, Hoogland Ext 47.</p></details></article>
           </div>
         </div>
       </section>
